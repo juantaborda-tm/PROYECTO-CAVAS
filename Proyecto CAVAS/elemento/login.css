@@ -7,7 +7,6 @@
 }
 
 body {
-    display: flex;
     padding: 0;
     margin: 0   ;
 }
@@ -31,7 +30,7 @@ main {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 80%;
+        width: 300px;
     }
 
     #caja_contenedora h1 {
@@ -40,12 +39,67 @@ main {
         color: black;
     }
 
-    #caja_email {
-        padding: 40px;
+    #caja_contenedora span {
+        font-size: 1.7em;
     }
+
+        #caja_email {
+            margin: 20px 0;
+        }
 
         #caja_email label {
             font-size: 1.2em;
+            font-weight: 600;
         }
 
+            #caja2_email input {
+                border: none;
+                outline: none;
+                border-bottom: solid 3px #000000;
+                width: 100%;
+            }
 
+            #caja2_email {
+                display: flex;
+                margin: 10px 0;
+            }
+
+        #caja_contraseña {
+            margin: 20px 0;
+        }
+
+        #caja_contraseña label {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+            #caja2_contraseña input {
+                border: none;
+                outline: none;
+                border-bottom: solid 3px #000000;
+                width: 100%;
+            }
+
+            #caja2_contraseña {
+                display: flex;
+                margin: 10px 0;
+            }
+
+        #caja_checkbox label {
+            font-size: 1.1em;
+        }
+
+        #caja_checkbox input {
+            transform: scale(1.2);
+        }
+
+        #btn_iniciar {
+            height: 50px;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 5px;
+            background: #0076D1;
+            border: transparent;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
