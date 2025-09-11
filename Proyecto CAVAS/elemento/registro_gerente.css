@@ -30,5 +30,20 @@ main {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 300px;
+        width: 35%;
     }
+
+    #caja_contenedora #caja_horizontal {
+        display: flex;
+        justify-content: flex-start;
+        gap: 5em;
+    }
+
+    #caja_id_usuario{
+        
+        position: relative;
+        margin-left: 46px;
+        
+
+    }
+    

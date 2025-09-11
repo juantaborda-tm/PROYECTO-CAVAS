@@ -7,6 +7,8 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="elemento/registro_gerente.css">
 </head>
 <body>
     <main id="caja_padre">
@@ -21,7 +23,7 @@
 
             <form action="" method="post">
 
-                <div id="caja_linea1">
+                <div id="caja_horizontal">
 
                     <div id="caja_nombre_empresa">
 
@@ -51,7 +53,7 @@
 
                 </div>
 
-                <div id="caja_linea2">
+                <div id="caja_horizontal">
                     
                     <div id="caja_nombre_usuario">
 
@@ -73,7 +75,7 @@
                         <div id="caja2_fecha_usuario">
 
                             <span><ion-icon name="calendar"></ion-icon></span>
-                            <input type="datetime-local" name="fecha_usuario" id="fecha_usuario" tabindex="5" required>
+                            <input type="date" name="fecha_usuario" id="fecha_usuario" tabindex="5" required>
 
                         </div>
 
@@ -81,7 +83,7 @@
 
                 </div>
 
-                <div id="caja_linea3">
+                <div id="caja_horizontal">
 
                     <div id="caja_tipo_id_usuario">
 
@@ -90,7 +92,14 @@
                         <div id="caja2_tipo_id">
 
                             <span><ion-icon name="id-card"></ion-icon></span>
-                            <select name="id_tipo_usuario" id="id_tipo_usuario" tabindex="3" required></select>
+                            <select name="id_tipo_usuario" id="id_tipo_usuario" tabindex="3" required>
+
+                                <option value="documento_1">C.c</option>
+                                <option value="documento_2">T.I</option>
+
+                            </select>
+
+                                
 
                         </div>
 
@@ -102,7 +111,7 @@
 
                         <div id="caja2_id_usuario">
 
-                            <span><ion-icon name="person"></ion-icon></ion-icon></span>
+                            <span id="icono"><ion-icon name="person"></ion-icon></ion-icon></span>
                             <input type="tel" name="id_usuario" id="id_usuario" tabindex="4" maxlength="10" minlength="6" pattern="[0-9]{6,10}" title="Agrega un numero de documento valido" required>
 
                         </div>
@@ -111,7 +120,7 @@
 
                 </div>
 
-                <div id="caja_linea4">
+                <div id="caja_horizontal">
 
                     <div id="caja_tel_usuario">
 
@@ -141,7 +150,7 @@
 
                 </div>
 
-                <div id="caja_linea5">
+                <div id="caja_horizontal">
 
                     <div id="caja_contraseña_usuario">
 
