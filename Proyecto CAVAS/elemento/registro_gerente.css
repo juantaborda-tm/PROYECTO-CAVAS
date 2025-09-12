@@ -30,20 +30,109 @@ main {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 35%;
+        width: 40%;
     }
 
-    #caja_contenedora #caja_horizontal {
-        display: flex;
-        justify-content: flex-start;
-        gap: 5em;
+    #caja_contenedora h1 {
+        font-size: 2.5em;
+        text-align: center;
+        color: black;
     }
 
-    #caja_id_usuario{
-        
-        position: relative;
-        margin-left: 46px;
-        
-
+    #caja_contenedora span {
+        font-size: 1.7em;
     }
-    
+
+        #caja_contenedora #caja_horizontal1 {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10%;
+        }
+
+            #caja_nombre_empresa label {
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+                #caja2_nombre_empresa input {
+                    border: none;
+                    outline: none;
+                    border-bottom: solid 3px #000000;
+                    margin-left: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                #caja2_nombre_empresa {
+                    display: flex;
+                    margin: 10px 0;
+                }
+
+            #caja_nit_empresa label {
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+                #caja2_nit_empresa input {
+                    border: none;
+                    outline: none;
+                    border-bottom: solid 3px #000000;
+                    margin-left: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                #caja2_nit_empresa {
+                    display: flex;
+                    margin: 10px 0;
+                }
+
+            #caja_contenedora #caja_horizontal2 {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20%;
+        }
+
+            #caja_nombre_usuario label {
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+                #caja2_nombre_usuario input {
+                    border: none;
+                    outline: none;
+                    border-bottom: solid 3px #000000;
+                    margin-left: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                #caja2_nombre_usuario {
+                    display: flex;
+                    margin: 10px 0;
+                }
+
+            #caja_fecha_usuario label {
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+                #caja2_fecha_usuario input {
+                    border: none;
+                    outline: none;
+                    border-bottom: solid 3px #000000;
+                    margin-left: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                #caja2_fecha_usuario {
+                    display: flex;
+                    margin: 10px 0;
+                }
