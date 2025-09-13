@@ -45,7 +45,6 @@ main {
 
         #caja_contenedora #caja_horizontal1 {
             display: flex;
-            justify-content: center;
             margin: 20px 0;
             gap: 10%;
         }
@@ -92,9 +91,8 @@ main {
 
             #caja_contenedora #caja_horizontal2 {
             display: flex;
-            justify-content: center;
             margin: 20px 0;
-            gap: 20%;
+            gap: 10%;
         }
 
             #caja_nombre_usuario label {
