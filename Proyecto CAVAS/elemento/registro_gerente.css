@@ -25,8 +25,6 @@ main {
 
     #caja_contenedora {
         position: absolute;
-        justify-content: center;
-        align-items: center;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -43,94 +41,5 @@ main {
         font-size: 1.7em;
     }
 
-        #caja_contenedora #caja_horizontal1 {
-            display: flex;
-            margin: 20px 0;
-            gap: 10%;
-        }
-
-            #caja_nombre_empresa label {
-                font-size: 1.2em;
-                font-weight: 600;
-            }
-
-                #caja2_nombre_empresa input {
-                    border: none;
-                    outline: none;
-                    border-bottom: solid 3px #000000;
-                    margin-left: 10px;
-                    width: 100%;
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-
-                #caja2_nombre_empresa {
-                    display: flex;
-                    margin: 10px 0;
-                }
-
-            #caja_nit_empresa label {
-                font-size: 1.2em;
-                font-weight: 600;
-            }
-
-                #caja2_nit_empresa input {
-                    border: none;
-                    outline: none;
-                    border-bottom: solid 3px #000000;
-                    margin-left: 10px;
-                    width: 100%;
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-
-                #caja2_nit_empresa {
-                    display: flex;
-                    margin: 10px 0;
-                }
-
-            #caja_contenedora #caja_horizontal2 {
-            display: flex;
-            margin: 20px 0;
-            gap: 10%;
-        }
-
-            #caja_nombre_usuario label {
-                font-size: 1.2em;
-                font-weight: 600;
-            }
-
-                #caja2_nombre_usuario input {
-                    border: none;
-                    outline: none;
-                    border-bottom: solid 3px #000000;
-                    margin-left: 10px;
-                    width: 100%;
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-
-                #caja2_nombre_usuario {
-                    display: flex;
-                    margin: 10px 0;
-                }
-
-            #caja_fecha_usuario label {
-                font-size: 1.2em;
-                font-weight: 600;
-            }
-
-                #caja2_fecha_usuario input {
-                    border: none;
-                    outline: none;
-                    border-bottom: solid 3px #000000;
-                    margin-left: 10px;
-                    width: 100%;
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-
-                #caja2_fecha_usuario {
-                    display: flex;
-                    margin: 10px 0;
-                }
+    #caja_contenedora div#columna_1, #caja_contenedora div#columna_2 {
+    }
