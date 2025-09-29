@@ -6,18 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro gerente</title>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <link rel="stylesheet" href="elemento/registro_gerente.css">
 </head>
 
 <body>
     <main id="caja_padre">
-
-        <div id="caja_imagen_fondo">
-
-        </div>
 
         <div id="caja_contenedora">
 
@@ -25,13 +18,13 @@
 
             <form action="" method="post">
 
-                <div class="columna_1">
+                <div class="columna">
 
-                    <div id="caja_nombre_empresa">
+                    <div id="caja">
 
                         <label for="">Nombre de empresa</label>
 
-                        <div id="caja2_nombre_empresa">
+                        <div id="caja2">
 
                             <span><ion-icon name="business"></ion-icon></span>
                             <input type="text" name="nombre_empresa" id="nombre_empresa" minlength="1" maxlength="128" tabindex="0" pattern="[A-Za-z0-9]{1,128}" title="Por favor ingresa tu nombre" required>
@@ -40,30 +33,33 @@
 
                     </div>
 
-                    <div id="caja_nombre_usuario">
+                    <div id="caja">
 
                         <label for="">Nombre completo</label>
 
-                        <div id="caja2_nombre_usuario">
+                        <div id="caja2">
 
                             <span><ion-icon name="accessibility"></ion-icon></span>
-                            <input type="text" name="nombre_usuario" id="nombre_usuario" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa tu nombre" required>
+                            <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Nombre(s) y apellido(s)" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa tu nombre" required>
 
                         </div>
 
                     </div>
 
-                    <div id="caja_tipo_id_usuario">
+                    <div id="caja">
 
                         <label for="">Tipo de identificacion</label>
 
-                        <div id="caja2_tipo_id">
+                        <div id="caja2">
 
                             <span><ion-icon name="id-card"></ion-icon></span>
                             <select name="id_tipo_usuario" id="id_tipo_usuario" tabindex="3" required>
 
-                                <option value="documento_1">C.c</option>
-                                <option value="documento_2">T.I</option>
+                                <option value="documento_1">Cedula de ciudadania</option>
+                                <option value="documento_2">Tarjeta de identidad</option>
+                                <option value="documento_3">Pasaporte</option>
+                                <option value="documento_4">Cedula de extranjeria</option>
+                                <option value="documento_5">Registro civil</option>
 
                             </select>
 
@@ -71,24 +67,24 @@
 
                     </div>
 
-                    <div id="caja_tel_usuario">
+                    <div id="caja">
 
                         <label for="">Numero de telefono</label>
 
-                        <div id="caja2_tel_usuario">
+                        <div id="caja2">
 
                             <span><ion-icon name="call"></ion-icon></span>
-                            <input type="tel" name="tel_usuario" id="tel_usuario" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Digita un numero de telefono valido" tabindex="6" required>
+                            <input type="tel" name="tel_usuario" id="tel_usuario" placeholder="3211234567" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Digita un numero de telefono valido" tabindex="6" required>
 
                         </div>
 
                     </div>
 
-                    <div id="caja_contraseña_usuario">
+                    <div id="caja">
 
                         <label for="">Contraseña</label>
 
-                        <div id="caja2_contraseña_usuario">
+                        <div id="caja2">
 
                             <span><ion-icon name="lock-closed"></ion-icon></span>
                             <input type="password" name="contraseña_usuario" id="contraseña_usuario" minlength="8" maxlength="21" tabindex="8" pattern="[A-Za-z0-9#$&\\.,:]{8,21}" title="Digita una contraseña mas segura" required>
@@ -99,13 +95,13 @@
 
                 </div>
 
-                <div class="columna_2">
+                <div class="columna">
 
-                    <div id="caja_nit_empresa">
+                    <div id="caja">
 
                         <label for="">NIT de empresa</label>
 
-                        <div id="caja2_nit_empresa">
+                        <div id="caja2">
 
                             <span><ion-icon name="pin"></ion-icon></span>
                             <input type="text" name="nit_empresa" id="nit_empresa" minlength="1" maxlength="128" tabindex="1" pattern="[0-9]{1,128}" title="Por favor ingresa tu nombre" required>
@@ -114,11 +110,11 @@
 
                     </div>
 
-                    <div id="caja_fecha_usuario">
+                    <div id="caja">
 
                         <label for="">Fecha de nacimiento</label>
 
-                        <div id="caja2_fecha_usuario">
+                        <div id="caja2">
 
                             <span><ion-icon name="calendar"></ion-icon></span>
                             <input type="date" name="fecha_usuario" id="fecha_usuario" tabindex="5" required>
@@ -127,11 +123,11 @@
 
                     </div>
 
-                    <div id="caja_id_usuario">
+                    <div id="caja">
 
                         <label for="">No. de identificacion</label>
 
-                        <div id="caja2_id_usuario">
+                        <div id="caja2">
 
                             <span id="icono"><ion-icon name="person"></ion-icon></ion-icon></span>
                             <input type="tel" name="id_usuario" id="id_usuario" tabindex="4" maxlength="10" minlength="6" pattern="[0-9]{6,10}" title="Agrega un numero de documento valido" required>
@@ -140,24 +136,24 @@
 
                     </div>
 
-                    <div id="caja_email_usuario">
+                    <div id="caja">
 
                         <label for="">Email</label>
 
-                        <div id="caja2_email_usuario">
+                        <div id="caja2">
 
                             <span><ion-icon name="mail"></ion-icon></span>
-                            <input type="email" inputmode="email" name="email_usuario" id="email_usuario" minlength="3" maxlength="64" tabindex="7" pattern="[A-Za-z0-9]{3,64}" title="Parece que esto no es un email" required>
+                            <input type="email" inputmode="email" name="email_usuario" placeholder="correoejemplo@gmail.com" id="email_usuario" minlength="3" maxlength="64" tabindex="7" pattern="[A-Za-z0-9]{3,64}" title="Parece que esto no es un email" required>
 
                         </div>
 
                     </div>
 
-                    <div id="caja_confirmar_contraseña_usuario">
+                    <div id="caja">
 
                         <label for="">Confirmar contraseña</label>
 
-                        <div id="caja2_confirmar_contraseña_usuario">
+                        <div id="caja2">
 
                             <span><ion-icon name="lock-open"></ion-icon></span>
                             <input type="password" name="confirmar_contraseña_usuario" minlength="8" maxlength="21" tabindex="9" pattern="[A-Za-z0-9#$&\\.,:]{8,21}" title="Digita una contraseña mas segura" required>
