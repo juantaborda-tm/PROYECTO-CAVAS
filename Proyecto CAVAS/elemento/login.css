@@ -127,6 +127,7 @@ main {
 /* Regla para tablet */
 
 @media screen and (min-width: 650px) {
+
     #caja_contenedora {
         width: 300px;
         top: 70%;
