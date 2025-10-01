@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    transition: 0.7s;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+}
+
+main {
+    position: absolute;
+    min-height: 100vh;
+    background: rgb(252, 252, 252);
+    width: 100%;
+}
+
+    #caja_padre {
+        display: flex;
+    }
+
+        #caja_padre #barra_menu {
+            display: flex;
+            width: 200px;
+            height: 100vh;
+            background: #43F4B0;
+            flex-direction: column;
+        }
+
+        #caja_encabezado_producto {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #caja_padre #barra_encabezado {
+            align-items: center;
+            width: 100%;
+            height: 50px;
+        }
+
+        #caja_padre #principal_productos {
+            display: block;
+        }
+
+
+
+/* Contenedor derecho que incluye encabezado y productos */
+
+
+/* Encabezado superior */
+#barra_encabezado {
+    height: 10vh;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+/* Sección de productos */
+#principal_productos {
+    height: 90vh;
+    width: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #fafafa;
+}
