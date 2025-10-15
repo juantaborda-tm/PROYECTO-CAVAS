@@ -15,19 +15,23 @@
 
         <section id="barra_menu">
 
+            <img src="logo_de_cavas.png" id="logo">
+
             <div id="cuenta_usuario">
 
-                <img id="foto_perfil" src="" alt="">
+                <img id="foto_perfil" src="usuario_prueba.jpg" alt="">
 
-                <p id="texto_correo"></p>
+                <p id="texto_nombre">mi nombre</p>
+
+                <p id="texto_correo">micorreo@gmail.com</p>
 
             </div>
 
-            <menu id="barra_de_menu"></menu>
+            <menu id="menu"></menu>
+
+            <button id="btn_cerrar_sesion" type="submit">Cerrar sesión</button>
 
             <a href="" id="marca_proyecto"></a>
-
-            <button type="submit">Cerrar sesión</button>
 
         </section>
 
@@ -35,15 +39,7 @@
 
             <section id="barra_encabezado">
 
-                <div id="logo">
-
-                </div>
-
-                <div id="encabezado">
-
-                    <p id="saludo_usuario">Hola </p>
-
-                </div>
+                    <p id="saludo_usuario">Hola, </p>
 
                 <button id="configuracion"><ion-icon name="cog"></ion-icon></button>
 
@@ -53,17 +49,15 @@
 
                 <div id="1ra_barra_horizontal">
 
-                    <input type="text" placeholder="¿Que deseas buscar?">
+                    <input id="barra_busqueda" type="text" placeholder="¿Que deseas buscar?">
 
                     <button id="verificar">Verificar</button>
 
-                    <button id="Agregar_producto">Agregar producto</button>
+                    <button id="agregar_producto">Agregar producto<ion-icon name="add-outline"></ion-icon></button>
 
                 </div>
 
-                <p id="productos_agregados"></p>
-
-                <select name="" id="categoria_productos"></select>
+                <select id="categoria_productos"></select>
 
                 <section id="informe_productos">
                     
