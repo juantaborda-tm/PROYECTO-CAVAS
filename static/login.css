@@ -1,0 +1,143 @@
+/* Para movil */
+*{
+    box-sizing: border-box;
+    transition: 0.5s;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14xp;
+}
+
+main {
+    position: absolute;
+    min-height: 100vh;
+    background: url(fondo_login.jpg) center center;
+    width: 100%;
+    z-index: 1;
+}
+
+    #caja_contenedora {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        z-index: 2;
+    }
+
+    #caja_contenedora h1 {
+        text-align: center;
+        font-size: 2.5em;
+        color: black;
+        z-index: 3;
+    }
+
+    #caja_contenedora span {
+        font-size: 1.7em;
+        z-index: 4;
+    }
+
+        #caja_email {
+            margin: 20px 0;
+            z-index: 3;
+        }
+
+        #caja_email label {
+            font-size: 1.2em;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+            #caja2_email input {
+                border: none;
+                outline: none;
+                border-bottom: solid 3px #000000;
+                margin-left: 10px;
+                width: 100%;
+                font-size: 16px;
+                z-index: 3;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            #caja2_email {
+                display: flex;
+                margin: 10px 0;
+                z-index: 3;
+            }
+
+        #caja_contraseña {
+            margin: 20px 0;
+            z-index: 3;
+        }
+
+        #caja_contraseña label {
+            font-size: 1.2em;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+            #caja2_contraseña input {
+                border: none;
+                outline: none;
+                border-bottom: solid 3px #000000;
+                margin-left: 10px;
+                width: 100%;
+                z-index: 3;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            #caja2_contraseña {
+                display: flex;
+                margin: 10px 0;
+                z-index: 3;
+            }
+
+        #caja_checkbox label {
+            font-size: 1.1em;
+            z-index: 3;
+        }
+
+        #caja_checkbox input {
+            transform: scale(1.2);
+            z-index: 3;
+        }
+
+        #btn_iniciar {
+            height: 50px;
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 5px;
+            background: #1CABFF;
+            border: transparent;
+            font-size: 1.2em;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+/* Regla para tablet */
+
+@media screen and (min-width: 650px) {
+
+    #caja_contenedora {
+        width: 300px;
+        top: 70%;
+    }
+}
+
+/*Regla para computador*/
+
+@media screen and (min-width: 1024px) {
+    #caja_contenedora {
+        top: 50%;
+    }
+}
