@@ -9,6 +9,7 @@
 body {
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -18,20 +19,15 @@ body {
 
 main {
     position: absolute;
-    min-height: 100vh;
-    height: 100vh;
+    display: flex;
     background: rgb(252, 252, 252);
     width: 100%;
 }
 
-    #caja_padre {
-        display: flex;
-    }
-
         #caja_padre #barra_menu {
             display: flex;
             width: 350px;
-            height: 100vh;
+            height: 100%;
             background: #43F4B0;
             border-radius: 0 10px 10px 0;
             flex-direction: column;
@@ -142,6 +138,26 @@ main {
                 height: 100vh;
             }
 
+            #principal_productos #texto_categoria {
+                position: absolute;
+                left: 312px;
+                top: 178px;
+                color: #000000;
+                z-index: 2;
+                font-weight: 600;
+            }
+
+            #principal_productos #categoria_productos {
+                border: none;
+                outline: none;
+                width: 180px;
+                height: 50px;
+                margin: 30px 0 0 20px;
+                border-radius: 8px;
+                background: #1CABFF;
+                position: relative;
+            }
+
                 #principal_productos #1ra_barra_horizontal {
                     display: flex;
                 }
@@ -179,4 +195,17 @@ main {
                         border-radius: 8px;
                         font-weight: 600;
                         font-size: 14px;
+                    }
+
+                    #principal_productos h2 {
+                        font-weight: 600;
+                        margin: 50px 0 0 20px;
+                    }
+
+                    #principal_productos #informe_productos {
+                        margin: 10px 5px 2px 20px;
+                        background: rgb(222, 222, 222);
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 100%;
                     }
