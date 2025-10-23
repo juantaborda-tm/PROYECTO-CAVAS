@@ -27,7 +27,17 @@
 
             </div>
 
-            <menu id="menu"></menu>
+            <section id="menu">
+                <p id="menu_productos">Productos</p>
+
+                <p id="menu_facturas">Facturas</p>
+
+                <p id="menu_proveedores">Proveedores</p>
+
+                <p id="menu_empleados">Empleados</p>
+
+                <p id="menu_informes">Informes</p>
+            </section>
 
             <button id="btn_cerrar_sesion" type="submit">Cerrar sesión</button>
 
@@ -39,9 +49,7 @@
 
             <section id="barra_encabezado">
 
-                    <p id="saludo_usuario">Hola, </p>
-
-                <button id="configuracion"><ion-icon name="cog"></ion-icon></button>
+                    <p id="saludo_usuario">Hola Juan, en que te podemos ayudar el dia de hoy?</p>
 
             </section>
 
@@ -64,16 +72,34 @@
                 <h2>Historial de productos agregados</h2>
 
                 <section id="informe_productos">
+
+                    <div id="titulos_historial">
+
+                        <label for="" id="texto_id_producto">Id</label>
+
+                        <label for="" id="texto_nombre_producto">Nombre</label>
+
+                        <label for="" id="texto_tipo_producto">Tipo</label>
+
+                        <label for="" id="texto_cantidad_producto">Cantidad</label>
+
+                        <label for="" id="texto_fecha_producto">Fecha de ingreso</label>
+                    </div>
                     
-                    <p id="id_producto"></p>
-                    <p id="nombre_producto"></p>
-                    <p id="tipo_producto"></p>
-                    <p id="cantidad_producto"></p>
-                    <p id="fecha_producto"></p>
+                    <div id="informe_productos_agregados">
 
-                    <button id="editar_producto"></button>
+                        <p id="id_producto"></p>
 
-                    <button id="eliminar_producto"></button>
+                        <p id="nombre_producto"></p>
+
+                        <p id="tipo_producto"></p>
+
+                        <p id="cantidad_producto"></p>
+
+                        <p id="fecha_producto"></p>
+
+                    </div>
+
                 </section>
 
             </section>
