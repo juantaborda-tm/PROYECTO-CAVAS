@@ -16,7 +16,7 @@
 
             <h1>Registro Gerente</h1>
 
-            <form action="/registro" method="post">
+            <form action="/" method="post">
 
                 <div class="columna">
 
@@ -53,7 +53,6 @@
                             <select name="id_tipo_gerente" id="id_tipo_gerente" tabindex="3" required>
 
                                 <option value="documento_1">Cedula de ciudadania</option>
-                                <option value="documento_2">Tarjeta de identidad</option>
                                 <option value="documento_3">Pasaporte</option>
                                 <option value="documento_4">Cedula de extranjeria</option>
                                 <option value="documento_5">Registro civil</option>
@@ -70,7 +69,7 @@
 
                         <div id="caja2">
 
-                            <input type="tel" name="tel_gerente" id="tel_gerente" placeholder="3211234567" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Digita un numero de telefono valido" tabindex="6" required>
+                            <input type="tel" name="tel_gerente" id="tel_gerente" placeholder="3211234567" maxlength="10" minlength="10"  title="Digita un numero de telefono valido" tabindex="6" required>
 
                         </div>
 
@@ -82,7 +81,7 @@
 
                         <div id="caja2">
 
-                            <input type="password" name="contraseña_gerente" id="contraseña_gerente" minlength="8" maxlength="21" tabindex="8" pattern="[A-Za-z0-9#$&\\.,:]{8,21}" title="Digita una contraseña mas segura" required>
+                            <input type="password" name="contraseña_gerente" id="contraseña_gerente" minlength="8" maxlength="21" tabindex="8" title="Digita una contraseña mas segura" required>
 
                         </div>
 
@@ -98,7 +97,7 @@
 
                         <div id="caja2">
 
-                            <input type="text" name="nit_empresa" id="nit_empresa" minlength="1" maxlength="128" tabindex="1" pattern="[0-9]{1,128}" title="Por favor ingresa tu nombre" required>
+                            <input type="text" name="nit_empresa" id="nit_empresa" minlength="1" maxlength="128" tabindex="1"  title="Por favor ingresa tu nombre" required>
 
                         </div>
 
