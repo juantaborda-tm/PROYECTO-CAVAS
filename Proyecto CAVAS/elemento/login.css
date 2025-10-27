@@ -17,7 +17,7 @@ body {
 main {
     position: absolute;
     min-height: 100vh;
-    background: url(fondo_login.jpg) center center;
+    background: url(fondo_login_negro.png) center center;
     width: 100%;
     z-index: 1;
 }
@@ -36,12 +36,11 @@ main {
     #caja_contenedora h1 {
         text-align: center;
         font-size: 2.5em;
-        color: black;
+        color: white;
         z-index: 3;
     }
 
-    #caja_contenedora span {
-        font-size: 1.7em;
+    #caja_contenedora #icono {
         z-index: 4;
     }
 
@@ -54,18 +53,21 @@ main {
             font-size: 1.2em;
             font-weight: 600;
             z-index: 3;
+            color: white;
         }
 
             #caja2_email input {
                 border: none;
                 outline: none;
-                border-bottom: solid 3px #000000;
+                border-bottom: solid 2px white;
                 margin-left: 10px;
                 width: 100%;
                 font-size: 16px;
                 z-index: 3;
                 font-size: 16px;
                 font-weight: 600;
+                color: white;
+                background: transparent;
             }
 
             #caja2_email {
@@ -83,17 +85,20 @@ main {
             font-size: 1.2em;
             font-weight: 600;
             z-index: 3;
+            color: white;
         }
 
             #caja2_contraseña input {
                 border: none;
                 outline: none;
-                border-bottom: solid 3px #000000;
+                border-bottom: solid 2px white;
                 margin-left: 10px;
                 width: 100%;
                 z-index: 3;
                 font-size: 16px;
                 font-weight: 600;
+                color: white;
+                background: transparent;
             }
 
             #caja2_contraseña {
@@ -105,6 +110,7 @@ main {
         #caja_checkbox label {
             font-size: 1.1em;
             z-index: 3;
+            color: white;
         }
 
         #caja_checkbox input {
@@ -117,7 +123,7 @@ main {
             width: 100%;
             margin: 20px 0;
             border-radius: 5px;
-            background: #1CABFF;
+            background: rgb(207, 149, 0);
             border: transparent;
             font-size: 1.2em;
             font-weight: 600;
