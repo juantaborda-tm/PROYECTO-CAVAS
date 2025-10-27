@@ -12,10 +12,11 @@ programa = Flask(__name__)
 
 #Primero registrar el gerente
 
+
+"""
 @programa.route("/")
 def registro_gerente():
     return render_template("registro_gerente.html")
-
 
 @programa.route("/", methods = ["POST"])
 def registro_g():
@@ -35,13 +36,25 @@ def registro_g():
     cursor.execute(sql)
     my_db.commit()
     return render_template("registro_gerente.html")
+"""
+
+#Luego registrar usuarios 
 
 
-@programa.route("/registro_u")
 
-
-
-
+@programa.route("/registro_u", methods = ["POST"])
+def registro_u():
+    nombre_usuario = request.form["nombre_usuario"]
+    id_tipo_usuario = request.form["id_tipo_usuario"]
+    tel_usuario = request.form["tel_usuario"]
+    contraseña_usuario = request.form["contraseña_usuario"]
+    fecha_usuario = request.form["fecha_usuario"]
+    id_usuario = request.form["id_usuario"]
+    email_usuario = request.form["email_usuario"]
+    roll = "2" #roll 2 es usuario normal
+    cursor = my_db.cursor() 
+    sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{contraseña_usuario}' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')"
+    return render_template("registro_usuario.html")
 
 
 
