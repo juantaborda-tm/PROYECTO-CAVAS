@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro usuario</title>
 
-    <link rel="stylesheet" href="elemento/registro_usuario.css">
+    <link rel="stylesheet" href="static/registro_usuario.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 
             <h1>Registro</h1>
 
-            <form action="registro_u" method="post">
+            <form action="registro_usuarios" method="post">
 
                 <div class="columna">
 
@@ -26,7 +26,7 @@
 
                         <div id="caja2">
 
-                            <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Nombre(s) y apellido(s)" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa tu nombre" required>
+                            <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Nombre(s) y apellido(s)" minlength="1" maxlength="128" tabindex="2"  title="Por favor ingresa tu nombre" required>
 
                         </div>
 
@@ -58,7 +58,7 @@
 
                         <div id="caja2">
 
-                            <input type="tel" name="tel_usuario" id="tel_usuario" placeholder="3211234567" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Digita un numero de telefono valido" tabindex="6" required>
+                            <input type="tel" name="tel_usuario" id="tel_usuario" placeholder="3211234567" maxlength="10" minlength="10"  title="Digita un numero de telefono valido" tabindex="6" required>
 
                         </div>
 
@@ -70,7 +70,7 @@
 
                         <div id="caja2">
 
-                            <input type="password" name="contraseña_usuario" id="contraseña_usuario" minlength="8" maxlength="21" tabindex="8" pattern="[A-Za-z0-9#$&\\.,:]{8,21}" title="Digita una contraseña mas segura" required>
+                            <input type="password" name="contraseña_usuario" id="contraseña_usuario" minlength="8" maxlength="21" tabindex="8"  required>
 
                         </div>
 
@@ -98,7 +98,7 @@
 
                         <div id="caja2">
 
-                            <input type="tel" name="id_usuario" id="id_usuario" tabindex="4" maxlength="10" minlength="6" pattern="[0-9]{6,10}" title="Agrega un numero de documento valido" required>
+                            <input type="tel" name="id_usuario" id="id_usuario" tabindex="4" maxlength="10" minlength="6"  title="Agrega un numero de documento valido" required>
 
                         </div>
 
@@ -110,7 +110,7 @@
 
                         <div id="caja2">
 
-                            <input type="email" inputmode="email" name="email_usuario" placeholder="correoejemplo@gmail.com" id="email_usuario" minlength="3" maxlength="64" tabindex="7" pattern="[A-Za-z0-9]{3,64}" title="Parece que esto no es un email" required>
+                            <input type="email" inputmode="email" name="email_usuario" placeholder="correoejemplo@gmail.com" id="email_usuario" minlength="3" maxlength="64" tabindex="7"  title="Parece que esto no es un email" required>
 
                         </div>
 
@@ -122,7 +122,7 @@
 
                         <div id="caja2">
 
-                            <input type="password" name="confirmar_contraseña_usuario" minlength="8" maxlength="21" tabindex="9" pattern="[A-Za-z0-9#$&\\.,:]{8,21}" title="Digita una contraseña mas segura" required>
+                            <input type="password" name="confirmar_contraseña_usuario" minlength="8" maxlength="21" tabindex="9"  required>
 
                         </div>
 
