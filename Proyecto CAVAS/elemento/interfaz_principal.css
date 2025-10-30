@@ -1,250 +1,92 @@
 *{
     box-sizing: border-box;
-    transition: 0.7s;
+    transition: 0.6s;
     top: 0;
     margin: 0;
     padding: 0;
 }
 
-body {
+html, body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 14px;
-    position: relative;
-    min-height: 100vh;
-    height: 100vh;
-    width: 100%;
-    margin: 0;
     padding: 0;
-    overflow: hidden ;
+    margin: 0;
 }
 
-main {
+#caja_padre {
     position: absolute;
-    display: flex;
-    background: rgb(252, 252, 252);
+    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    background: rgb(1, 1, 1) center center;
+    display: flex;
 }
 
-        #caja_padre #barra_menu {
-            display: flex;
-            width: 350px;
-            height: 100%;
-            background: #1CABFF;
-            border-radius: 0 10px 10px 0;
-            flex-direction: column;
-        }
+    #caja_padre #barra_menu {
+        position: absolute;
+        flex-direction: column;
+        width: 70%;
+        height: 100vh;
+        border-right: 2px solid #bcbcbc;
+        display: flex;
+    }
 
-            #barra_menu #logo {
-                width: 100%;
-                height: 80px;
-                background:  white;
-            }
-
-            #barra_menu #cuenta_usuario {
-                width: 100%;
-                height: 120px;
-                background: #43F4B0;
-            }
-
-                #cuenta_usuario #foto_perfil {
-                    position: relative;
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    background: blue;
-                    left: 50%;
-                    top: 10%;
-                    transform: translate(-50%,-10%);
-                }
-
-                #cuenta_usuario #texto_nombre {
-                    position: relative;
-                    width: 100%; 
-                    text-align: center;
-                }
-
-                #cuenta_usuario #texto_correo {
-                    position: relative;
-                    width: 100%;
-                    margin-top: 10px;
-                    text-align: center;
-                }
-
-            #barra_menu #menu {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-                border-radius: 10px;
-                margin: 10px 0;
-                width: 100%;
-                height: 420px;
-            }
-
-            #menu p {
-                position: relative;
-                width: 95%;
-                background: rgb(252, 252, 252);
-                color: #000000;
-                height: 40px;
-                margin-top: 10px;
-                border-radius: 0 5px 5px;
-                padding: 10px 0 0 15px;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            #barra_menu #marca_proyecto {
-                width: 100%;
-                height: 20px;
-                margin: 10px;
-            }
-
-            #barra_menu #btn_cerrar_sesion {
-                position: relative;
-                width: 80%;
-                height: 50px;
-                background: #FF4242;
-                border: none;
-                border-radius: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                font-weight: 600;
-                font-size: 14px;
-            }
-        
-        #caja_encabezado_producto {
+        #barra_menu #logo {
             width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            height: 70px;
         }
 
-            #caja_padre #barra_encabezado {
-                align-items: center;
-                width: 100%;
-                height: 50px;
-                display: flex;  
-            }
+        #barra_menu #cuenta_usuario {
+            width: 90%;
+            height: 90px;
+            margin: 0 10px 0 10px;
+            border-bottom: 3px solid #bcbcbc;
+        }
 
-                #barra_encabezado #saludo_usuario {
-                    position: relative;
-                    width: 90%;
-                    font-size: 18px;
-                    margin: 10px;
-                }
-
-            #caja_padre #principal_productos {
-                width: 100%;
-                height: 100vh;
-            }
-
-            #principal_productos #texto_categoria {
-                position: absolute;
-                left: 312px;
-                top: 178px;
-                color: #000000;
-                z-index: 2;
-                font-weight: 600;
-            }
-
-            #principal_productos #categoria_productos {
-                border: none;
-                outline: none;
-                width: 180px;
-                height: 50px;
-                margin: 30px 0 0 20px;
-                border-radius: 8px;
-                background: #1CABFF;
+            #cuenta_usuario #foto_perfil {
                 position: relative;
+                left: 50%;
+                margin: 5px 0;
+                transform: translateX(-50%);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
             }
 
-                #principal_productos #1ra_barra_horizontal {
-                    display: flex;
+            #cuenta_usuario #texto_nombre {
+                width: 100%;
+                margin: 3px 0;
+                text-align: center;
+                color: #f1f1f1;
+            }
+
+            #cuenta_usuario #texto_correo {
+                width: 100%;
+                text-align: center;
+                margin: 3px 0;
+                color: #f1f1f1;
+            }
+
+            #barra_menu #lista_menu {
+                display: flex;
+                margin: 10px 0 10px 20px;
+                flex-direction: column;
+            }
+
+                #lista_menu h2 {
+                    width: 60px;
+                    text-decoration: none;
+                    color: #f1f1f1;
+                    border-bottom: 3px solid #bcbcbc;
                 }
 
-                    #principal_productos #barra_busqueda {
-                        border: none;
-                        border-bottom: solid 3px #000000;
-                        outline: none;
-                        width: 40%;
-                        height: 40px;
-                        margin: 40px 0 0 20px;
-                    }
+                #lista_menu li {
+                    color: #f1f1f1;
+                    list-style-type: none;
+                    margin: 10px 0;
+                }
 
-                    #principal_productos #verificar {
-                        position: relative;
-                        border: none;
-                        background: #1CABFF;
-                        width: 140px;
-                        height: 45px;
-                        left: 25%;
-                        transform: translateX(-25%);
-                        border-radius: 8px;
-                        font-weight: 600;
-                        font-size: 14px;
-                    }
-
-                    #principal_productos #agregar_producto {
-                        position: relative;
-                        border: none;
-                        background: #43F4B0;
-                        width: 140px;
-                        height: 45px;
-                        left: 30%;
-                        transform: translateX(-30%);
-                        border-radius: 8px;
-                        font-weight: 600;
-                        font-size: 14px;
-                    }
-
-                    #principal_productos h2 {
-                        font-weight: 600;
-                        margin: 50px 0 0 20px;
-                    }
-
-                    #principal_productos #informe_productos {
-                        margin: 10px 10px 20px 20px;
-                        background: rgb(222, 222, 222);
-                        border-radius: 0 0 10px 10px;
-                        width: 98%;
-                        height: 60%;
-                    }
-
-                        #informe_productos #titulos_historial {
-                            display: flex;
-                            width: 100%;
-                            height: 50px;
-                            justify-content: space-between;
-                            text-align: center;
-                        }
-
-                            #titulos_historial label {
-                                background: #1CABFF;
-                                width: 100%;
-                                height: 50px;
-                                margin-right: 10px;
-                                padding: 15px;
-                                border-radius: 0 0 10px 10px;
-                                font-weight: 600;
-                                font-size: 18px;
-                            }
-
-                        #informe_productos #informe_productos_agregados {
-                            display: flex;
-                            width: 100%;
-                            height: 40px;
-                            text-align: center;
-                            justify-content: space-between;
-                        }
-
-                            #informe_productos_agregados p {
-                                background: rgb(215, 215, 215);
-                                width: 100%;
-                                height: 40px;
-                                margin-right: 10px;
-                                margin: 10px;
-                                padding: 12px;
-                                border-radius: 10px;
-                            }
+                #lista_menu #cierre_sesion {
+                    padding-bottom: 10px;
+                    border-bottom: 3px solid #bcbcbc;
+                }
