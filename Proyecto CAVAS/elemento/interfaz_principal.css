@@ -20,44 +20,77 @@ html, body {
     width: 100%;
     background: rgb(1, 1, 1) center center;
     display: flex;
+    flex-direction: column;
+    z-index: 1;
 }
 
     #caja_padre #barra_menu {
         position: absolute;
         flex-direction: column;
+        background: rgb(5, 5, 5);
+        top: 0;
+        left: -100%;
         width: 70%;
         height: 100vh;
-        border-right: 2px solid #bcbcbc;
         display: flex;
+        border-right: 3px solid #bcbcbc;
+        z-index: 6;
     }
 
-        #barra_menu #logo {
+    #menu_hamburguesa:checked~#barra_menu {
+        left: 0;
+    }
+
+        #barra_menu #barra_logo {
+            display: flex;
             width: 100%;
-            height: 70px;
+            height: 8%;
+            z-index: 7;
         }
+
+            #barra_logo #btn_salir_menu {
+                width: 15%;
+                padding: 10px;
+                z-index: 7;
+            }
+
+            #btn_salir_menu:checked~#barra_menu {
+                left: -100%;
+            }
+
+            #barra_logo #logo {
+                position: relative;
+                padding: 0 0 0 50px;
+                width: 85%;
+                z-index: 7;
+            }
 
         #barra_menu #cuenta_usuario {
             width: 90%;
-            height: 90px;
+            height: 12%;
             margin: 0 10px 0 10px;
             border-bottom: 3px solid #bcbcbc;
+            justify-content: space-between;
+            z-index: 7;
         }
 
             #cuenta_usuario #foto_perfil {
                 position: relative;
                 left: 50%;
-                margin: 5px 0;
                 transform: translateX(-50%);
                 width: 30px;
                 height: 30px;
+                margin: 5px 0;
                 border-radius: 50%;
+                z-index: 8;
             }
 
             #cuenta_usuario #texto_nombre {
                 width: 100%;
-                margin: 3px 0;
                 text-align: center;
+                margin: 3px 0;
                 color: #f1f1f1;
+                z-index: 8;
             }
 
             #cuenta_usuario #texto_correo {
@@ -65,28 +98,222 @@ html, body {
                 text-align: center;
                 margin: 3px 0;
                 color: #f1f1f1;
+                z-index: 8;
             }
 
             #barra_menu #lista_menu {
                 display: flex;
                 margin: 10px 0 10px 20px;
                 flex-direction: column;
+                width: 90%;
+                height: 66%;
+                justify-content: space-between;
+                z-index: 7;
             }
+
+                #lista_menu svg {
+                    position: relative;
+                    top: 5px;
+                    right: 10px;
+                    z-index: 9;
+                }
 
                 #lista_menu h2 {
                     width: 60px;
                     text-decoration: none;
                     color: #f1f1f1;
                     border-bottom: 3px solid #bcbcbc;
+                    z-index: 8;
                 }
 
                 #lista_menu li {
+                    position: relative;
                     color: #f1f1f1;
                     list-style-type: none;
-                    margin: 10px 0;
+                    font-size: 16px;
+                    left: 10px;                
+                    z-index: 8;
                 }
 
                 #lista_menu #cierre_sesion {
                     padding-bottom: 10px;
-                    border-bottom: 3px solid #bcbcbc;
+                    margin: 30px 0 0 0;
+                    z-index: 8;
+                }
+
+            #barra_menu #marca_proyecto {
+                position: relative;
+                color: #f1f1f1;
+                display: flex;
+                padding: 12px;
+                border-top: 3px solid #bcbcbc;
+                width: 90%;
+                height: 12%;
+                left: 10px;
+                font-size: 11px;
+                z-index: 8;
+            }
+
+    #caja_padre #barra_encabezado {
+        border-bottom: 3px solid #bcbcbc;
+        width: 100%;
+        height: 6%;
+        z-index: 2;
+    }
+
+        #barra_encabezado #saludo_usuario {
+            width: 95%;
+            font-size: 18px;
+            color: #f1f1f1;
+            margin: 15px 0 0 10px;
+            z-index: 3;
+        }
+
+    #principal_productos #hamburguesa_menu {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        z-index: 2;
+    }
+
+    #principal_productos #agregar_producto {
+        position: relative;
+        border: none;
+        width: 40%;
+        height: 50px;
+        border-radius: 8px;
+        top: 5px;
+        left: 45%;
+        background: rgb(207, 149, 0);
+        font-size: 16px;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    #principal_productos #recoger_busqueda {
+        display: flex;
+        position: relative;
+        width: 70%;
+        border-radius: 8px;
+        background: rgb(15, 15, 15);
+        margin-top: 50px;
+        padding: 15px;
+        left: 20px;
+        z-index: 1;
+    }
+
+        #recoger_busqueda svg {
+            position: relative;
+            top: 3px;
+            z-index: 3;
+        }
+
+        #recoger_busqueda #barra_busqueda {
+            border: none;
+            border-bottom: 3px solid #bcbcbc;
+            width: 100%;
+            background: transparent;
+            padding: 5px;
+            z-index: 2;
+        }
+
+    #principal_productos h2 {
+        color: #f1f1f1;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 30px 0 10px 10px;
+        z-index: 2;
+    }
+
+    #principal_productos #informe_productos {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        background: rgb(15, 15, 15);
+        margin: 20px;
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+        #informe_productos #titulos_historial {
+            position: relative;
+            display: flex;
+            width: 95%;
+            height: 230px;
+            left: 10px;
+            font-size: 16px;
+            color: #f1f1f1;
+            font-weight: 600;
+            border-bottom: 3px solid #bcbcbc;
+            z-index: 3;
+        }
+
+            #titulos_historial #columna_1 {
+                width: 50%;
+                flex-direction: column;
+                margin: 10px;
+                text-align: center;
+                z-index: 4;
+            }
+
+                #columna_1 label, p {
+                    margin: 10px 0;
+                }
+
+                #columna_1 p {
+                    position: relative;
+                    height: 28px;
+                    background: rgb(11, 11, 11);
+                    border-radius: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 15px;
+                    z-index: 5;
+                }
+
+                #columna_1 #id_producto {
+                    width: 70%;
+                }
+
+                #columna_1 #tipo_producto {
+                    width: 95%;
+                }
+
+                #columna_1 #fecha_producto {
+                    width: 70%;
+                }
+
+            #titulos_historial #columna_2 {
+                width: 50%;
+                flex-direction: column;
+                margin: 10px;
+                text-align: center;
+            }
+
+                #columna_2 label, p {
+                    margin: 10px 0;
+                }
+
+                #columna_2 p {
+                    position: relative;
+                    height: 28px;
+                    background: rgb(11, 11, 11);
+                    border-radius: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 15px;
+                    z-index: 5;
+                }
+
+                #columna_2 #nombre_producto {
+                    width: 100%;
+                }
+
+                #columna_2 #cantidad_producto {
+                    width: 30%;
+                }
+
+                #columna_2 #movimiento {
+                    height: 23px;
+                    width: 50%;
                 }
