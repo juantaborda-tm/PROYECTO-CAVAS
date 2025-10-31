@@ -11,6 +11,8 @@ html, body {
     font-size: 14px;
     padding: 0;
     margin: 0;
+    background: rgb(1, 1, 1) center center;
+
 }
 
 #caja_padre {
@@ -18,7 +20,6 @@ html, body {
     height: 100vh;
     min-height: 100vh;
     width: 100%;
-    background: rgb(1, 1, 1) center center;
     display: flex;
     flex-direction: column;
     z-index: 1;
@@ -137,7 +138,7 @@ html, body {
 
                 #lista_menu #cierre_sesion {
                     padding-bottom: 10px;
-                    margin: 30px 0 0 0;
+                    margin: 30px 0 -20px 0;
                     z-index: 8;
                 }
 
@@ -185,7 +186,7 @@ html, body {
         top: 5px;
         left: 45%;
         background: rgb(207, 149, 0);
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
         z-index: 2;
     }
@@ -215,6 +216,7 @@ html, body {
             background: transparent;
             padding: 5px;
             z-index: 2;
+            color: #f1f1f1;
         }
 
     #principal_productos h2 {
@@ -228,10 +230,11 @@ html, body {
     #principal_productos #informe_productos {
         position: relative;
         width: 90%;
-        height: 100%;
-        background: rgb(15, 15, 15);
+        height: 400px;
+        background: rgb(10, 10, 10);
         margin: 20px;
         border-radius: 10px;
+        border: 2px solid rgb(25, 25, 25);
         z-index: 2;
     }
 
@@ -248,7 +251,7 @@ html, body {
             z-index: 3;
         }
 
-            #titulos_historial #columna_1 {
+            #titulos_historial #columna {
                 width: 50%;
                 flex-direction: column;
                 margin: 10px;
@@ -256,14 +259,14 @@ html, body {
                 z-index: 4;
             }
 
-                #columna_1 label, p {
+                #columna label, p {
                     margin: 10px 0;
                 }
 
-                #columna_1 p {
+                #columna p {
                     position: relative;
                     height: 28px;
-                    background: rgb(11, 11, 11);
+                    background: rgb(17, 17, 17);
                     border-radius: 8px;
                     left: 50%;
                     transform: translateX(-50%);
@@ -271,33 +274,33 @@ html, body {
                     z-index: 5;
                 }
 
-                #columna_1 #id_producto {
+                #columna #id_producto {
                     width: 70%;
                 }
 
-                #columna_1 #tipo_producto {
+                #columna #tipo_producto {
                     width: 95%;
                 }
 
-                #columna_1 #fecha_producto {
+                #columna #fecha_producto {
                     width: 70%;
                 }
 
-            #titulos_historial #columna_2 {
+            #titulos_historial #columna {
                 width: 50%;
                 flex-direction: column;
                 margin: 10px;
                 text-align: center;
             }
 
-                #columna_2 label, p {
+                #columna label, p {
                     margin: 10px 0;
                 }
 
-                #columna_2 p {
+                #columna p {
                     position: relative;
                     height: 28px;
-                    background: rgb(11, 11, 11);
+                    background: rgb(17, 17, 17);
                     border-radius: 8px;
                     left: 50%;
                     transform: translateX(-50%);
@@ -305,15 +308,81 @@ html, body {
                     z-index: 5;
                 }
 
-                #columna_2 #nombre_producto {
+                #columna #nombre_producto {
                     width: 100%;
                 }
 
-                #columna_2 #cantidad_producto {
+                #columna #cantidad_producto {
                     width: 30%;
                 }
 
-                #columna_2 #movimiento {
+                #columna #movimiento {
                     height: 23px;
                     width: 50%;
                 }
+
+@media screen and (min-width:650px) {
+
+    #caja_padre #barra_menu {
+        width: 40%;
+    }
+
+        #cuenta_usuario #foto_perfil {
+            margin: 10px 0 0 0;
+            width: 50px;
+            height: 50px;
+        }
+
+        #cuenta_usuario #texto_nombre {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        #cuenta_usuario #texto_correo {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+            #lista_menu #cierre_sesion {
+                margin: 50px 0 -15px 0;
+            }
+
+        #barra_encabezado #saludo_usuario {
+            font-size: 20px;
+            color: #f1f1f1;
+            margin: 25px 0 0 15px;
+        }
+
+        #principal_productos #agregar_producto {
+        width: 30%;
+        height: 50px;
+        font-size: 16px;
+        left: 60%;
+        }
+
+        #principal_productos #recoger_busqueda {
+            width: 50%;
+        }
+
+        #principal_productos h2 {
+        margin: 30px 0 50px 20px;
+        }
+
+        #principal_productos #informe_productos {
+        height: 700px;
+        margin: 40px;
+        }
+
+        #informe_productos #titulos_historial {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex-direction: column;
+            top: 10px;
+            height: 200px;
+        }
+
+            #titulos_historial #columna {
+                position: relative;
+                display: contents;
+            }
+}
