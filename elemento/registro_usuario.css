@@ -19,7 +19,7 @@ body {
 main {
     position: absolute;
     min-height: 100vh;
-    background: url(fondo_login.jpg) center center;
+    background: url(fondo_login_negro.png) center center;
     width: 100%;
     z-index: 1;
 }
@@ -45,7 +45,7 @@ form {
         #caja_contenedora h1 {
             font-size: 2.5em;
             text-align: center;
-            color: black;
+            color: white;
             z-index: 4;
         }
 
@@ -65,17 +65,18 @@ form {
             border: none;
             outline: none;
             background: transparent;
-            border-bottom: solid 3px #000000;
+            border-bottom: solid 3px white;
             width: 100%;
             font-size: 12px;
             font-weight: 600;
             z-index: 4;
+            color: white;
         }
 
         #caja_contenedora select {
             border: none;
             outline: none;
-            border-bottom: solid 3px #000000;
+            border-bottom: solid 3px white;
             width: 100%;
             font-size: 12px;
             font-weight: 600;
@@ -86,6 +87,7 @@ form {
             font-size: 1em;
             font-weight: 600;
             z-index: 4;
+            color: white;
         }
 
             form #btn_registrar_usuario {
@@ -94,7 +96,7 @@ form {
                 width: 80%;
                 margin: 20px 0;
                 border-radius: 5px;
-                background: #1CABFF;
+                background: rgb(207, 149, 0);
                 border: transparent;
                 font-size: 1.2em;
                 font-weight: 600;
