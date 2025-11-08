@@ -14,11 +14,11 @@ programa = Flask(__name__)
 
 
 
-@programa.route("/")
+@programa.route("/registro_gerente")
 def registro_gerente():
     return render_template("registro_gerente.html")
 
-@programa.route("/", methods = ["POST"])
+@programa.route("/registro_gerente", methods = ["POST"])
 def registro_g():
     nombre_empresa = request.form["nombre_empresa"]
     nombre_gerente = request.form["nombre_gerente"]
@@ -40,11 +40,11 @@ def registro_g():
 
 #Luego registrar usuarios 
 
-@programa.route("/registro_user")
-def registro_gerente():
-    return render_template("registro_gerente.html")
+@programa.route("/registro_usuario")
+def registro_usuarios():
+    return render_template("registro_usuario.html")
 
-@programa.route("/registro_user", methods = ["POST"])
+@programa.route("/registro_usuarios", methods = ["POST"])
 def registro_u():
     nombre_usuario = request.form["nombre_usuario"]
     id_tipo_usuario = request.form["id_tipo_usuario"]
@@ -54,13 +54,29 @@ def registro_u():
     id_usuario = request.form["id_usuario"]
     email_usuario = request.form["email_usuario"]
     roll = "2" #roll 2 es usuario normal
-    cursor = my_db.cursor() 
-    sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{contraseña_usuario}' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')"
+    cursor = my_db.cursor()
+    sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{contraseña_usuario}' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')" 
+    cursor.execute(sql)
+    my_db.commit()
     return render_template("registro_usuario.html")
 
 
+@programa.route("/login")
+def login():
+    return render_template("login.html")
 
-
+@programa.route("/login")
+def logear():
+    email_usuario = request.form["email_usuario"]
+    contraseña_usuario = request.form["contraseña_usuario"]
+    cursor = my_db.cursor()
+    sql = f"SELECT roll FROM usuarios WHERE correo = '{email_usuario}' AND contra = '{contraseña_usuario}'"
+    cursor.execute(sql)
+    
+    
+@programa.route("/principal")
+def principal():
+    return render_template("interfaz_principal.html")
 
 
 if __name__=="__main__":
