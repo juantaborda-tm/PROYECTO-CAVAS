@@ -13,7 +13,6 @@ programa = Flask(__name__)
 #Primero registrar el gerente
 
 
-"""
 @programa.route("/")
 def registro_gerente():
     return render_template("registro_gerente.html")
@@ -36,7 +35,7 @@ def registro_g():
     cursor.execute(sql)
     my_db.commit()
     return render_template("registro_gerente.html")
-"""
+
 
 #Luego registrar usuarios 
 

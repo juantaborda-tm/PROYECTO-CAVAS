@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+    transition: 0.6s;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    background: rgb(5, 5, 5);
+
+}
+
+#caja_padre {
+    position: absolute;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+    #caja_padre #barra_menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100vh;
+        left: -100%;
+        border-right: 2px solid #cbcbcb;
+    }
+
+
+
+    #caja_padre #barra_logo {
+        width: 100%;
+        height: 8%;
+        display: flex;
+    }
+
+        #barra_logo #btn_salir_menu {
+            width: 20%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        #barra_logo #logo {
+            width: 80%;
+            height: 100%;
+            padding: 0 0 0 15px;
+        }
+
+        #barra_menu #cuenta_usuario {
+            position: relative;
+            width: 95%;
+            height: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: 2px solid #cbcbcb;
+        }
+
+            #cuenta_usuario #foto_perfil {
+                position: relative;
+                width: 80px;
+                height: 70%;
+                border-radius: 50%;
+                padding: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            #cuenta_usuario #texto_nombre {
+                color: white;
+                position: relative;
+                width: 100%;
+                height: 30%;
+                text-align: center;
+                font-size: 14px;
+            }
+
+        #barra_menu #lista_menu {
+            position: relative;
+            width: 95%;
+            height: 68%;
+            list-style-type: none;
+            color: #cbcbcb;
+            font-size: 14px;
+            font-weight: 600;
+            flex-direction: column;
+            display: flex;
+            padding-left: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            justify-content: space-between;
+            border-bottom: 2px solid #cbcbcb;
+        }
+
+            #lista_menu h2 {
+                font-size: 2em;
+                padding: 10px 0 0 0;
+            }
+
+            #lista_menu svg {
+                position: relative;
+                top: 5px;
+                margin-right: 10px;
+            }
+
+            #lista_menu #cierre_sesion {
+                margin-top: 50px;
+                padding-bottom: 10px;
+            }
+
+        #barra_menu #marca_proyecto {
+            width: 100%;
+            height: 12%;
+            color: #cbcbcb;
+            padding: 10px;
+        }
+
+    #caja_padre #observable {
+        position: relative;
+        display: flex; 
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+
+        #observable h2 {
+            color: white;
+            padding: 15px;
+            font-size: 1.3em;
+        }
+
+        #observable #agregar_producto {
+            color: black;
+            font-weight: 600;
+            position: relative;
+            width: 40%;
+            height: 50px;
+            background: rgb(207, 149, 0);
+            border-radius: 8px;
+            border: none;
+            font-size: 15px;
+            left: 90%;
+            top: 15px;
+            transform: translateX(-90%);
+        }
+
+        #observable #hamburguesa_menu {
+            padding: 10px;
+            position: relative;
+            top: -40px;
+        }
+
+        #observable #recoger_busqueda {
+            position: relative;
+            width: 90%;
+            height: 50px;
+            background: #121212;
+            border-radius: 8px;
+            left: 15px;
+        }
+
+            #recoger_busqueda svg {
+                position: relative;
+                top: 50%;
+                left: 7px; 
+                transform: translateY(-50%);
+            }
+
+            #recoger_busqueda #barra_busqueda {
+                border: none;
+                position: relative;
+                outline: none;
+                background: transparent;
+                left: 15px;
+                font-size: 15px;
+            }
+
+        #observable #texto_historial {
+            color: white;
+            padding: 30px 0 0 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #observable #informe_producto {
+            position: relative;
+            flex-direction: column;
+            display: flex;
+            width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #121212;
+            border-radius: 8px;
+            gap: 5px;
+            color: #cbcbcb;
+            padding: 10px;
+            margin: 20px 0 0 0;
+        }
+
+            #informe_producto label {
+                display: none;
+            }
+
+            #informe_producto #id_producto {
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            #informe_producto #nombre_producto {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            #informe_producto #tipo_producto {
+                font-size: 17px;
+                font-size: 500;
+            }
+
+            #informe_producto #cantidad_producto {
+                padding-top: 5px;
+                font-size: 2em;
+                font-weight: 600;
+            }
+
+            #informe_producto #fecha_producto {
+                padding-top: 5px;
+                font-size: 14px;
+                font-weight: 600;
+            }
