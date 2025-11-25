@@ -11,7 +11,7 @@ html, body {
     font-size: 14px;
     padding: 0;
     margin: 0;
-    background: rgb(1, 1, 1) center center;
+    background: rgb(5, 5, 5);
 
 }
 
@@ -19,6 +19,7 @@ html, body {
     position: absolute;
     height: 100vh;
     min-height: 100vh;
+    min-width: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -27,362 +28,201 @@ html, body {
 
     #caja_padre #barra_menu {
         position: absolute;
+        display: flex;
         flex-direction: column;
-        background: rgb(5, 5, 5);
-        top: 0;
-        left: -100%;
         width: 70%;
         height: 100vh;
+        left: -100%;
+        border-right: 2px solid #cbcbcb;
+    }
+
+    #caja_padre #barra_logo {
+        width: 100%;
+        height: 8%;
         display: flex;
-        border-right: 3px solid #bcbcbc;
-        z-index: 6;
     }
 
-    #menu_hamburguesa:checked~#barra_menu {
-        left: 0;
-    }
-
-        #barra_menu #barra_logo {
-            display: flex;
+        #barra_logo #logo {
             width: 100%;
-            height: 8%;
-            z-index: 7;
+            height: 100%;
+            padding: 0 0 0 15px;
         }
 
-            #barra_logo #btn_salir_menu {
-                width: 15%;
-                padding: 10px;
-                z-index: 7;
-            }
-
-            #btn_salir_menu:checked~#barra_menu {
-                left: -100%;
-            }
-
-            #barra_logo #logo {
-                position: relative;
-                padding: 0 0 0 50px;
-                width: 85%;
-                z-index: 7;
-            }
-
         #barra_menu #cuenta_usuario {
-            width: 90%;
+            position: relative;
+            width: 95%;
             height: 12%;
-            margin: 0 10px 0 10px;
-            border-bottom: 3px solid #bcbcbc;
-            justify-content: space-between;
-            z-index: 7;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: 2px solid #cbcbcb;
         }
 
             #cuenta_usuario #foto_perfil {
                 position: relative;
+                width: 80px;
+                height: 70%;
+                border-radius: 50%;
+                padding: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 30px;
-                height: 30px;
-                margin: 5px 0;
-                border-radius: 50%;
-                z-index: 8;
             }
 
             #cuenta_usuario #texto_nombre {
-                width: 100%;
-                text-align: center;
-                margin: 3px 0;
-                color: #f1f1f1;
-                z-index: 8;
-            }
-
-            #cuenta_usuario #texto_correo {
-                width: 100%;
-                text-align: center;
-                margin: 3px 0;
-                color: #f1f1f1;
-                z-index: 8;
-            }
-
-            #barra_menu #lista_menu {
-                display: flex;
-                margin: 10px 0 10px 20px;
-                flex-direction: column;
-                width: 90%;
-                height: 66%;
-                justify-content: space-between;
-                z-index: 7;
-            }
-
-                #lista_menu svg {
-                    position: relative;
-                    top: 5px;
-                    right: 10px;
-                    z-index: 9;
-                }
-
-                #lista_menu h2 {
-                    width: 60px;
-                    text-decoration: none;
-                    color: #f1f1f1;
-                    border-bottom: 3px solid #bcbcbc;
-                    z-index: 8;
-                }
-
-                #lista_menu li {
-                    position: relative;
-                    color: #f1f1f1;
-                    list-style-type: none;
-                    font-size: 16px;
-                    left: 10px;                
-                    z-index: 8;
-                }
-
-                #lista_menu #cierre_sesion {
-                    padding-bottom: 10px;
-                    margin: 30px 0 -20px 0;
-                    z-index: 8;
-                }
-
-            #barra_menu #marca_proyecto {
+                color: white;
                 position: relative;
-                color: #f1f1f1;
-                display: flex;
-                padding: 12px;
-                border-top: 3px solid #bcbcbc;
-                width: 90%;
-                height: 12%;
-                left: 10px;
-                font-size: 11px;
-                z-index: 8;
+                width: 100%;
+                height: 30%;
+                text-align: center;
+                font-size: 14px;
             }
 
-    #caja_padre #barra_encabezado {
-        border-bottom: 3px solid #bcbcbc;
-        width: 100%;
-        height: 6%;
-        z-index: 2;
-    }
-
-        #barra_encabezado #saludo_usuario {
-            width: 95%;
-            font-size: 18px;
-            color: #f1f1f1;
-            margin: 15px 0 0 10px;
-            z-index: 3;
-        }
-
-    #principal_productos #hamburguesa_menu {
-        position: relative;
-        left: 10px;
-        top: 10px;
-        z-index: 2;
-    }
-
-    #principal_productos #agregar_producto {
-        position: relative;
-        border: none;
-        width: 40%;
-        height: 50px;
-        border-radius: 8px;
-        top: 5px;
-        left: 45%;
-        background: rgb(207, 149, 0);
-        font-size: 15px;
-        font-weight: 600;
-        z-index: 2;
-    }
-
-    #principal_productos #recoger_busqueda {
-        display: flex;
-        position: relative;
-        width: 70%;
-        border-radius: 8px;
-        background: rgb(15, 15, 15);
-        margin-top: 50px;
-        padding: 15px;
-        left: 20px;
-        z-index: 1;
-    }
-
-        #recoger_busqueda svg {
+        #barra_menu #lista_menu {
             position: relative;
-            top: 3px;
-            z-index: 3;
-        }
-
-        #recoger_busqueda #barra_busqueda {
-            border: none;
-            border-bottom: 3px solid #bcbcbc;
-            width: 100%;
-            background: transparent;
-            padding: 5px;
-            z-index: 2;
-            color: #f1f1f1;
-        }
-
-    #principal_productos h2 {
-        color: #f1f1f1;
-        font-size: 18px;
-        font-weight: 600;
-        margin: 30px 0 10px 10px;
-        z-index: 2;
-    }
-
-    #principal_productos #informe_productos {
-        position: relative;
-        width: 90%;
-        height: 400px;
-        background: rgb(10, 10, 10);
-        margin: 20px;
-        border-radius: 10px;
-        border: 2px solid rgb(25, 25, 25);
-        z-index: 2;
-    }
-
-        #informe_productos #titulos_historial {
-            position: relative;
-            display: flex;
             width: 95%;
-            height: 230px;
-            left: 10px;
-            font-size: 16px;
-            color: #f1f1f1;
+            height: 68%;
+            list-style-type: none;
+            color: #cbcbcb;
+            font-size: 14px;
             font-weight: 600;
-            border-bottom: 3px solid #bcbcbc;
-            z-index: 3;
+            flex-direction: column;
+            display: flex;
+            padding-left: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            justify-content: space-between;
+            border-bottom: 2px solid #cbcbcb;
         }
 
-            #titulos_historial #columna {
-                width: 50%;
-                flex-direction: column;
-                margin: 10px;
-                text-align: center;
-                z-index: 4;
+            #lista_menu h2 {
+                font-size: 2em;
+                padding: 10px 0 0 0;
             }
 
-                #columna label, p {
-                    margin: 10px 0;
-                }
-
-                #columna p {
-                    position: relative;
-                    height: 28px;
-                    background: rgb(17, 17, 17);
-                    border-radius: 8px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    margin-bottom: 15px;
-                    z-index: 5;
-                }
-
-                #columna #id_producto {
-                    width: 70%;
-                }
-
-                #columna #tipo_producto {
-                    width: 95%;
-                }
-
-                #columna #fecha_producto {
-                    width: 70%;
-                }
-
-            #titulos_historial #columna {
-                width: 50%;
-                flex-direction: column;
-                margin: 10px;
-                text-align: center;
+            #lista_menu svg {
+                position: relative;
+                top: 5px;
+                margin-right: 10px;
             }
-
-                #columna label, p {
-                    margin: 10px 0;
-                }
-
-                #columna p {
-                    position: relative;
-                    height: 28px;
-                    background: rgb(17, 17, 17);
-                    border-radius: 8px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    margin-bottom: 15px;
-                    z-index: 5;
-                }
-
-                #columna #nombre_producto {
-                    width: 100%;
-                }
-
-                #columna #cantidad_producto {
-                    width: 30%;
-                }
-
-                #columna #movimiento {
-                    height: 23px;
-                    width: 50%;
-                }
-
-@media screen and (min-width:650px) {
-
-    #caja_padre #barra_menu {
-        width: 40%;
-    }
-
-        #cuenta_usuario #foto_perfil {
-            margin: 10px 0 0 0;
-            width: 50px;
-            height: 50px;
-        }
-
-        #cuenta_usuario #texto_nombre {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-
-        #cuenta_usuario #texto_correo {
-            margin: 5px 0;
-            font-size: 16px;
-        }
 
             #lista_menu #cierre_sesion {
-                margin: 50px 0 -15px 0;
+                margin-top: 50px;
+                padding-bottom: 10px;
             }
 
-        #barra_encabezado #saludo_usuario {
-            font-size: 20px;
-            color: #f1f1f1;
-            margin: 25px 0 0 15px;
+        #barra_menu #marca_proyecto {
+            width: 100%;
+            height: 12%;
+            color: #cbcbcb;
+            padding: 10px;
         }
 
-        #principal_productos #agregar_producto {
-        width: 30%;
-        height: 50px;
-        font-size: 16px;
-        left: 60%;
+    #caja_padre #observable {
+        position: relative;
+        display: flex; 
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+
+        #observable h2 {
+            color: white;
+            padding: 15px;
+            font-size: 1.3em;
         }
 
-        #principal_productos #recoger_busqueda {
-            width: 50%;
+        #observable #agregar_producto {
+            color: black;
+            font-weight: 600;
+            position: relative;
+            width: 40%;
+            height: 50px;
+            background: rgb(207, 149, 0);
+            border-radius: 8px;
+            border: none;
+            font-size: 15px;
+            left: 15px;
+            top: 15px;
         }
 
-        #principal_productos h2 {
-        margin: 30px 0 50px 20px;
+        #menu_hamburguesa:checked~#barra_menu {
+            left: 0;
         }
 
-        #principal_productos #informe_productos {
-        height: 700px;
-        margin: 40px;
+        #observable #recoger_busqueda {
+            position: relative;
+            width: 90%;
+            height: 50px;
+            background: #121212;
+            border-radius: 8px;
+            left: 15px;
         }
 
-        #informe_productos #titulos_historial {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            flex-direction: column;
-            top: 10px;
-            height: 200px;
-        }
-
-            #titulos_historial #columna {
+            #recoger_busqueda svg {
                 position: relative;
-                display: contents;
+                top: 50%;
+                left: 7px; 
+                transform: translateY(-50%);
             }
-}
+
+            #recoger_busqueda #barra_busqueda {
+                border: none;
+                position: relative;
+                outline: none;
+                background: transparent;
+                left: 15px;
+                font-size: 15px;
+                color: #cbcbcb;
+            }
+
+        #observable #texto_historial {
+            color: white;
+            padding: 30px 0 0 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #observable #informe_producto {
+            position: relative;
+            flex-direction: column;
+            display: flex;
+            width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #121212;
+            border-radius: 8px;
+            gap: 5px;
+            color: #cbcbcb;
+            padding: 10px;
+            margin: 20px 0 0 0;
+        }
+
+            #informe_producto label {
+                display: none;
+            }
+
+            #informe_producto #id_producto {
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            #informe_producto #nombre_producto {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            #informe_producto #tipo_producto {
+                font-size: 17px;
+                font-size: 500;
+            }
+
+            #informe_producto #cantidad_producto {
+                padding-top: 5px;
+                font-size: 2em;
+                font-weight: 600;
+            }
+
+            #informe_producto #fecha_producto {
+                padding-top: 5px;
+                font-size: 14px;
+                font-weight: 600;
+            }

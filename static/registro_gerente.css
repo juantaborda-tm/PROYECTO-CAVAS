@@ -70,6 +70,8 @@ form {
             font-size: 12px;
             font-weight: 600;
             z-index: 4;
+            color: white;
+            padding: 2px 0;
         }
 
         #caja_contenedora select {
