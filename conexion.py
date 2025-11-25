@@ -1,7 +1,8 @@
 from flask import Flask, redirect, render_template, request, flash, url_for
-import mysql.connector
-import tkinter as tk
+import mysql.connector  
+from tkinter import *
 from tkinter import messagebox  
+
 
 my_db = mysql.connector.connect(host = "localhost",
                                 port = "3306",
@@ -10,9 +11,9 @@ my_db = mysql.connector.connect(host = "localhost",
                                 database = "cavas")
 
 programa = Flask(__name__)
+programa.secret_key = 'alan123'
 
-
-
+#funcion para mostrar ventana de registro
 
 #Primero registrar el gerente
 
@@ -42,8 +43,7 @@ def registro_g():
         sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, nom_empresa, num_tel, nit_empre, fecha_naci, tipo_id, roll) VALUES ('{id_gerente}' , '{nombre_gerente}' , '{email_gerente}' , '{contraseña_gerente}' , '{nombre_empresa}' , '{tel_gerente}' , '{nit_emprese}' , '{fecha_nacimiento_g}' , '{id_tipo_gerente}' , '{roll}')"
         cursor.execute(sql)
         my_db.commit()
-        return render_template("registro_gerente.html",)
-    
+        return render_template("registro_gerente.html")
     
     else: 
         return render_template("registro_gerente.html", msg = "La contraseña no coincide")
