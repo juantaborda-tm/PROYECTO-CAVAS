@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear producto</title>
+
+    <link rel="stylesheet" href="elemento/agregar_producto.css">
+</head>
+<body>
+
+    <main id="caja_padre">
+
+        <div id="caja_contenedora">
+
+            <h1>Agregar producto</h1>
+
+            <p id="texto_crear_categoria">¿Ya has creado una categoria?</p>
+
+            <button type="submit" id="btn_ir_crear_categoria">Crear categoria</button>
+
+            <div id="codigo_barras">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" id="ic_codigo_barras">
+                    <path d="M128 96C110.3 96 96 110.3 96 128L96 512C96 529.7 110.3 544 128 544C145.7 544 160 529.7 160 512L160 128C160 110.3 145.7 96 128 96zM216 96C202.7 96 192 106.7 192 120L192 520C192 533.3 202.7 544 216 544C229.3 544 240 533.3 240 520L240 120C240 106.7 229.3 96 216 96zM288 128L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128zM496 120L496 520C496 533.3 506.7 544 520 544C533.3 544 544 533.3 544 520L544 120C544 106.7 533.3 96 520 96C506.7 96 496 106.7 496 120zM400 120L400 520C400 533.3 410.7 544 424 544C437.3 544 448 533.3 448 520L448 120C448 106.7 437.3 96 424 96C410.7 96 400 106.7 400 120z" fill="#CF9500"/></svg>
+
+                <p>Escanear codigo</p>
+            </div>
+
+            <form action="" id="crear_producto">
+
+                <div id="columna">
+
+                    <div id="caja_id_producto">
+
+                        <label for=""> Id</label>
+
+                        <input type="text" name="id_crear_producto" id="id_crear_producto" tabindex="0" required>
+
+                    </div>
+
+                    <div id="caja_tipo_producto">
+
+                        <label for="">Tipo</label>
+
+                        <input type="text" name="tipo_crear_producto" id="tipo_crear_producto" tabindex="2" required>
+
+                    </div>
+
+                </div>
+
+                <div id="columna">
+
+                    <div id="caja_nombre_producto">
+
+                        <label for="">Nombre</label>
+
+                        <input type="text" name="nombre_crear_producto" id="nombre_crear_producto" tabindex="1" required>
+
+                    </div>
+
+                    <div id="caja_cantidad_producto">
+
+                        <label for="">Cantidad</label>
+
+                        <input type="number" name="cantidad_crear_producto" id="cantidad_crear_producto" tabindex="3" required>
+
+                    </div>
+                </div>
+
+                <button type="submit" id="btn_crear_producto">Agregar producto</button>
+
+            </form>
+
+        </div>
+
+    </main>
+</body>
+</html>
