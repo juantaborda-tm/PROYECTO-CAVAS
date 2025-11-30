@@ -12,12 +12,12 @@ body {
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 14xp;
+    background: url(fondo_login_negro.png);
 }
 
 main {
     position: absolute;
     min-height: 100vh;
-    background: url(fondo_login_negro.png) center center;
     width: 100%;
     z-index: 1;
 }

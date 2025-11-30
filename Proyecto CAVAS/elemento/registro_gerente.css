@@ -14,19 +14,19 @@ body {
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 14px;
+    background: url(fondo_login_negro.png);
 }
 
 main {
     position: absolute;
     min-height: 100vh;
-    background: url(fondo_login_negro.png) center center;
     width: 100%;
     z-index: 1;
 }
 
 form {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 2em;
     z-index: 2;
@@ -47,13 +47,6 @@ form {
             text-align: center;
             color: white;
             z-index: 4;
-        }
-
-        #caja_contenedora #caja2{
-            display: flex;
-            margin: 20px 0;
-            z-index: 4;
-
         }
 
         #caja_contenedora #caja {
