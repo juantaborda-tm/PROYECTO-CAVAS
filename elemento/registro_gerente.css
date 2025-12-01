@@ -20,10 +20,7 @@ body {
 main {
     position: absolute;
     min-height: 100vh;
-<<<<<<< HEAD:static/registro_gerente.css
     background: url(fondo_login_negro.png) center center;
-=======
->>>>>>> 22a8f39ec90da2391888169bd00174c2a36c975a:Proyecto CAVAS/elemento/registro_gerente.css
     width: 100%;
     z-index: 1;
 }
