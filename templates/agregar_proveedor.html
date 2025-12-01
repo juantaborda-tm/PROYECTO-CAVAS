@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar proveedor</title>
+
+    <link rel="stylesheet" href="elemento/agregar_proveedor.css">
+
+</head>
+<body>
+
+    <main id="caja_padre">
+
+        <div id="caja_contenedora">
+
+            <h1>Registro proveedor</h1>
+
+            <form action="" id="datos_proveedor">
+
+                <div id="columna">
+
+                    <div id="caja"><!-- Nit de empresa -->
+
+                        <label for="">Nit empresa</label>
+
+                        <input type="text" name="nit_empresa_proveedor" id="nit_empresa_proveedor" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor un NIT valido" required>
+
+                    </div>
+
+                    <div id="caja"><!-- nombre_completo -->
+
+                        <label for="">Nombre completo</label>
+
+                        <input type="text" name="nombre_proveedor" id="nombre_proveedor" placeholder="Nombre(s) y apellido(s)" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa tu nombre" required>
+
+                    </div>
+
+                    <div id="caja"><!-- correo electronico -->
+
+                        <label for="">Correo electronico</label>
+
+                        <input type="text" name="correo_proveedor" id="correo_proveedor" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa un correo valido" required>
+
+                    </div>
+
+                </div>
+
+                <div id="columna">
+
+                    <div id="caja"><!-- Cedula -->
+
+                        <label for="">No. identificacion</label>
+
+                        <input type="text" name="id_proveedor" id="id_proveedor" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor digita un id valido " required>
+
+                    </div>
+
+                    <div id="caja"><!-- telefono -->
+
+                        <label for="">Telefono</label>
+
+                        <input type="text" name="telefono_proveedor" id="telefono_proveedor" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa un numero de telefono valido" required>
+
+                    </div>
+
+                    <div id="caja"><!-- direccion de empresa -->
+
+                        <label for="">Direccion empresa</label>
+
+                        <input type="text" name="direccion_empresa_proveedor" id="direccion_empresa_proveedor" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z]{1,128}" title="Por favor ingresa una direccion valida" required>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" id="btn_registrar_proveedor">Agregar proveedor</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

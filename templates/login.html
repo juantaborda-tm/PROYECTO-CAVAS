@@ -1,3 +1,4 @@
+<<<<<<< HEAD:templates/login.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -68,4 +69,84 @@
     </main>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio sesion</title>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="elemento/login.css">
+
+</head>
+<body>
+
+    <main>
+
+        <div id="imagen_fondo">
+
+        </div>
+
+        <div id="caja_contenedora">
+
+            <h1>Iniciar sesion</h1>
+
+            <form action="" method="post">
+
+                <div id="caja_email">
+
+                    <label for="">Email</label>
+
+                    <div id="caja2_email">
+
+                        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)" id="icono">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M22 6.25649V17.25C22 18.4926 20.9926 19.5 19.75 19.5H4.25C3.00736 19.5 2 18.4926 2 17.25V6.23398C2 6.22372 2.00021 6.2135 2.00061 6.20334C2.01781 5.25972 2.78812 4.5 3.73592 4.5H20.2644C21.2229 4.5 22 5.27697 22.0001 6.23549C22.0001 6.24249 22.0001 6.24949 22 6.25649ZM3.5 8.187V17.25C3.5 17.6642 3.83579 18 4.25 18H19.75C20.1642 18 20.5 17.6642 20.5 17.25V8.18747L13.2873 13.2171C12.5141 13.7563 11.4866 13.7563 10.7134 13.2171L3.5 8.187ZM20.5 6.2286L20.5 6.23398V6.24336C20.4976 6.31753 20.4604 6.38643 20.3992 6.42905L12.4293 11.9867C12.1716 12.1664 11.8291 12.1664 11.5713 11.9867L3.60116 6.42885C3.538 6.38481 3.50035 6.31268 3.50032 6.23568C3.50028 6.10553 3.60577 6 3.73592 6H20.2644C20.3922 6 20.4963 6.10171 20.5 6.2286Z" fill="white"/>
+                        </svg>
+
+
+                        <input type="email" inputmode="email" name="email_usuario" id="email_usuario" minlength="3" maxlength="64" tabindex="0" pattern="[A-Za-z0-9]{3,64}" title="Parece que esto no es un email" required>
+
+                    </div>
+
+                </div>
+
+                <div id="caja_contraseña">
+
+                    <label for="">Contraseña</label>
+
+                    <div id="caja2_contraseña">
+
+                        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)" id="icono">
+                            <path d="M10.5 16C10.5 15.1716 11.1716 14.5 12 14.5C12.8284 14.5 13.5 15.1716 13.5 16V17.5C13.5 18.3284 12.8284 19 12 19C11.1716 19 10.5 18.3284 10.5 17.5V16Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.75 7.25C6.75 4.3505 9.10051 2 12 2C14.8995 2 17.25 4.35051 17.25 7.25V9.125H18.5C19.7426 9.125 20.75 10.1324 20.75 11.375V17.2495C20.75 19.8729 18.6234 21.9995 16 21.9995H8C5.37665 21.9995 3.25 19.8729 3.25 17.2495V11.375C3.25 10.1324 4.25736 9.125 5.5 9.125H6.75V7.25ZM8.25 9.125H15.75V7.25C15.75 5.17893 14.0711 3.5 12 3.5C9.92893 3.5 8.25 5.17893 8.25 7.25V9.125ZM5.5 10.625C5.08579 10.625 4.75 10.9608 4.75 11.375V17.2495C4.75 19.0444 6.20507 20.4995 8 20.4995H16C17.7949 20.4995 19.25 19.0444 19.25 17.2495V11.375C19.25 10.9608 18.9142 10.625 18.5 10.625H5.5Z" fill="white"/>
+                        </svg>
+
+
+                        <input type="password" name="contraseña_usuario" id="contraseña_usuario" minlength="8" maxlength="21" tabindex="1" pattern="[A-Za-z0-9#$&\\.,:]{8,21}" title="Agrega una contraseña mas segura" required>  
+
+                    </div>
+
+                </div>
+
+                <div id="caja_checkbox">
+
+                    <input type="checkbox" id="recordar_contraseña" name="recordar_contraseña">
+                    <label>Recordar contraseña</label>
+
+                </div>
+
+                <button type="submit" id="btn_iniciar">Iniciar</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+>>>>>>> 22a8f39ec90da2391888169bd00174c2a36c975a:Proyecto CAVAS/login.html
 </html>
