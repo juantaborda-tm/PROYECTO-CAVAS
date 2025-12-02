@@ -372,7 +372,7 @@ html, body {
 
         #caja_padre #barra_menu {
             position: relative;
-            width: 25%;
+            width: 20%;
             left: 0;
         } 
 
@@ -400,6 +400,10 @@ html, body {
         #barra_menu #marca_proyecto {
             font-size: 12px;
         }
+
+    #caja_padre #observable {
+        width: 80%;
+    }
 
         #observable h2 {
             padding: 20px 0 30px 15px;
@@ -483,6 +487,7 @@ html, body {
                 background: #121212;
                 border-radius: 8px;
                 height: 35px;
+                margin: 3px 0;
             }
 
                 #datos_informe p:nth-child(1) {
