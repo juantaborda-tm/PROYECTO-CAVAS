@@ -65,6 +65,7 @@ form {
             font-weight: 600;
             z-index: 4;
             color: white;
+            margin-top: 15px;
             padding: 2px 0;
         }
 
@@ -76,6 +77,7 @@ form {
             font-size: 12px;
             font-weight: 600;
             z-index: 4;
+            margin-top: 15px;
         }
 
         #caja_contenedora label {

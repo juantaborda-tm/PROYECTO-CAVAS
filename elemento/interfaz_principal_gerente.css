@@ -67,10 +67,10 @@ html, body {
 
             #cuenta_usuario #foto_perfil {
                 position: relative;
-                width: 70px;
-                height: 70%;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
-                padding: 10px;
+                margin: 5px 0 5px 0;
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 8;
@@ -302,8 +302,9 @@ html, body {
     }   
 
         #cuenta_usuario #foto_perfil {
-            width: 90px;
-            height: 70%;
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
         }
 
         #cuenta_usuario #texto_nombre {
@@ -380,8 +381,8 @@ html, body {
         }
 
         #cuenta_usuario #foto_perfil {
-            width: 60px;
-            height: 60%;
+            width: 50px;
+            height: 50px;margin-top: 5px;
         }
 
         #cuenta_usuario #texto_nombre {
@@ -433,9 +434,11 @@ html, body {
             display: flex;
             width: 96%;
             gap: 0;
-            padding: 10px;
+            padding: 0;
             height: 55%;
             margin-bottom: 10px;
+            background: transparent;
+            margin: 30px 0 0 0;
         }
 
             #informe_producto #titulos_informe {
@@ -443,49 +446,94 @@ html, body {
                 text-align: center;
                 font-weight: 600;
                 color: white;
-                justify-content: space-around;
+                margin: 10px 0 20px 0;
+                width: 100%;
             }
 
+                #titulos_informe p:nth-child(1) {
+                    width: 12%;
+                }
+
+                #titulos_informe p:nth-child(2) {
+                    width: 30%;
+                }
+
+                #titulos_informe p:nth-child(3) {
+                    width: 40%;
+                }
+
+                #titulos_informe p:nth-child(4) {
+                    width: 10%;
+                }
+
+                #titulos_informe p:nth-child(5) {
+                    width: 12%;
+                    margin-right: 5px;
+                }
+
             #informe_producto #datos_informe {
-                margin-top: 30px;
+                margin-top: 0px;
                 flex-direction: row;
                 justify-content: center;
                 text-wrap-mode: nowrap;
                 text-align: center;
                 overflow: hidden;
+                align-items: center;
                 text-overflow: ellipsis;
-                flex-basis: 1;
+                background: #121212;
+                border-radius: 8px;
+                height: 35px;
             }
 
-                #informe_producto #id_producto {
-                    font-size: 13px;
-                    flex: 1;
+                #datos_informe p:nth-child(1) {
+                    width: 12%;
+                    margin: 0 5px 0 5px;
                 }
 
-                #informe_producto #nombre_producto {
-                    font-size: 13px;
-                    justify-content: center;
-                    flex: 1;
+                #datos_informe p:nth-child(2) {
+                    width: 30%;
+                    margin: 0 5px 0 5px;
                 }
 
-                #informe_producto #tipo_producto {
-                    font-size: 13px;
-                    font-size: 600;
-                    justify-content: center;
-                    flex: 1;
+                #datos_informe p:nth-child(3) {
+                    width: 40%;
+                    margin: 0 5px 0 5px;
                 }
 
-                #informe_producto #cantidad_producto {
+                #datos_informe p:nth-child(4) {
+                    width: 10%;
+                    margin: 0 5px 0 5px;
+                }
+
+                #datos_informe p:nth-child(5) {
+                    width: 12%;
+                    margin: 0 5px 0 5px;
+                }
+
+                #datos_informe #id_producto {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+
+                #datos_informe #nombre_producto {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+
+                #datos_informe #tipo_producto {
+                    font-size: 12px;
+                }
+
+                #datos_informe #cantidad_producto {
                     padding-top: 0;
-                    font-size: 13px;
-                    justify-content: center;
-                    flex: 1;
+                    font-size: 12px;
+                    font-weight: 500;
                 }
 
-                #informe_producto #fecha_producto {
+                #datos_informe #fecha_producto {
                     padding-top: 0;
-                    font-size: 13px;
-                    justify-content: center;
-                    flex: 1;
+                    font-size: 12px;
+                    font-weight: 500;
                 }
+
 }
