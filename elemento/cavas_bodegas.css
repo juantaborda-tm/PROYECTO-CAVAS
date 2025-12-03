@@ -1,0 +1,405 @@
+*{
+    box-sizing: border-box;
+    transition: 0.6s;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    background: rgb(5, 5, 5);
+}
+
+#caja_padre {
+    position: absolute;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+    #caja_padre #barra_menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100vh;
+        left: -100%;
+        border-right: 2px solid #cbcbcb;
+        z-index: 6;
+        background: rgb(5, 5, 5);
+    }   
+
+        #caja_padre #barra_menu.open {
+            left: 0;
+        }
+
+    #caja_padre #barra_logo {
+        width: 100%;
+        height: 8%;
+        display: flex;
+        z-index: 7;
+    }
+
+        #barra_logo #logo {
+            width: 100%;
+            height: 100%;
+            padding: 0 0 0 15px;
+            z-index: 8;
+        }
+
+        #barra_menu #cuenta_usuario {
+            position: relative;
+            width: 95%;
+            height: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: 2px solid #cbcbcb;
+            z-index: 7;
+        }
+
+            #cuenta_usuario #foto_perfil {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin: 5px 0 5px 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 8;
+            }
+
+            #cuenta_usuario #texto_nombre {
+                color: white;
+                position: relative;
+                width: 100%;
+                height: 30%;
+                text-align: center;
+                font-size: 14px;
+                z-index: 8;
+            }
+
+        #barra_menu #lista_menu {
+            position: relative;
+            width: 95%;
+            height: 68%;
+            list-style-type: none;
+            color: #cbcbcb;
+            font-size: 14px;
+            font-weight: 600;
+            flex-direction: column;
+            display: flex;
+            padding-left: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            justify-content: space-between;
+            border-bottom: 2px solid #cbcbcb;
+            z-index: 7;
+        }
+
+            #lista_menu h2 {
+                font-size: 2em;
+                padding: 10px 0 0 0;
+                z-index: 7;
+            }
+
+            #lista_menu svg {
+                position: relative;
+                top: 5px;
+                margin-right: 10px;
+                z-index: 8;
+            }
+
+            #lista_menu #cierre_sesion {
+                margin-top: 50px;
+                padding-bottom: 10px;
+                z-index: 7;
+            }
+
+        #barra_menu #marca_proyecto {
+            width: 100%;
+            height: 12%;
+            color: #cbcbcb;
+            padding: 10px;
+            z-index: 7;
+        }
+
+    #caja_padre #observable {
+        position: relative;
+        display: flex; 
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+    }
+
+        #observable #encabezado {
+            width: 100%;
+            height: 6%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+            #encabezado #ic_atras {
+                margin-left: 10px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #encabezado h2 {
+                position: relative;
+                color: white;
+                margin-left: 20px;
+                top: 25%;
+                right: 10px;
+            }
+
+            #observable #menu_hamburguesa {
+            position: relative;
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 3;
+            top: 25%;
+            right: 10px;
+            }
+
+                #menu_hamburguesa span {
+                display: block;
+                height: 3px;
+                background: #cbcbcb;
+                border-radius: 2px;
+                transition: 0.3s;
+                z-index: 3;
+            }
+
+            #menu_hamburguesa.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(9px);
+            }
+
+            #menu_hamburguesa.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            #menu_hamburguesa.active span:nth-child(3) {
+                transform: rotate(-45deg) translateY(-9px);
+            }
+
+        #observable #barra_horizontal {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            margin: 10% 0 0 0;
+        }
+
+            #barra_horizontal #btn_crear_nevera {
+                height: 40px;
+                width: 40%;
+                background: rgb(207, 149, 0);
+                border-radius: 8px;
+                font-weight: 600;
+            }
+
+            #barra_horizontal #btn_crear_estanteria {
+                height: 40px;
+                width: 40%;
+                background: rgb(207, 149, 0);
+                border-radius: 8px;
+                font-weight: 600;
+            }
+
+        #observable #titulo_historial {
+            color: white;
+            width: 90%;
+            font-weight: 600;
+            font-size: 18px;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+
+        #observable #historial {
+            width: 90%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 20px;
+        }
+
+            #historial #horizontal {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+                #horizontal #caja_espacio_agregado {
+                    display: flex;
+                    flex-direction: column;
+                    background: #121212;
+                    height: 120px;
+                    width: 30%;
+                    border-radius: 8px;
+                    margin: 5px;
+                }
+
+                    #caja_espacio_agregado #tres_puntos {
+                        position: relative;
+                        left: 90%;
+                        transform: translateX(-90%);
+                    }
+
+                    #caja_espacio_agregado svg:nth-child(2) {
+                        color: white;
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        margin-top: -10px;
+                        margin-bottom: 5px;
+                    }
+
+                    #caja_espacio_agregado p {
+                        color: white;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+
+@media screen and (min-width:650px ) {
+
+    #caja_padre #barra_menu {
+        width: 40%;
+    }   
+
+        #cuenta_usuario #foto_perfil {
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+        }
+
+        #cuenta_usuario #texto_nombre {
+                font-size: 16px;
+            }
+
+        #barra_menu #lista_menu {
+            font-size: 18px;
+        }
+
+        #lista_menu h2 {
+                font-size: 2.2em;
+            }
+
+        #barra_menu #marca_proyecto {
+            font-size: 15px;
+        }
+
+        #observable #encabezado {
+            height: 8%;
+        }
+
+        #observable #menu_hamburguesa {
+            right: 15px;
+        }
+
+        #observable #barra_horizontal {
+            justify-content: center;
+            margin: 5% 0 0 0;
+        }
+
+            #barra_horizontal #btn_crear_nevera {
+                height: 50px;
+                width: 30%;
+                margin-right: 30px;
+                font-size: 16px;
+            }
+
+            #barra_horizontal #btn_crear_estanteria {
+                height: 50px;
+                width: 30%;
+                margin-left: 30px;
+                font-size: 16px;
+            }
+
+        #observable #historial {
+            width: 95%;
+        }
+
+            #horizontal #caja_espacio_agregado {
+                width: 18%;
+            }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    #caja_padre {
+        flex-direction: row;
+    }
+
+        #caja_padre #barra_menu {
+            position: relative;
+            width: 20%;
+            left: 0;
+        } 
+
+    #barra_logo #logo {
+            padding: 0 0 0 0;
+        }
+
+        #cuenta_usuario #foto_perfil {
+            width: 50px;
+            height: 50px;
+            margin-top: 5px;
+        }
+
+        #cuenta_usuario #texto_nombre {
+                font-size: 14px;
+        }
+
+        #barra_menu #lista_menu {
+            font-size: 14px;
+        }
+
+            #lista_menu h2 {
+                font-size: 2em;
+            }
+
+        #barra_menu #marca_proyecto {
+            font-size: 12px;
+        }
+
+    #caja_padre #observable {
+        width: 80%;
+    }
+
+    #observable #encabezado {
+        justify-content: inherit;
+    }
+
+        #encabezado h2 {
+            right: 0;
+            left: 0;
+            top: 30%;
+        }
+
+    #observable #menu_hamburguesa {
+        display: none;
+    }
+
+        #encabezado #ic_atras {
+            display: none;
+        }
+
+    #observable #barra_horizontal {
+        justify-content: center;
+        margin: 3% 0 0 0;
+    }
+
+}
