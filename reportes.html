@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleados</title>
+    <title>Reportes</title>
 
-    <link rel="stylesheet" href="elemento/empleados.css">
-
+    <link rel="stylesheet" href="elemento/reportes.css">
 </head>
 <body>
 
@@ -162,7 +161,7 @@
                         fill="#cbcbcb" />
                 </svg>
 
-                <h2>Empleados</h2>
+                <h2>Categorias</h2>
 
                 <div id="menu_hamburguesa">
 
@@ -174,82 +173,19 @@
 
             </header>
 
-            <button id="agregar_empleado" type="submit">Añadir empleado</button>
+            <p>Aqui podras mandar cualquier reporte o sugerencia a tu superior</p>
 
-            <div id="historial">
+            <form action="" id="mandar_reporte">
 
-                <div id="columna">
+                <textarea name="mensaje_reporte" id="mensaje_reporte" placeholder="Escribe aqui" required></textarea>
 
-                    <div id="horizontal">
+                <button id="btn_enviar_reporte" type="submit">Enviar</button>
 
-                        <p id="titulo">Nombre</p>
-                        <p>Juan Mairn Cartagena</p>
-
-                    </div>
-
-                    <div id="horizontal">
-
-                        <p id="titulo">Identificación</p>
-                        <p>1111233453</p>
-
-                    </div>
-
-                    <div id="horizontal">
-
-                        <p id="titulo">Tipo identificación</p>
-                        <p>Cedula de ciudadania</p>
-
-                    </div>
-
-                </div>
-
-                <div id="columna">
-
-                    <div id="horizontal">
-
-                        <p id="titulo">Telefono</p>
-                        <p>312232451</p>
-
-                    </div>
-
-                    <div id="horizontal">
-
-                        <p id="titulo">Fecha nacimiento</p>
-                        <p>11/33/3244</p>
-
-                    </div>
-
-                    <div id="horizontal">
-
-                        <p id="titulo">Correo electronico</p>
-                        <p>jtabares56@gmail.com</p>
-
-                    </div>
-
-                </div>
-
-            </div>
+            </form>
 
         </section>
 
     </main>
-
-    <script>
-        // Seleccionamos los elementos del DOM
-        const menu_hamburguesa = document.getElementById('menu_hamburguesa');
-        const menu = document.getElementById('barra_menu');
-
-        // Escuchamos el evento "click" en el botón hamburguesa
-        menu_hamburguesa.addEventListener('click', () => {
-            // Alternamos la clase "active" en el botón
-            // Esto hace que las tres líneas se transformen en una "X"
-            menu_hamburguesa.classList.toggle('active');
-
-            // Alternamos la clase "open" en el menú
-            // Esto mueve el menú desde la izquierda (-250px) hasta 0
-            menu.classList.toggle('open');
-        });
-    </script>
 
 </body>
 </html>

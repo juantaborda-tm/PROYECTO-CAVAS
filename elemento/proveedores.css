@@ -197,7 +197,7 @@ html, body {
                 transform: rotate(-45deg) translateY(-9px);
             }
 
-        #observable #agregar_empleado {
+        #observable #agregar_proveedor {
             width: 50%;
             height: 40px;
             background: rgb(207, 149, 0);
@@ -346,7 +346,7 @@ html, body {
         display: none;
     }
 
-    #observable #agregar_empleado {
+    #observable #agregar_proveedor {
             width: 25%;
             height: 45px;
             left: 3%;

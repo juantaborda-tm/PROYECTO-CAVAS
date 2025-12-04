@@ -197,45 +197,42 @@ html, body {
                 transform: rotate(-45deg) translateY(-9px);
             }
 
-        #observable #agregar_empleado {
-            width: 50%;
-            height: 40px;
-            background: rgb(207, 149, 0);
-            border: none;
-            font-weight: 600;
-            border-radius: 8px;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: 10%;
+        #observable p {
+            margin-top: 5%;
+            color: white;
+            margin-left: 10px;
+            margin-bottom: 7%;
             font-size: 15px;
         }
 
-        #observable #historial {
-            background: #121212;
-            width: 90%;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 8px;
-            font-size: 12px;
-            margin: 5px 0;
-        }
-
-            #columna #horizontal {
+            #mandar_reporte #mensaje_reporte {
+                border: none;
+                background: #121212;
+                outline: none;
+                width: 80%;
                 display: flex;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 8px;
+                padding: 10px;
+                padding-bottom: 160px;
                 color: white;
-                margin: 10px;
             }
 
-                #horizontal #titulo {
-                    font-weight: 600;
-                    width: 40%;
-                }
-
-                #horizontal p:nth-child(2) {
-                    width: 60%;
-                }
+            #mandar_reporte #btn_enviar_reporte {
+                border: none;
+                left: 50%;
+                position: relative;
+                transform: translateX(-50%);
+                margin-top: 5%;
+                height: 40px;
+                width: 50%;
+                border-radius: 8px;
+                background: rgb(209, 147, 0);
+                font-weight: 600;
+                font-size: 15px;
+            }
 
 @media screen and (min-width: 650px) {
 
@@ -281,9 +278,19 @@ html, body {
             right: 15px;
         }
 
-        #observable #historial {
+        #observable p {
+            margin-left: 20px;
             font-size: 16px;
         }
+
+            #mandar_reporte #mensaje_reporte {
+                width: 60%;
+            }
+
+            #mandar_reporte #btn_enviar_reporte {
+                height: 45px;
+                width: 40%;
+            }
 }
 
 @media screen and (min-width: 1024px) {
@@ -346,25 +353,20 @@ html, body {
         display: none;
     }
 
-    #observable #agregar_empleado {
-            width: 25%;
-            height: 45px;
-            left: 3%;
+    #observable p {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+        #mandar_reporte #mensaje_reporte {
+            width: 40%;
+            left: 20px;
             transform: translateX(0);
-    }
+        }
 
-    #observable #historial {
-        display: flex;
-        width: 95%;
-    }
-
-    #historial #columna {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-
-    #observable #historial {
-        font-size: 14px;
-    }
+        #mandar_reporte #btn_enviar_reporte {
+            left: 10%;
+            transform: translateX(-10%);
+            width: 30%;
+        }
 }
