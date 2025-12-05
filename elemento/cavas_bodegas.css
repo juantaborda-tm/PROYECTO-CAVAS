@@ -96,13 +96,22 @@ html, body {
             font-weight: 600;
             flex-direction: column;
             display: flex;
-            padding-left: 10px;
             left: 50%;
             transform: translateX(-50%);
             justify-content: space-between;
             border-bottom: 2px solid #cbcbcb;
             z-index: 7;
         }
+
+            #lista_menu li {
+                border-radius: 5px;
+                padding-bottom: 8px;
+                padding-left: 12px;
+            }
+
+            #lista_menu li:hover {
+                background: #202020;
+            }
 
             #lista_menu h2 {
                 font-size: 2em;
@@ -205,18 +214,29 @@ html, body {
 
             #barra_horizontal #btn_crear_nevera {
                 height: 40px;
-                width: 40%;
+                width: 28%;
                 background: rgb(207, 149, 0);
                 border-radius: 8px;
                 font-weight: 600;
+                border: none
             }
 
             #barra_horizontal #btn_crear_estanteria {
                 height: 40px;
-                width: 40%;
+                width: 28%;
                 background: rgb(207, 149, 0);
                 border-radius: 8px;
                 font-weight: 600;
+                border: none;
+            }
+
+            #barra_horizontal #btn_crear_espacio {
+                height: 40px;
+                width: 28%;
+                background: rgb(207, 149, 0);
+                border-radius: 8px;
+                font-weight: 600;
+                border: none;
             }
 
         #observable #titulo_historial {
@@ -309,21 +329,24 @@ html, body {
         }
 
         #observable #barra_horizontal {
-            justify-content: center;
             margin: 5% 0 0 0;
         }
 
             #barra_horizontal #btn_crear_nevera {
                 height: 50px;
                 width: 30%;
-                margin-right: 30px;
                 font-size: 16px;
             }
 
             #barra_horizontal #btn_crear_estanteria {
                 height: 50px;
                 width: 30%;
-                margin-left: 30px;
+                font-size: 16px;
+            }
+
+            #barra_horizontal #btn_crear_espacio {
+                height: 50px;
+                width: 30%;
                 font-size: 16px;
             }
 
@@ -398,8 +421,19 @@ html, body {
         }
 
     #observable #barra_horizontal {
-        justify-content: center;
         margin: 3% 0 0 0;
+    }
+
+    #barra_horizontal #btn_crear_nevera {
+        width: 25%;
+    }
+
+    #barra_horizontal #btn_crear_estanteria {
+        width: 25%;
+    }
+
+    #barra_horizontal #btn_crear_espacio {
+        width: 25%;
     }
 
 }
