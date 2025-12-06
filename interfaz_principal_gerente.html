@@ -166,37 +166,49 @@
 
             <p id="texto_historial">Historial de productos</p>
 
-            <div id="informe_producto">
+            <table id="informe_producto">
 
-                <div id="titulos_informe">
+                <thead>
 
-                    <p id="ttl_id_producto">Id</p>
+                    <tr id="titulos_informe">
 
-                    <p id="ttl_nombre_producto">Nombre</p>
+                        <th id="ttl_id_producto">Id</th>
 
-                    <p id="ttl_tipo_producto">Tipo</p>
+                        <th id="ttl_nombre_producto">Nombre</th>
 
-                    <p id="ttl_cantidad_producto">Cantidad</p>
+                        <th id="ttl_tipo_producto">Tipo</th>
 
-                    <p id="ttl_fecha_producto">Fecha ingreso</p>
+                        <th id="ttl_cantidad_producto">Cantidad</th>
 
-                </div>
+                        <th id="ttl_fecha_producto">Fecha ingreso</th>
 
-                <div id="datos_informe">
+                    </tr>
 
-                    <p id="id_producto">1132322431</p>
+                </thead>
 
-                    <p id="nombre_producto">serveza heineken 330 ml</p>
+                <tbody>
 
-                    <p id="tipo_producto">sispack de cerveza heineken x6 de 330 ml</p>
+                    {% for productos in productos %}
 
-                    <p id="cantidad_producto">150</p>
+                    <tr id="datos_informe">
 
-                    <p id="fecha_producto">43/12/2345</p>
+                        <td id="id_producto">1132322431</td>
 
-                </div>
+                        <td id="nombre_producto">serveza heineken 330 ml</td>
 
-            </div>
+                        <td id="tipo_producto">sispack de cerveza heineken x6 de 330 ml</td>
+
+                        <td id="cantidad_producto">150</td>
+
+                        <td id="fecha_producto">43/12/2345</td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
 
         </section>
 
