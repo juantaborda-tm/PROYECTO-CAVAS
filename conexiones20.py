@@ -121,20 +121,14 @@ def agrega_p():
     sql = f"INSERT INTO bebidas (id, nombre, categoria, cantidad) VALUES ('{id_crear_producto}' , '{nombre_crear_producto}' , '{categoria_crear_producto}' , '{cantidad_crear_producto}')"
     cursor.execute(sql)
     my_db.commit()
-    return render_template("interfaz_principal_gerente.html")
+    cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
+    productos = cursor.fetchall()
+    return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
-@programa.route("/interfaz_principal_g")
-def interfaz_principal_g():
-    return render_template("interfaz_principal_gerente.html")
-
-@programa.route("/mostrar_productos")
-def mostrar_productos_historial():
-    cursor = my_db.cursor()
-    sql = "SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas"
-    cursor.execute(sql)
-    productos = cursor.fetchall() #trae todas las filas
-    return render_template("mostrar.html", productos=productos)
+@programa.route("/agregar_producto")
+def movimientos():
+    return render_template("movimientos.html")
 
 
 
