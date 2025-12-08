@@ -126,7 +126,7 @@ def agrega_p():
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
-@programa.route("/agregar_producto")
+@programa.route("/buscador_producto")
 def movimientos():
     return render_template("movimientos.html")
 
