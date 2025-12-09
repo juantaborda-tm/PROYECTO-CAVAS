@@ -133,12 +133,10 @@ def agrega_p():
     cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
     productos = cursor.fetchall()
     
-    session["reporte"] = f"{productos[-1][1]}, {productos[-1][4]}"
-    
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
-
+7
 @programa.route("/empleados")
 def empleados():
     cursor = my_db.cursor()
@@ -146,12 +144,6 @@ def empleados():
     empleados = cursor.fetchall()
     
     return render_template("empleados.html" , empleados=empleados)
-
-
-
-@programa.route("/busca_producto")
-def buscador():
-    return render_template("buscador.html")
 
 
 @programa.route("/movimientos")
