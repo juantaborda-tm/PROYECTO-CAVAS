@@ -144,12 +144,11 @@ html, body {
         position: relative;
         display: flex; 
         flex-direction: column;
-        height: 100vh;
         width: 100%;
         z-index: 1;
     }
 
-        #observable h2 {
+        #encabezado h2 {
             position: relative;
             color: white;
             padding: 20px 0 30px 15px;
@@ -157,7 +156,7 @@ html, body {
             z-index: 2;
         }
 
-        #observable #menu_hamburguesa {
+        #encabezado #menu_hamburguesa {
             position: relative;
             margin-left: 95%;
             transform: translateX(-95%);
@@ -197,7 +196,7 @@ html, body {
             font-weight: 600;
             position: relative;
             width: 60%;
-            height: 50px;
+            height: 45px;
             background: rgb(207, 149, 0);
             border-radius: 8px;
             border: none;
@@ -211,7 +210,7 @@ html, body {
         #observable #recoger_busqueda {
             position: relative;
             width: 90%;
-            height: 50px;
+            height: 45px;
             background: #121212;
             border-radius: 8px;
             left: 15px;
@@ -252,7 +251,6 @@ html, body {
             width: 90%;
             left: 50%;
             transform: translateX(-50%);
-            background: #121212;
             border-radius: 8px;
             gap: 5px;
             color: #cbcbcb;
@@ -270,39 +268,22 @@ html, body {
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
+                margin: 5px 0;
+                padding: 10px;
+                background: #121212;
+                width: 100%;
+                border-radius: 8px;
             }
 
-            #datos_informe #id_producto {
-                font-size: 17px;
-                font-weight: 600;
-                z-index: 5;
-            }
+                #datos_informe td {
+                    margin: 5px 0;
+                    display: flex;
+                }
 
-            #datos_informe #nombre_producto {
-                font-size: 22px;
-                font-weight: 600;
-                z-index: 5;
-            }
-
-            #datos_informe #tipo_producto {
-                font-size: 17px;
-                font-size: 500;
-                z-index: 5;
-            }
-
-            #datos_informe #cantidad_producto {
-                padding-top: 5px;
-                font-size: 2em;
-                font-weight: 600;
-                z-index: 5;
-            }
-
-            #datos_informe #fecha_producto {
-                padding-top: 5px;
-                font-size: 14px;
-                font-weight: 600;
-                z-index: 5;
-            }
+                #datos_informe p {
+                    font-weight: 600;
+                    padding-right: 10px;
+                }
 
 @media screen and (min-width: 650px) {
 
@@ -456,9 +437,30 @@ html, body {
 
             #informe_producto #titulos_informe {
                 display: flex;
-                justify-content: space-around;
+                width: 100%;
                 margin-bottom: 20px;
+                text-align: center;
             }
+
+                #titulos_informe #ttl_id_producto {
+                    width: 15%;
+                }
+
+                #titulos_informe #ttl_nombre_producto {
+                    width: 25%;
+                }
+
+                #titulos_informe #ttl_tipo_producto {
+                    width: 33%;
+                }
+
+                #titulos_informe #ttl_cantidad_producto {
+                    width: 10%;
+                }
+
+                #titulos_informe #ttl_fecha_producto {
+                    width: 17%;
+                }
 
             #informe_producto #datos_informe {
                 display: flex;
@@ -466,40 +468,37 @@ html, body {
                 overflow: inherit;
                 background: #121212;
                 padding: 10px;
+                width: 100%;
                 border-radius: 8px;
-                justify-content: space-around;
             }
 
+                #datos_informe p {
+                    display: none;
+                }
 
-            #informe_producto th, td {
-                text-align: center;
-                display: flex;
-            } 
+                #datos_informe td {
+                    justify-content: center;  
+                    padding: 0 5px;
+                }
 
                 #datos_informe #id_producto {
-                    font-size: 12px;
-                    font-weight: 500;
+                    width: 15%;
                 }
 
                 #datos_informe #nombre_producto {
-                    font-size: 12px;
-                    font-weight: 500;
+                    width: 25%;
                 }
 
                 #datos_informe #tipo_producto {
-                    font-size: 12px;
+                    width: 33%;
                 }
 
                 #datos_informe #cantidad_producto {
-                    padding-top: 0;
-                    font-size: 12px;
-                    font-weight: 500;
+                    width: 10%;
                 }
 
                 #datos_informe #fecha_producto {
-                    padding-top: 0;
-                    font-size: 12px;
-                    font-weight: 500;
+                    width: 17%;
                 }
 
 }

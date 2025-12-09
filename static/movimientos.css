@@ -250,19 +250,19 @@ html, body {
                 margin: 3px 0;
             }
 
-                #informacion svg {
+                #informacion #icono {
                     width: 3%;
                     margin: 0 10px 0 -10px;
                 }
 
-                #informacion li {
+                #informacion #info_movimiento {
                     width: 70%;
                     text-wrap-mode: nowrap;
                     overflow: hidden;
                     margin-right: 10px;
                 }
 
-                #informacion p {
+                #informacion #fecha_movimiento {
                     width: 30%;
                     text-align: center;
                 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Empleados</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Empleados</h1>
+    <form action="/emp">
+        <table>
+            <thead>
+                <tr>
+                    <th>Identificación</th>
+                    <th>Nombre completo</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Fecha nacimiento</th>
+                    <th>Tipo identificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleados %}
+                <tr>
+                    <td>{{ empleado.num_id }}</td>
+                    <td>{{ empleado.nom_comple }}</td>
+                    <td>{{ empleado.correo }}</td>
+                    <td>{{ empleado.num_tel }}</td>
+                    <td>{{ empleado.fecha_naci }}</td>
+                    <td>{{ empleado.tipo_id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>    
+</body>
+</html>

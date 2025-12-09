@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, flash, url_for
+from flask import Flask, redirect, render_template, request, flash, url_for, session
 import mysql.connector  
 
 
@@ -95,7 +95,7 @@ def logear():
         if resultado_roll:
             roll = resultado_roll[0]
             if roll == "1":
-                return render_template("interfaz_principal_gerente.html")
+                return redirect("/interfaz_principal_g")
             elif roll == "2":
                 return render_template("interf_user.html")
             else:
@@ -105,11 +105,20 @@ def logear():
         return render_template("login.html", msg="Credenciales incorrectas. Inténtalo de nuevo.")
 
 
-#Que al agregar un producto mandé eso al backend y muestre en el historial lo que agregó
+@programa.route("/interfaz_principal_g")
+def interf_principal():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
+    productos = cursor.fetchall()
+    return render_template("interfaz_principal_gerente.html", productos=productos)
+
 
 @programa.route("/agrega_producto")
 def agregar_producto():
     return render_template("agregar_producto.html")
+
+
+#Que al agregar un producto mandé eso al backend y muestre en el historial lo que agregó
 
 @programa.route("/agrega_producto", methods = ["POST"])
 def agrega_p():
@@ -123,10 +132,29 @@ def agrega_p():
     my_db.commit()
     cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
     productos = cursor.fetchall()
+    
+    session["reporte"] = f"{productos[-1][1]}, {productos[-1][4]}"
+    
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
-@programa.route("/buscador_producto")
+
+@programa.route("/empleados")
+def empleados():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT num_id, nom_comple, correo, num_tel, fecha_naci, tipo_id FROM usuarios WHERE roll = '2'")
+    empleados = cursor.fetchall()
+    
+    return render_template("empleados.html" , empleados=empleados)
+
+
+
+@programa.route("/busca_producto")
+def buscador():
+    return render_template("buscador.html")
+
+
+@programa.route("/movimientos")
 def movimientos():
     return render_template("movimientos.html")
 
