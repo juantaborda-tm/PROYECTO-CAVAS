@@ -25,6 +25,12 @@ main {
     z-index: 1;
 }
 
+    #caja_padre #ic_atras {
+        position: absolute;
+        margin: 10px;
+        display: flex;
+    }
+
 form {
     display: flex;
     justify-content: space-around;

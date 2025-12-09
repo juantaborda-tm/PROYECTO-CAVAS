@@ -25,6 +25,12 @@ html, body {
     justify-content: center;
 }
 
+    #caja_padre #ic_atras {
+        position: absolute;
+        margin: 10px;
+        display: flex;
+    }
+
     #caja_padre #caja_contenedora {
         position: absolute;
         left: 50%;

@@ -24,6 +24,12 @@ main {
     z-index: 1;
 }
 
+#caja_padre #ic_atras {
+    position: absolute;
+    margin: 10px;
+    display: flex;
+}
+
     #caja_contenedora {
         position: absolute;
         left: 50%;

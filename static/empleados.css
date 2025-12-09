@@ -221,30 +221,45 @@ html, body {
         }
 
         #observable #historial {
-            background: #121212;
             width: 90%;
+            display: flex;
             position: relative;
             left: 50%;
+            flex-direction: column;
             transform: translateX(-50%);
-            border-radius: 8px;
             font-size: 12px;
             margin: 5px 0;
         }
 
-            #columna #horizontal {
-                display: flex;
-                color: white;
-                margin: 10px;
+            #historial #titulos {
+                display: none;
             }
 
-                #horizontal #titulo {
-                    font-weight: 600;
-                    width: 40%;
+            #historial #info_empleado {
+                width: 100%;
+                padding: 0 10px;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                margin: 5px 0;
+                background: #121212;
+                border-radius: 8px;
+            }
+
+                #info_empleado td {
+                    color: white;
+                    margin: 10px 0;
+                    display: flex;
+                    flex-direction: column;
                 }
 
-                #horizontal p:nth-child(2) {
+                #info_empleado p {
+                    font-weight: 600;
+                    font-size: 14px;
+                    margin: 0 0 5px 0;
                     width: 60%;
                 }
+
 
 @media screen and (min-width: 650px) {
 
@@ -362,18 +377,23 @@ html, body {
             transform: translateX(0);
     }
 
+    #historial #info_empleado {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     #observable #historial {
         display: flex;
         width: 95%;
-    }
-
-    #historial #columna {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-
-    #observable #historial {
         font-size: 14px;
     }
+
+        #info_empleado td {
+            flex-direction: row;
+        }
+
+        #info_empleado p {
+            width: 40%;
+        }
+
 }
