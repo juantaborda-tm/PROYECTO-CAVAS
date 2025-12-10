@@ -246,6 +246,7 @@ html, body {
             position: relative;
             left: 5%;
             top: 10%;
+            width: 90%;
             font-size: 16px;
             font-weight: 600;
         }
@@ -257,51 +258,47 @@ html, body {
             width: 90%;
             left: 50%;
             transform: translateX(-50%);
-            background: #121212;
             border-radius: 8px;
             gap: 5px;
-            color: #cbcbcb;
+            top: 10%;
+            color: white;
             padding: 10px;
-            margin: 10px 0 0 0;
-            top: 12%;
+            margin: 20px 0 0 0;
             z-index: 2;
         }
 
-            #historial #horizontal {
-                display: flex;
-            }
-
             #historial #titulos_productos {
-                display: flex;
-                flex-direction: column;
-                font-weight: 600;
-                font-size: 15px;
-                color: white;
+                display: none;
+                z-index: 4;
             }
-
-                #titulos_productos p {
-                    margin-top: 5px;
-                }
 
             #historial #informacion_producto {
                 display: flex;
-                position: relative;
-                left: 10px;
-                color: white;
                 flex-direction: column;
                 overflow: hidden;
-                text-wrap-mode: nowrap;
+                margin: 5px 0;
+                padding: 10px;
+                background: #121212;
+                width: 100%;
+                border-radius: 8px;
             }
 
-                #informacion_producto p {
-                    margin-top: 6px;
+                #informacion_producto td {
+                    margin: 5px 0;
+                    display: flex;
                 }
 
-                #horizontal #iconos_pc {
+                #informacion_producto p {
+                    font-weight: 600;
+                    padding-right: 10px;
+                }
+
+
+                #informacion_producto #iconos_pc {
                     display: none;
                 }
 
-            #historial #iconos {
+            #informacion_producto #iconos {
                 margin-top: 15px;
             }
 
@@ -456,40 +453,20 @@ html, body {
             margin: 10px 10px 0 10px;
         }
 
-    #observable #titulo_historial {
-        left: 20px;
-        top: 0;
-        margin-top: 30px;
-        width: 30%;
-    }
+        #observable #titulo_historial {
+            left: 2%;
+        }
 
     #observable #historial {
-        flex-direction: column;
-        width: 96%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: none;
-        top: 0;
+        top: 10%;
+        width: 100%;
+        margin-left: 20px;
     }
-
-        #historial #horizontal {
-            flex-direction: column;
-        }
-
-        #historial #horizontal_2 {
-            display: flex;
-            background: #121212;
-            border-radius: 8px;
-            height: 40px;
-            align-items: center;
-            margin-top: 0;
-            margin: 3px 0;
-        }
 
         #historial #titulos_productos {
             display: flex;
             flex-direction: row;
-            width: 90%;
+            width: 100%;
             font-size: 14px;
             text-align: center;
             margin-bottom: 20px;

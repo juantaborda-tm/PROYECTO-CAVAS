@@ -112,13 +112,18 @@ def interf_principal():
     productos = cursor.fetchall()
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
+@programa.route("/productos")
+def mostrar_productos():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
+    productos = cursor.fetchall()
+    return render_template("productos.html", productos=productos )
+
 
 @programa.route("/agrega_producto")
 def agregar_producto():
     return render_template("agregar_producto.html")
 
-
-#Que al agregar un producto mandé eso al backend y muestre en el historial lo que agregó
 
 @programa.route("/agrega_producto", methods = ["POST"])
 def agrega_p():
@@ -136,7 +141,21 @@ def agrega_p():
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
-7
+@programa.route("/categorias")
+def categorias():
+    return render_template("categorias.html")
+
+
+@programa.route("/cavas_bodegas")
+def cavas_bodegas():
+    return render_template("cavas_bodegas.html")
+
+
+@programa.route("/movimientos")
+def movimientos():
+    return render_template("movimientos.html")
+
+
 @programa.route("/empleados")
 def empleados():
     cursor = my_db.cursor()
@@ -145,10 +164,17 @@ def empleados():
     
     return render_template("empleados.html" , empleados=empleados)
 
+@programa.route("/proveedores")
+def proveedores():
+    return render_template("proveedores.html")
 
-@programa.route("/movimientos")
-def movimientos():
-    return render_template("movimientos.html")
+@programa.route("/reportes")
+def reportes():
+    return render_template("reportes.html")
+
+
+
+
 
 
 
