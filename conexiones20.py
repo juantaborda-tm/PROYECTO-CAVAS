@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, flash, url_for, session
+from flask import Flask, redirect, render_template, request, flash, url_for, session, make_response
 import mysql.connector, hashlib
 
 
@@ -102,12 +102,12 @@ def logear():
             if roll == "1":
                 return redirect("/interfaz_principal_g")
             elif roll == "2":
-                return render_template("interfaz_principal_gerente.html")
+                return redirect("/interfaz_principal_g")
             else:
                 return render_template("login.html", msg1 = "Credenciales de usuario no reconocido.")  
             
     else:
-        return render_template(msg="Credenciales incorrectas. Inténtalo de nuevo."  )
+        return render_template("login.html" ,msg="Credenciales incorrectas. Inténtalo de nuevo."  )
 
 
 @programa.route("/interfaz_principal_g")
@@ -147,8 +147,37 @@ def agrega_p():
 
 
 @programa.route("/categorias")
-def categorias():
-    return render_template("categorias.html")
+def mostrar_categoria():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT nombre_categoria FROM categorias")
+    categorias = cursor.fetchall()
+    return render_template("categorias.html", categorias = categorias)
+
+@programa.route("/crear_categoria")
+def agregar_categoria():
+    return render_template("crear_categoria.html")
+
+@programa.route("/crear_categoria", methods = ["POST"])
+def insertar_categoria():
+    crear_nueva_categoria = request.form["crear_nueva_categoria"]
+    cursor = my_db.cursor()
+    sql = f"SELECT nombre_categoria FROM categorias WHERE nombre_categoria = '{crear_nueva_categoria}'"
+    cursor.execute(sql)
+    resultado = cursor.fetchone()
+    
+    if resultado:
+        # Ya existe → enviar mensaje
+        mensaje = "La categoría ya existe"
+        return render_template("crear_categoria.html", mensaje=mensaje)
+    
+    else:
+        cursor = my_db.cursor()
+        sql = f"INSERT INTO categorias (nombre_categoria) VALUES ('{crear_nueva_categoria}')"
+        cursor.execute(sql)
+        my_db.commit()
+        return redirect("/interfaz_principal_g")
+    
+        
 
 
 @programa.route("/cavas_bodegas")
@@ -175,7 +204,7 @@ def mostrar_proveedores():
     cursor = my_db.cursor()
     cursor.execute("SELECT cedula, nit, nombre, telefono, correo, direccion FROM proveedores")
     proveedores = cursor.fetchall()
-    return render_template("proveedores.html", proveedores=  proveedores )
+    return render_template("proveedores.html", proveedores = proveedores )
 
 
 @programa.route("/agregar_proveedor")
@@ -210,15 +239,17 @@ def principal():
     return render_template("interfaz_principal_gerente.html")
 
 
-
 @programa.route("/reportes")
 def reportes():
     return render_template("reportes.html")
 
+
 @programa.route("/cerrar_sesion")
 def cerrar_sesion():
     session.clear()
-    return redirect("/login")
+    return redirect("/")
+
+
 
 
 
