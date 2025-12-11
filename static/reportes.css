@@ -23,7 +23,9 @@ html, body {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    flex-shrink: 0;
 }
+
 
     #caja_padre #barra_menu {
         position: absolute;
@@ -153,6 +155,8 @@ html, body {
         flex-direction: column;
         height: 100vh;
         width: 100%;
+        flex: 1;
+        overflow-y: auto;
         z-index: 1;
     }
 

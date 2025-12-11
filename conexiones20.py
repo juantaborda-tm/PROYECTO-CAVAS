@@ -102,12 +102,12 @@ def logear():
             if roll == "1":
                 return redirect("/interfaz_principal_g")
             elif roll == "2":
-                return render_template("interf_user.html")
+                return render_template("interfaz_principal_gerente.html")
             else:
                 return render_template("login.html", msg1 = "Credenciales de usuario no reconocido.")  
             
     else:
-        return render_template("login.html", msg="Credenciales incorrectas. Inténtalo de nuevo.")
+        return render_template(msg="Credenciales incorrectas. Inténtalo de nuevo."  )
 
 
 @programa.route("/interfaz_principal_g")

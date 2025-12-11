@@ -23,6 +23,7 @@ html, body {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    flex-shrink: 0;
 }
 
     #caja_padre #barra_menu {
@@ -154,6 +155,8 @@ html, body {
         height: 100vh;
         width: 100%;
         z-index: 1;
+        flex: 1;
+        overflow-y: auto;
     }
 
         #observable #encabezado {

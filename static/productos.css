@@ -23,6 +23,7 @@ html, body {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    flex-shrink: 0;
 }
 
     #caja_padre #barra_menu {
@@ -153,6 +154,8 @@ html, body {
         flex-direction: column;
         height: 100vh;
         width: 100%;
+        flex: 1;
+        overflow-y: auto;
         z-index: 1;
     }
 
@@ -305,6 +308,10 @@ html, body {
                     left: 77%;
                     transform: translateX(-77%);
                     margin: 0 0 0 20px;
+                }
+
+                #iconos #separador {
+                    display: none;
                 }
 
 @media screen and (min-width: 650px) {
