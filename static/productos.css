@@ -106,6 +106,7 @@ html, body {
             #lista_menu a {
                 text-decoration: inherit;
                 color: #cbcbcb;
+                display: block;
             }
 
             #lista_menu li:hover {
@@ -299,15 +300,6 @@ html, body {
                     padding-right: 10px;
                 }
 
-
-                #informacion_producto #iconos_pc {
-                    display: none;
-                }
-
-            #informacion_producto #iconos {
-                margin-top: 15px;
-            }
-
                 #iconos svg {
                     position: relative;
                     left: 77%;
@@ -482,15 +474,15 @@ html, body {
             }
 
             #titulos_productos th:nth-child(2) {
-                width: 30%;
+                width: 25%;
             }
 
             #titulos_productos th:nth-child(3) {
-                width: 45%;
+                width: 35%;
             }
 
             #titulos_productos th:nth-child(4) {
-                width: 10%;
+                width: 15%;
             }
 
         #titulos_productos th {
@@ -520,37 +512,38 @@ html, body {
         }
 
         #informacion_producto td:nth-child(2) {
-            width: 30%;
+            width: 25%;
             margin: 0 5px 0 5px;
         }
 
         #informacion_producto td:nth-child(3) {
-            width: 45%;
+            width: 35%;
             margin: 0 5px 0 5px;
         }
 
         #informacion_producto td:nth-child(4) {
-            width: 10%;
+            width: 15%;
             margin: 0 5px 0 5px;
         }
 
-        #horizontal_2 #pc_iconos {
-            display: flex;
+        #informacion_producto td:nth-child(5) {
             width: 10%;
-            justify-content: end;
         }
 
-        #horizontal #iconos_pc {
+        #informacion_producto #iconos {
+            justify-content: space-around;
+        }
+
+        #iconos svg {
+            left: 0;
+            transform: translateX(0);
+            margin: 0 0 0 0;
+        }
+
+        #iconos #separador {
             display: flex;
+            align-items: center;
         }
 
-            #iconos_pc {
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-
-        #historial #iconos {
-            display: none;
-        }
 
 }

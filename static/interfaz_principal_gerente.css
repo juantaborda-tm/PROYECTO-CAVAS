@@ -107,6 +107,7 @@ html, body {
             #lista_menu a {
                 text-decoration: inherit;
                 color: #cbcbcb;
+                display: block;
             }
 
             #lista_menu li:hover {

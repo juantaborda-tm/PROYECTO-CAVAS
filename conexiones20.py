@@ -205,6 +205,10 @@ def registro_proveedor():
     
     return render_template("proveedores.html" , proveedores = proveedores)
 
+@programa.route("/principal")
+def principal():
+    return render_template("interfaz_principal_gerente.html")
+
 
 
 @programa.route("/reportes")
