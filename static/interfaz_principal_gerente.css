@@ -151,7 +151,6 @@ html, body {
 
     #caja_padre #observable {
         position: relative;
-        display: flex; 
         flex-direction: column;
         width: 100%;
         flex: 1;
