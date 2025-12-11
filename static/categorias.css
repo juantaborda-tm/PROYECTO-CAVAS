@@ -23,6 +23,8 @@ html, body {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    flex-shrink: 0;
+
 }
 
     #caja_padre #barra_menu {
@@ -106,6 +108,7 @@ html, body {
             #lista_menu a {
                 text-decoration: inherit;
                 color: #cbcbcb;
+                display: block;
             }
 
             #lista_menu li:hover {
@@ -152,6 +155,8 @@ html, body {
         flex-direction: column;
         height: 100vh;
         width: 100%;
+        flex: 1;
+        overflow-y: auto;
         z-index: 1;
     }
 
@@ -272,7 +277,7 @@ html, body {
             z-index: 2;
         }
 
-            #historial #horizontal {
+            #historial #informacion_categoria {
                 display: flex;
                 background: #121212;
                 height: 35px;
@@ -281,11 +286,7 @@ html, body {
                 padding: 0 5px;
             }
 
-                #horizontal #iconos_pc {
-                    display: none;
-                }
-
-                #horizontal #datos_categoria {
+                #informacion_categoria #inf_categoria {
                     width: 80%;
                     margin: 0 5px;
                     text-wrap-mode: nowrap;
@@ -293,17 +294,20 @@ html, body {
                     color: white;
                 }
 
-                #horizontal #iconos {
+                #informacion_categoria #iconos {
                     display: flex;
                     width: 20%;
-                    justify-content: end;
+                    justify-content: space-around;
                 }
 
                 #iconos svg {
-                    width: 18px;
-                    height: 18px;
                     margin-left: 15px;
                 }
+
+                #informacion_categoria #separador {
+                    display: flex;
+                    align-items: center;
+
 
 @media screen and (min-width: 650px) {
 

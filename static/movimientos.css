@@ -23,6 +23,7 @@ html, body {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    flex-shrink: 0;
 }
 
     #caja_padre #barra_menu {
@@ -106,6 +107,7 @@ html, body {
             #lista_menu a {
                 text-decoration: inherit;
                 color: #cbcbcb;
+                display: block;
             }
 
             #lista_menu li:hover {
@@ -156,6 +158,8 @@ html, body {
         flex-direction: column;
         height: 100vh;
         width: 100%;
+        flex: 1;
+        overflow-y: auto;
         z-index: 1;
     }
 
