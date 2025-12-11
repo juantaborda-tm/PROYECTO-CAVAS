@@ -109,8 +109,14 @@ html, body {
                 padding-left: 12px;
             }
 
+            #lista_menu a {
+                text-decoration: inherit;
+                color: #cbcbcb;
+            }
+
             #lista_menu li:hover {
                 background: #202020;
+                font-size: 16px;
             }
 
             #lista_menu h2 {
@@ -239,6 +245,79 @@ html, body {
                 border: none;
             }
 
+            #barra_horizontal label {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                font-size: 12px;
+            }
+
+        #observable #ventana {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+        }
+
+            #ventana_flotante:checked~#ventana {
+                display: flex;  
+            }
+
+            #ventana #contenido_ventana {
+                width: 80%;
+                padding: 20px;
+                background-color: #121212;
+                border-radius: 8px;
+            }
+
+                #contenido_ventana p {
+                    color: white;
+                    font-size: 15px;
+                    margin-bottom: 30px;
+                }
+
+                #contenido_ventana #btns_horizontal {
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+                }
+
+                    #btns_horizontal #btn_cerrar {
+                        border: none;
+                        background: #202020;
+                        color: white;
+                        border-radius: 5px;
+                        padding: 10px;
+                        margin-right: 10px;
+                    }
+
+                    #btns_horizontal #btn_crear {
+                        border: none;
+                        background: rgb(207, 149, 0);
+                        color: black;
+                        border-radius: 5px;
+                        padding: 10px 35px;
+                        margin-left: 20px;
+                        font-weight: 600;
+                    }
+
+            #ventana #cerrar_ventana {
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
         #observable #titulo_historial {
             color: white;
             width: 90%;
@@ -356,6 +435,14 @@ html, body {
                 font-size: 16px;
             }
 
+            #barra_horizontal label {
+                font-size: 14px;
+            }
+
+            #ventana #contenido_ventana {
+                width: 50%;
+            }
+
         #observable #historial {
             width: 95%;
         }
@@ -440,6 +527,10 @@ html, body {
 
     #barra_horizontal #btn_crear_espacio {
         width: 25%;
+    }
+
+    #ventana #contenido_ventana {
+        width: 30%;
     }
 
 }

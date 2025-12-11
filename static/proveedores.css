@@ -103,14 +103,20 @@ html, body {
             z-index: 7;
         }
 
-            #lista_menu li {
-                border-radius: 5px;
-                padding-bottom: 8px;
-                padding-left: 12px;
+            #lista_menu a {
+                text-decoration: inherit;
+                color: #cbcbcb;
             }
 
             #lista_menu li:hover {
                 background: #202020;
+                font-size: 16px;
+            }
+
+            #lista_menu li {
+                border-radius: 5px;
+                padding-bottom: 8px;
+                padding-left: 12px;
             }
 
             #lista_menu h2 {
@@ -376,18 +382,23 @@ html, body {
             transform: translateX(0);
     }
 
+        #historial #info_proveedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
     #observable #historial {
         display: flex;
         width: 95%;
+        font-size: 14px; 
+        top: -5%;   
     }
 
-    #historial #columna {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
+    #info_empleado td {
+        flex-direction: row;
     }
 
-    #observable #historial {
-        font-size: 14px;
+    #info_empleado p {
+        width: 40%;
     }
 }

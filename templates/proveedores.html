@@ -180,7 +180,7 @@
                         fill="#cbcbcb" />
                 </svg>
 
-                <h2>Cava / bodega</h2>
+                <h2>Proveedores</h2>
 
                 <div id="menu_hamburguesa">
 
@@ -191,8 +191,9 @@
                 </div>
 
             </header>
-
-            <button id="agregar_proveedor" type="submit">Añadir proveedor</button>
+            <a href="/agregar_proveedor"> 
+                <button id="agregar_proveedor" type="submit">Añadir proveedor</button>
+            </a>
 
             <form action="/proveedores">
 
@@ -220,21 +221,21 @@
 
                     <tbody>
 
-                        {% for empleado in empleados %} 
+                        {% for proveedor in proveedores %} 
 
                         <tr id="info_proveedor">    
 
-                            <td><p>Nit empresa:</p>{{ empleado[1] }}</td>
+                            <td><p>Nit empresa:</p>{{ proveedor[1] }}</td>
 
-                            <td><p>No. identificacion:</p>{{ empleado[0] }}</td>
+                            <td><p>No. identificacion:</p>{{ proveedor[0] }}</td>
 
-                            <td><p>Nombre:</p>{{ empleado[5] }}</td>
+                            <td><p>Nombre:</p>{{ proveedor[2] }}</td>
 
-                            <td><p>Telefono:</p>{{ empleado[3] }}</td>
+                            <td><p>Telefono:</p>{{ proveedor[3] }}</td>
 
-                            <td><p>Correo electronico:</p>{{ empleado[4] }}</td>
+                            <td><p>Correo electronico:</p>{{ proveedor[4] }}</td>
 
-                            <td><p>Direccion de empresa:</p>{{ empleado[2] }}</td>
+                            <td><p>Direccion de empresa:</p>{{ proveedor[5] }}</td>
 
                         </tr>
 

@@ -57,18 +57,28 @@
 
                 </div>
 
-                <div id="caja_checkbox">
-
-                    <input type="checkbox" id="recordar_contraseña" name="recordar_contraseña">
-                    <label>Recordar contraseña</label>
-
-                </div>
-
                 <button type="submit" id="btn_iniciar">Iniciar</button>
 
             </form>
 
         </div>
+
+        {% if msg %}
+        <div id="mensaje_error" name="mensaje_error">
+        {{ msg }}
+        </div>
+
+        <script>
+        // Espera 2 segundos y oculta el div
+
+        setTimeout(function() {            
+                document.getElementById("mensaje_error").style.display = "flex";
+
+            },3000)
+        </script>
+
+        {% endif %}
+
 
     </main>
 

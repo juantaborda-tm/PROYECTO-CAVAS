@@ -103,6 +103,16 @@ html, body {
             z-index: 7;
         }
 
+            #lista_menu a {
+                text-decoration: inherit;
+                color: #cbcbcb;
+            }
+
+            #lista_menu li:hover {
+                background: #202020;
+                font-size: 16px;
+            }
+
             #lista_menu li {
                 border-radius: 5px;
                 padding-bottom: 8px;

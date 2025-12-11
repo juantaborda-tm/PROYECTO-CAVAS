@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    transition: 0.5s;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14xp;
+    background: rgb(5, 5, 5);
+}   
+
+main {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+}
+
+    #caja_padre #ic_atras {
+        position: absolute;
+        margin: 10px;
+        display: flex;
+    }
+
+        #caja_contenedora {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+        }
+
+        #caja_contenedora h1 {
+            color: white;
+            text-align: center;
+        }
+
+        #caja_contenedora #texto {
+            color: white;
+            font-size: 15px;
+        }
+
+        #caja_contenedora button {
+            border: none;
+            height: 45px;
+            background: rgb(209, 149, 0);
+            width: 80%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+@media screen and (min-width: 650px) {
+
+    #caja_contenedora {
+        top: 60%;
+        width: 45%;
+    }
+
+        #caja_contenedora button {
+            height: 50px;
+        }
+}
+
+@media screen and (min-width: 1024px) {
+
+    #caja_contenedora {
+        top: 50%;
+        width: 30%;
+    }
+
+}

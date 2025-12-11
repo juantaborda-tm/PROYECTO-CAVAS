@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleados</title>
+    <title>Bodega</title>
 
-    <link rel="stylesheet" href="static/empleados.css">
-
+    <link rel="stylesheet" href="static/cavas_bodegas.css">
 </head>
+
 <body>
 
     <main id="caja_padre">
@@ -34,7 +35,7 @@
                 <h2>Menú</h2>
 
                 <li>
-                    <a href="/interfaz_principal_g">
+                    <a href="/principal">
                     <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M12.45 4.90342C12.1833 4.70342 11.8167 4.70342 11.55 4.90342L5.05 9.77842C4.86115 9.92006 4.75 10.1423 4.75 10.3784V18.4998C4.75 18.9141 5.08579 19.2498 5.5 19.2498H9V16.9998C9 15.343 10.3431 13.9998 12 13.9998C13.6569 13.9998 15 15.343 15 16.9998V19.2498H18.5C18.9142 19.2498 19.25 18.9141 19.25 18.4998V10.3784C19.25 10.1423 19.1389 9.92006 18.95 9.77842L12.45 4.90342ZM10.65 3.70342C11.45 3.10342 12.55 3.10342 13.35 3.70342L19.85 8.57842C20.4166 9.00334 20.75 9.67021 20.75 10.3784V18.4998C20.75 19.7425 19.7426 20.7498 18.5 20.7498H14.25C13.8358 20.7498 13.5 20.4141 13.5 19.9998V16.9998C13.5 16.1714 12.8284 15.4998 12 15.4998C11.1716 15.4998 10.5 16.1714 10.5 16.9998V19.9998C10.5 20.4141 10.1642 20.7498 9.75 20.7498H5.5C4.25736 20.7498 3.25 19.7425 3.25 18.4998V10.3784C3.25 9.67021 3.58344 9.00334 4.15 8.57842L10.65 3.70342Z" fill="#cbcbcb"/>
                         </svg>Principal
@@ -181,7 +182,7 @@
                         fill="#cbcbcb" />
                 </svg>
 
-                <h2>Empleados</h2>
+                <h2>Cava / bodega</h2>
 
                 <div id="menu_hamburguesa">
 
@@ -193,62 +194,91 @@
 
             </header>
 
-            <a href="registro_usuarios">
-                <button id="agregar_empleado" type="submit">Añadir empleado</button>
-            </a>    
+            <div id="barra_horizontal">
 
+                <div id="btn_crear_nevera">
+                    <label for="ventana_flotante">Crear nevera</label>
+                </div>
 
-            <form action="/empleados">
+                <div id="btn_crear_estanteria">
+                    <label for="ventana_flotante">Crear estanteria</label>
+                </div>
 
-                <table id="historial">
+                <div id="btn_crear_espacio">
+                    <label for="ventana_flotante">Crear espacio</label>
+                </div>
 
-                    <thead>
+                <input type="checkbox" id="ventana_flotante" hidden>
 
-                        <tr id="titulos">
+                <div id="ventana">
 
-                            <th>Nombre</th>
+                    <div id="contenido_ventana">
 
-                            <th>No. identificacion</th>
+                        <p>¿Estas seguro de que quieres crear este objeto?</p>
 
-                            <th>Tipo identificacion</th>
+                        <div id="btns_horizontal">
 
-                            <th>Telefono</th>
+                            <div id="btn_cerrar">
+                                <label for="ventana_flotante">Cancelar</label>
+                            </div>
 
-                            <th>Fecha de nacimiento</th>
+                            <div id="btn_crear">
+                                <label for="ventana_flotante">Crear</label>
+                            </div>
 
-                            <th>Correo electronico</th>
+                        </div>
 
-                        </tr>
+                    </div>
 
-                    </thead>
+                    <label for="ventana_flotante" id="cerrar_ventana"></label>
 
-                    <tbody>
+                </div>
 
-                        {% for empleado in empleados %} 
+            </div>
 
-                        <tr id="info_empleado">    
+            <p id="titulo_historial">Neveras y estanterias</p>
 
-                            <td><p>Nombre:</p>{{ empleado[1] }}</td>
+            <div id="historial">
 
-                            <td><p>No. identificacion:</p>{{ empleado[0] }}</td>
+                <div id="horizontal">
 
-                            <td><p>Tipo identificacion:</p>{{ empleado[5] }}</td>
+                    <div id="caja_espacio_agregado">
 
-                            <td><p>Telefono:</p>{{ empleado[3] }}</td>
+                        <svg width="25" height="25" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            transform="rotate(0 0 0)" id="tres_puntos">
+                            <path
+                                d="M6.3125 13.7558C5.346 13.7559 4.5625 12.9723 4.5625 12.0059V11.9959C4.5625 11.0294 5.346 10.2458 6.3125 10.2458C7.279 10.2458 8.0625 11.0294 8.0625 11.9958V12.0058C8.0625 12.9723 7.279 13.7558 6.3125 13.7558Z"
+                                fill="#cbcbcb" />
+                            <path
+                                d="M18.3125 13.7558C17.346 13.7558 16.5625 12.9723 16.5625 12.0058V11.9958C16.5625 11.0294 17.346 10.2458 18.3125 10.2458C19.279 10.2458 20.0625 11.0294 20.0625 11.9958V12.0058C20.0625 12.9723 19.279 13.7558 18.3125 13.7558Z"
+                                fill="#cbcbcb" />
+                            <path
+                                d="M10.5625 12.0058C10.5625 12.9723 11.346 13.7558 12.3125 13.7558C13.279 13.7558 14.0625 12.9723 14.0625 12.0058V11.9958C14.0625 11.0294 13.279 10.2458 12.3125 10.2458C11.346 10.2458 10.5625 11.0294 10.5625 11.9958V12.0058Z"
+                                fill="#cbcbcb" />
+                        </svg>
 
-                            <td><p>Fecha nacimiento:</p>{{ empleado[4] }}</td>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="80" height="80">
 
-                            <td><p>Correo electronico:</p>{{ empleado[2] }}</td>
+                            <path d="M32 12h64a8 8 0 0 1 8 8v88a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8z"
+                                fill="none" stroke="currentColor" stroke-width="4" />
+                            <path d="M32 64h64" stroke="currentColor" stroke-width="4" />
+                            <path d="M44 28v20" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <path d="M44 76v20" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <path d="M40 108v8" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <path d="M36 116h8" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <path d="M88 108v8" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <path d="M84 116h8" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                            <path d="M56 80h16M64 72v16M58 74l12 12M70 74l-12 12" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" />
+                        </svg>
 
-                        </tr>
+                        <p id="nombre_espacio">Nevera 1</p>
 
-                        {% endfor %}
+                    </div>
 
-                    </tdody>
+                </div>
 
-                </table>
-
-            </form>
+            </div>
 
         </section>
 
@@ -272,4 +302,5 @@
     </script>
 
 </body>
+
 </html>

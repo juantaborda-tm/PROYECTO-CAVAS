@@ -94,7 +94,7 @@ main {
                 border-bottom: solid 2px white;
                 margin-left: 10px;
                 width: 100%;
-                z-index: 3;
+                z-index: 3;;
                 font-size: 16px;
                 font-weight: 600;
                 color: white;
@@ -106,12 +106,6 @@ main {
                 margin: 10px 0;
                 z-index: 3;
             }
-
-        #caja_checkbox label {
-            font-size: 1.1em;
-            z-index: 3;
-            color: white;
-        }
 
         #caja_checkbox input {
             transform: scale(1.2);
@@ -129,6 +123,22 @@ main {
             font-weight: 600;
             z-index: 3;
         }
+
+            #mensaje_error {
+                position: absolute;
+                background: #121212;
+                width: 300px;
+                font-size: 15px;
+                font-weight: 600;
+                left: 50%;
+                top: 20%;
+                color: #ff4d4d;
+                transform: translate(-50%, -50%);
+                padding: 30px;
+                border-radius: 8px;
+                display: none;
+                z-index: 50;
+            }
 
 /* Regla para tablet */
 

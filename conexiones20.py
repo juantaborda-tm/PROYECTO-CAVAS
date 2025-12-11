@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request, flash, url_for, session
-import mysql.connector  
+import mysql.connector, hashlib
 
 
 my_db = mysql.connector.connect(host = "localhost",
@@ -28,11 +28,13 @@ def registro_g():
     id_tipo_gerente = request.form["id_tipo_gerente"]
     tel_gerente = request.form["tel_gerente"]
     contraseña_gerente = request.form["contraseña_gerente"]
+    ##cifrarda = hashlib.sha512(contraseña_gerente.encode("utf-8")).hexdigest() 
     confirmar_contraseña_gerente = request.form["confirmar_contraseña_gerente"]
     nit_emprese = request.form["nit_empresa"]
     fecha_gerente = request.form["fecha_gerente"]
     id_gerente = request.form["id_gerente"]
     email_gerente = request.form["email_gerente"]
+    
     roll = "1" #roll 1 es gerente
     #corregir orden de sintaxys SQL
     
@@ -43,8 +45,11 @@ def registro_g():
         my_db.commit()
         return render_template("registro_gerente.html")
     
-    else: 
-        return render_template("registro_gerente.html", msg = "La contraseña no coincide")
+    elif(confirmar_contraseña_gerente != contraseña_gerente): 
+        return render_template("registro_gerente.html", incorrectas = "Las contraseñas no coinciden")
+    
+    else:
+        return render_template("registro_gerente.html", msg0 = "credenciales incorrectas")
 
 
 #Luego registrar usuarios 
@@ -71,7 +76,7 @@ def registro_u():
         my_db.commit()
         return render_template("registro_usuario.html")
     else: 
-        return render_template("registro_usuario.html", msg = "La contraseña no coincide")
+        return render_template("registro_usuario.html", msg = "La contraseña no es la misma que en confirmar contraseña juan estupido")
 
 
 
@@ -164,13 +169,47 @@ def empleados():
     
     return render_template("empleados.html" , empleados=empleados)
 
+
 @programa.route("/proveedores")
-def proveedores():
-    return render_template("proveedores.html")
+def mostrar_proveedores():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT cedula, nit, nombre, telefono, correo, direccion FROM proveedores")
+    proveedores = cursor.fetchall()
+    return render_template("proveedores.html", proveedores=  proveedores )
+
+
+@programa.route("/agregar_proveedor")
+def a_proveedores():
+    return render_template("agregar_proveedor.html")
+
+
+@programa.route("/agregar_proveedor", methods = ["POST"])
+def registro_proveedor():
+    nit_empresa_proveedor = request.form["nit_empresa_proveedor"]
+    nombre_proveedor = request.form["nombre_proveedor"]
+    correo_proveedor = request.form["correo_proveedor"]
+    id_proveedor = request.form["id_proveedor"]
+    telefono_proveedor = request.form["telefono_proveedor"]
+    direccion_empresa_proveedor = request.form["direccion_empresa_proveedor"]
+    cursor = my_db.cursor()
+    sql = f"INSERT INTO proveedores (cedula, nit, nombre, telefono, correo, direccion ) VALUES ('{id_proveedor}' , '{nit_empresa_proveedor}' , '{nombre_proveedor}' , '{telefono_proveedor}' , '{correo_proveedor}' , '{direccion_empresa_proveedor}')"
+    cursor.execute(sql)
+    my_db.commit()
+    cursor.execute("SELECT cedula, nit, nombre, telefono, correo, direccion FROM proveedores ")
+    proveedores = cursor.fetchall()
+    
+    return render_template("proveedores.html" , proveedores = proveedores)
+
+
 
 @programa.route("/reportes")
 def reportes():
     return render_template("reportes.html")
+
+@programa.route("/cerrar_sesion")
+def cerrar_sesion():
+    session.clear()
+    return redirect("/login")
 
 
 

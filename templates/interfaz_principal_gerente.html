@@ -230,7 +230,7 @@
 
                     <tr id="datos_informe">
 
-                        <td id="id_producto"  class="productos"><p>Id:</p>{{ producto[0] }}</td>
+                        <td id="id_producto"><p>Id:</p>{{ producto[0] }}</td>
 
                         <td id="nombre_producto"><p>Nombre:</p>{{ producto[1] }}</td>
 
@@ -270,6 +270,38 @@
             menu.classList.toggle('open');
         });
     </script>
+
+    <!-- <script>
+        document.addEventListener("keyup", e => {
+            if (e.target.matches("#barra_busqueda")) {
+                filas = document.querySelectorAll("#id_producto").forEach(fila => {
+                    console.log(fila.textContent.toLowerCase().includes(e.target.value))
+                });
+            }
+        });
+    </script> -->
+
+    <script>
+        document.addEventListener("keyup", e => {
+            if (e.target.matches("#barra_busqueda")) {
+                // Selecciona todas las filas de la tabla
+                document.querySelectorAll("#datos_informe").forEach(fila => {
+                    // Texto de la fila en minúsculas
+                    const texto = fila.textContent.toLowerCase();
+                    // Texto escrito en la barra de búsqueda
+                    const busqueda = e.target.value.toLowerCase();
+
+                    // Si coincide, mostrar; si no, ocultar
+                    if (texto.includes(busqueda)) {
+                        fila.style.display = "";   // muestra la fila
+                    } else {
+                        fila.style.display = "none"; // oculta la fila
+                    }
+                });
+            }
+        });
+    </script>
+
     
 </body>
 

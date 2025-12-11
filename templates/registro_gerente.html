@@ -124,6 +124,36 @@
 
                 <button type="submit" id="btn_registrar_gerente" name="btn_registrar_gerente" tabindex="10">Registrar</button>
 
+                {% if incorrectas %}
+                <div id="ventana_flotante">
+                    <div id="mensaje_error" name="mensaje_error">
+                        {{ incorrectas }}
+                    </div>
+                </div>
+
+                <script>
+                // Oculta el div después de 3 segundos
+                setTimeout(function() {
+                    document.getElementById("ventana_flotante").style.display = "none";
+                }, 3000);
+                </script>
+
+                {% elif msg0 %}
+                <div id="ventana_flotante2">
+                    <div id="msg0" name="msg0">
+                        {{ msg0 }}
+                    </div>
+                </div>
+
+                <script>
+                // Oculta el div después de 3 segundos
+                setTimeout(function() {
+                    document.getElementById("ventana_flotante2").style.display = "none";
+                }, 3000);
+                </script>
+                {% endif %}
+
+
             </form>
         </div>
     </main>
