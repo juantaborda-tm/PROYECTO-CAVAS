@@ -80,7 +80,7 @@ def registro_u():
 
 
 
-@programa.route("/login")
+@programa.route("/")
 def login():
     return render_template("login.html")
 
@@ -192,11 +192,16 @@ def registro_proveedor():
     telefono_proveedor = request.form["telefono_proveedor"]
     direccion_empresa_proveedor = request.form["direccion_empresa_proveedor"]
     cursor = my_db.cursor()
+    
+    #aqui agrego el producto
     sql = f"INSERT INTO proveedores (cedula, nit, nombre, telefono, correo, direccion ) VALUES ('{id_proveedor}' , '{nit_empresa_proveedor}' , '{nombre_proveedor}' , '{telefono_proveedor}' , '{correo_proveedor}' , '{direccion_empresa_proveedor}')"
     cursor.execute(sql)
     my_db.commit()
+    
+    #esta parte muestra los productos
     cursor.execute("SELECT cedula, nit, nombre, telefono, correo, direccion FROM proveedores ")
     proveedores = cursor.fetchall()
+    
     
     return render_template("proveedores.html" , proveedores = proveedores)
 
