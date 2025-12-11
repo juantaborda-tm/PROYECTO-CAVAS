@@ -481,7 +481,7 @@ html, body {
             }
 
             #titulos_productos th:nth-child(4) {
-                width: 10%;
+                width: 15%;
             }
 
         #titulos_productos th {
@@ -521,18 +521,27 @@ html, body {
         }
 
         #informacion_producto td:nth-child(4) {
-            width: 10%;
+            width: 15%;
             margin: 0 5px 0 5px;
         }
 
         #informacion_producto td:nth-child(5) {
-            width: 15%;
+            width: 10%;
+        }
+
+        #informacion_producto #iconos {
+            justify-content: space-around;
         }
 
         #iconos svg {
             left: 0;
             transform: translateX(0);
-            margin: 0 0 0 30px;
+            margin: 0 0 0 0;
+        }
+
+        #iconos #separador {
+            display: flex;
+            align-items: center;
         }
 
 
