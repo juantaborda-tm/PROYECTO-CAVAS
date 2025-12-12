@@ -219,30 +219,6 @@ html, body {
                 transform: rotate(-45deg) translateY(-9px);
             }
 
-        #observable #titulos {
-            display: flex;
-            width: 90%;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 10%;
-            margin-bottom: 5%;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-            #titulos p:nth-child(1) {
-                width: 70%;
-            }
-
-            #titulos p:nth-child(2) {
-                width: 30%;
-                text-align: center;
-            }
-
         #observable #historial {
             display: flex;
             flex-direction: column;
@@ -253,7 +229,31 @@ html, body {
             transform: translateX(-50%);
         }
 
-            #historial #informacion {
+            #historial #titulos {
+                display: flex;
+                width: 90%;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                color: white;
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 10%;
+                margin-bottom: 5%;
+                padding: 0 20px;
+                text-align: center;
+            }
+
+                #titulos th:nth-child(1) {
+                    width: 60%;
+                }
+
+                #titulos th:nth-child(2) {
+                    width: 30%;
+                    text-align: center;
+                }
+
+            #historial #informacion_movimiento {
                 display: flex;
                 background: #121212;
                 height: 40px;
@@ -264,21 +264,26 @@ html, body {
                 margin: 3px 0;
             }
 
-                #informacion #icono {
+                #informacion_movimiento #icono {
                     width: 3%;
                     margin: 0 10px 0 -10px;
                 }
 
-                #informacion #info_movimiento {
-                    width: 70%;
+                #informacion_movimiento #info_movimiento {
+                    width: 60%;
                     text-wrap-mode: nowrap;
                     overflow: hidden;
                     margin-right: 10px;
                 }
 
-                #informacion #fecha_movimiento {
+                #informacion_movimiento #fecha_movimiento {
                     width: 30%;
                     text-align: center;
+                }
+
+                #infrmacion_movimiento #iconos {
+                    width: 10%;
+                    justify-content: center;
                 }
 
 @media screen and (min-width: 650px) {

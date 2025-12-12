@@ -252,6 +252,23 @@ html, body {
                 color: white;
             }
 
+        #observable #mensaje_no_encontrado {
+            display: none;
+            position: relative;
+            left: 50%;
+            width: 80%;
+            top: 10%;
+            padding: 30px 10px;
+            border-radius: 8px;
+            transform: translateX(-50%);
+            margin-top: 20px;
+            color: #cbcbcb;
+            font-size: 24px;
+            background: #121212;
+            font-weight: 600;
+            text-align: center;
+        }
+
         #observable #titulo_historial {
             color: white;
             position: relative;
@@ -280,14 +297,15 @@ html, body {
             #historial #informacion_categoria {
                 display: flex;
                 background: #121212;
-                height: 35px;
+                height: 40px;
                 align-items: center;
                 border-radius: 8px;
                 padding: 0 5px;
+                margin: 5px 0;
             }
 
                 #informacion_categoria #inf_categoria {
-                    width: 80%;
+                    width: 70%;
                     margin: 0 5px;
                     text-wrap-mode: nowrap;
                     overflow: hidden;
@@ -296,18 +314,88 @@ html, body {
 
                 #informacion_categoria #iconos {
                     display: flex;
-                    width: 20%;
+                    width: 30%;
+                    padding: 3px 3px;
                     justify-content: space-around;
-                }
-
-                #iconos svg {
-                    margin-left: 15px;
                 }
 
                 #informacion_categoria #separador {
                     display: flex;
                     align-items: center;
                 }
+
+                #barra_horizontal label {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                font-size: 12px;
+            }
+
+        #observable #ventana {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+        }
+
+            #ventana_flotante:checked~#ventana {
+                display: flex;  
+            }
+
+            #ventana #contenido_ventana {
+                width: 80%;
+                padding: 20px;
+                background-color: #121212;
+                border-radius: 8px;
+            }
+
+                #contenido_ventana p {
+                    color: white;
+                    font-size: 15px;
+                    margin-bottom: 30px;
+                }
+
+                #contenido_ventana #btns_horizontal {
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+                }
+
+                    #btns_horizontal #btn_editar {
+                        border: none;
+                        background: #202020;
+                        color: white;
+                        border-radius: 5px;
+                        padding: 10px;
+                        margin-right: 10px;
+                    }
+
+                    #btns_horizontal #btn_eliminar {
+                        border: none;
+                        background: rgb(207, 149, 0);
+                        color: black;
+                        border-radius: 5px;
+                        padding: 10px 35px;
+                        margin-left: 20px;
+                        font-weight: 600;
+                    }
+
+            #ventana #cerrar_ventana {
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
 
 
 @media screen and (min-width: 650px) {
@@ -359,12 +447,14 @@ html, body {
                 height: 50px;
             }
 
-                #iconos svg {
-                    width: inherit;
-                    height: inherit;
-                    margin-left: 25px;
-                }
+            #informacion_categoria #inf_categoria {
+                width: 78%;
+            }
 
+            #informacion_categoria #iconos {
+                display: flex;
+                width: 22%;                
+            }
 }
 
 @media screen and (min-width: 1024px) {
@@ -441,7 +531,7 @@ html, body {
         margin-left: 210px;
         top: 0;
         transform: translateX(0);
-        width: 30%;
+        width: 100%;
     }
 
     #observable #busqueda_categoria {
@@ -450,6 +540,10 @@ html, body {
         top: 0;
         left: 0;
         transform: translateX(0);
+    }
+
+    #observable #mensaje_no_encontrado {
+        top: 0;
     }
 
         #busqueda_categoria svg {
@@ -473,20 +567,10 @@ html, body {
         top: 0;
     }
 
-        #horizontal #iconos {
-            display: none;
-        }
-
-        #horizontal #pc_iconos {
+        #informacion_categoria #iconos {
             display: flex;
-            width: 20%;
+            width: 22%;  
             justify-content: end;
-        }
-
-        #horizontal #iconos_pc {
-            display: flex;
-            margin-right: 10px;
-            margin-left: 10px;
         }
 
 }

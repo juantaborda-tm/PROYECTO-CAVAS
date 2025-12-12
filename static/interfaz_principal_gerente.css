@@ -227,6 +227,23 @@ html, body {
             z-index: 3;
         }
 
+        #observable #mensaje_no_encontrado {
+            display: none;
+            position: relative;
+            left: 50%;
+            width: 80%;
+            top: 10%;
+            padding: 30px 10px;
+            border-radius: 8px;
+            transform: translateX(-50%);
+            margin-top: 20px;
+            color: #cbcbcb;
+            font-size: 24px;
+            background: #121212;
+            font-weight: 600;
+            text-align: center;
+        }
+
             #recoger_busqueda svg {
                 position: relative;
                 top: 50%;
@@ -293,6 +310,12 @@ html, body {
                 #datos_informe p {
                     font-weight: 600;
                     padding-right: 10px;
+                }
+
+                #datos_informe #iconos {
+                    left: 95%;
+                    position: relative;
+                    transform: translateX(-95%);
                 }
 
 @media screen and (min-width: 650px) {
@@ -433,6 +456,10 @@ html, body {
                 font-size: 15px;
             }
 
+        #observable #mensaje_no_encontrado {
+            top: 0;
+        }
+
         #observable #informe_producto {
             border-collapse: collapse;
             position: relative;
@@ -461,7 +488,7 @@ html, body {
                 }
 
                 #titulos_informe #ttl_tipo_producto {
-                    width: 33%;
+                    width: 22%;
                 }
 
                 #titulos_informe #ttl_cantidad_producto {
@@ -473,11 +500,12 @@ html, body {
                 }
 
             #informe_producto #datos_informe {
-                display: flex;
                 flex-direction: row;
                 overflow: inherit;
                 background: #121212;
-                padding: 10px;
+                padding: 0;
+                height: 50px;
+                align-items: center;
                 width: 100%;
                 border-radius: 8px;
             }
@@ -488,7 +516,7 @@ html, body {
 
                 #datos_informe td {
                     justify-content: center;  
-                    padding: 0 5px;
+                    padding: 0 0;
                 }
 
                 #datos_informe #id_producto {
@@ -500,7 +528,7 @@ html, body {
                 }
 
                 #datos_informe #tipo_producto {
-                    width: 33%;
+                    width: 22%;
                 }
 
                 #datos_informe #cantidad_producto {
@@ -509,6 +537,11 @@ html, body {
 
                 #datos_informe #fecha_producto {
                     width: 17%;
+                }
+
+                #datos_informe #iconos {
+                    left: 5%;
+                    transform: translateX(0);
                 }
 
 }
