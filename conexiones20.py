@@ -6,7 +6,7 @@ my_db = mysql.connector.connect(host = "localhost",
                                 port = "3306",
                                 user = "root",
                                 password = "",
-                                database = "cavas")
+                                database = "cavas2")
 
 programa = Flask(__name__)
 programa.secret_key = 'alan123'
@@ -72,7 +72,7 @@ def registro_u():
     roll = "2" #roll 2 es usuario normal
     if(confirmar_contraseña_usuario == contraseña_usuario):
         cursor = my_db.cursor()
-        sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{cifrarda}' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')" 
+        sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{cifrarda  }' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')" 
         cursor.execute(sql)
         my_db.commit()
         return render_template("registro_usuario.html")
@@ -104,7 +104,7 @@ def logear():
             if roll == "1":
                 return redirect("/interfaz_principal_g")
             elif roll == "2":
-                return render_template("/interfaz_principal_usuario")
+                return redirect("/interfaz_principal_u")
             else:
                 return render_template("login.html" , error = "credenciales incorrectas, intentalo de nuevo")
             
@@ -118,6 +118,7 @@ def interf_principal():
     cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
     productos = cursor.fetchall()
     return render_template("interfaz_principal_gerente.html", productos=productos)
+
 
 @programa.route("/productos")
 def mostrar_productos():
@@ -134,17 +135,24 @@ def agregar_producto():
 
 @programa.route("/agrega_producto", methods = ["POST"])
 def agrega_p():
+    #aqui agrego el producto
     id_crear_producto = request.form["id_crear_producto"]
     nombre_crear_producto = request.form["nombre_crear_producto"]
     categoria_crear_producto = request.form["categoria_crear_producto"]
     cantidad_crear_producto = request.form["cantidad_crear_producto"]
+    
+    #esta parte muestra los productos
     cursor = my_db.cursor()
     sql = f"INSERT INTO bebidas (id, nombre, categoria, cantidad) VALUES ('{id_crear_producto}' , '{nombre_crear_producto}' , '{categoria_crear_producto}' , '{cantidad_crear_producto}')"
+    
+    # Registrar movimiento
+    registrar_movimiento(f"Se agregó el producto {nombre_crear_producto}")
+    
+    #lista los productos
     cursor.execute(sql)
     my_db.commit()
     cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
     productos = cursor.fetchall()
-    
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
@@ -167,18 +175,20 @@ def insertar_categoria():
     cursor.execute(sql)
     resultado = cursor.fetchone()
     
+    # Registrar movimiento
+    registrar_movimiento(f"Se agregó nueva categoria:  {crear_nueva_categoria}")
+    
+    # Caso 1: La categoría ya existe
     if resultado:
-        # Ya existe → enviar mensaje
-        mensaje = "La categoría ya existe"
+        mensaje = "La categoría ya existe, ingresa tus productos en la categoría."
         return render_template("crear_categoria.html", mensaje=mensaje)
-    
-    else:
-        cursor = my_db.cursor()
-        sql = f"INSERT INTO categorias (nombre_categoria) VALUES ('{crear_nueva_categoria}')"
-        cursor.execute(sql)
-        my_db.commit()
-        return redirect("/categorias")
-    
+
+    # Caso 2: No existe → insertar
+    cursor.execute("INSERT INTO categorias (nombre_categoria) VALUES (%s)", (crear_nueva_categoria,))
+    my_db.commit()
+
+    return redirect("/interfaz_principal_g")
+        
         
 
 
@@ -187,16 +197,24 @@ def cavas_bodegas():
     return render_template("cavas_bodegas.html")
 
 
-@programa.route("/movimientos")
+@programa.route('/movimientos')
 def movimientos():
-    return render_template("movimientos.html")
+    cursor = my_db.cursor()
+    cursor.execute("SELECT descripcion, fecha FROM movimientos")
+    data = cursor.fetchall()
+    cursor.close()
+
+    return render_template('movimientos.html', movimientos=data)
 
 @programa.route("/movimientos")
-def mostrar_movimientos():
+def registrar_movimiento(descripcion):
     cursor = my_db.cursor()
-    cursor.execute("SELECT nombre, fecha_ingreso FROM bebidas")
-    movimientos = cursor.fetchall()
-    return render_template("movimientos.html", movimientos=movimientos, reporte = "se agrego el producto ${nombre}")
+    cursor.execute(
+        "INSERT INTO movimientos (descripcion) VALUES (%s)",
+        (descripcion,)
+    )
+    my_db.commit()
+    cursor.close()
 
 
 
@@ -252,63 +270,6 @@ def principal():
 @programa.route("/reportes")
 def reportes():
     return render_template("reportes.html")
-
-
-@programa.route("/cerrar_sesion")
-def cerrar_sesion():
-    session.clear()
-    return redirect("/")
-
-
-######################## apartado de cavas y bodegas ###########################
-
-
-
-#agregar espacio
-@programa.route("/agregar_espacio")
-def agregar_espacio():
-    return render_template("agregar_nombre_espacio.html")
-
-@programa.route("/agregar_espacio", methods = ["POST"])
-def agregar_e():
-    crear_nombre_espacio = request.form["crear_nombre_espacio"]
-    cursor = my_db.cursor()
-    sql = f"INSERT INTO bodega (tipo_espacio) VALUES ('{crear_nombre_espacio}')"
-    cursor.execute(sql)
-    my_db.commit()
-    return redirect("/interfaz_principal_g")
-
-#agregar estante
-
-@programa.route("/crear_estante")
-def agregar_estante():
-    return render_template("agregar_nombre_estanteria.html")
-
-@programa.route("/crear_estante", methods = ["POST"])
-def agregar_estant():
-    crear_nombre_estanteria = request.form["crear_nombre_estanteria"]
-    cursor = my_db.cursor()
-    sql = f"INSERT INTO bodega (tipo_espacio) VALUES ('{crear_nombre_estanteria}')"
-    cursor.execute(sql)
-    my_db.commit()
-    return redirect("/interfaz_principal_g")
-
-#agregar nevera
-
-@programa.route("/agregar_nevera")
-def agregar_nevera():
-    return render_template("/agregar_nombre_nevera.html")
-
-@programa.route("/agregar_nevera", methods = ["POST"])
-def agregar_never():
-    crear_nombre_nevera = request.form["crear_nombre_nevera"]
-    cursor = my_db.cursor()
-    sql = f"INSERT INTO bodega (tipo_espacio) VALUES ('{crear_nombre_nevera}')"
-    cursor.execute(sql)
-    my_db.commit()
-    return redirect("/interfaz_principal_g")
-
-
 
 
 
