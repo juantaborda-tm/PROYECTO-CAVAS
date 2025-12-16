@@ -560,7 +560,7 @@ html, body {
         margin-left: 210px;
         top: 0;
         transform: translateX(0);
-        width: 30%;
+        width: 100%;
     }
 
     #observable #busqueda_producto {

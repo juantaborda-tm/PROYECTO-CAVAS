@@ -142,7 +142,6 @@ def agrega_p():
     my_db.commit()
     cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
     productos = cursor.fetchall()
-    
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
@@ -165,12 +164,12 @@ def insertar_categoria():
     cursor.execute(sql)
     resultado = cursor.fetchone()
     
-    if resultado:
+    if len(resultado)== 1:
         # Ya existe → enviar mensaje
-        mensaje = "La categoría ya existe"
+        mensaje = "La categoría ya existe, ingresa tus productos en la cetegoria "
         return render_template("crear_categoria.html", mensaje=mensaje)
     
-    else:
+    elif (resultado) == 0:
         cursor = my_db.cursor()
         sql = f"INSERT INTO categorias (nombre_categoria) VALUES ('{crear_nueva_categoria}')"
         cursor.execute(sql)
@@ -250,18 +249,6 @@ def principal():
 @programa.route("/reportes")
 def reportes():
     return render_template("reportes.html")
-
-
-@programa.route("/cerrar_sesion")
-def cerrar_sesion():
-    session.clear()
-    return redirect("/")
-
-
-
-
-
-
 
 
 
