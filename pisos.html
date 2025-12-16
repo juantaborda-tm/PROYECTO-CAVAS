@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir espacio</title>
+    <title>Pisos</title>
 
-    <link rel="stylesheet" href="static/añadir_espacio_bodega.css">
+    <link rel="stylesheet" href="static/pisos.css">
 </head>
 <body>
 
@@ -22,13 +22,23 @@
 
             <h1>{{nombre_espacio}}</h1>
 
-            <p id="texto">Deseas añadir algo mas?</p>
+            *********
+            <table id="caja">
 
-            <button id="btn_añadir_piso">Añadir piso</button>
+                <thead id="numero_piso">
 
-            <button id="btn_añadir_columna">Añadir columna</button>
+                    <th>{{piso}}</th>
 
-            <button id="btn_añadir_producto">Añadir producto</button>
+                </thead>
+
+                <tbody id="boton_producto">
+
+                    <td id="añadir_producto_bodega">Agregar producto</td>
+
+                </tbody>
+
+            </table>
+            ************
 
         </div>
 
