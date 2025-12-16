@@ -174,7 +174,7 @@ def insertar_categoria():
         sql = f"INSERT INTO categorias (nombre_categoria) VALUES ('{crear_nueva_categoria}')"
         cursor.execute(sql)
         my_db.commit()
-        return redirect("/interfaz_principal_g")
+        return redirect("/categorias")
     
         
 
@@ -187,6 +187,14 @@ def cavas_bodegas():
 @programa.route("/movimientos")
 def movimientos():
     return render_template("movimientos.html")
+
+@programa.route("/movimientos")
+def mostrar_movimientos():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT nombre, fecha_ingreso FROM bebidas")
+    movimientos = cursor.fetchall()
+    return render_template("movimientos.html", movimientos=movimientos, reporte = "se agrego el producto ${nombre}")
+
 
 
 @programa.route("/empleados")

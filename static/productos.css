@@ -251,6 +251,23 @@ html, body {
                 color: white;
             }
 
+        #observable #mensaje_no_encontrado {
+            display: none;
+            position: relative;
+            left: 50%;
+            width: 80%;
+            top: 10%;
+            padding: 30px 10px;
+            border-radius: 8px;
+            transform: translateX(-50%);
+            margin-top: 20px;
+            color: #cbcbcb;
+            font-size: 24px;
+            background: #121212;
+            font-weight: 600;
+            text-align: center;
+        }
+
         #observable #titulo_historial {
             color: white;
             position: relative;

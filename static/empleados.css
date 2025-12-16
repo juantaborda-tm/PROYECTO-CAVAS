@@ -270,6 +270,21 @@ html, body {
                     width: 60%;
                 }
 
+                #info_empleado #iconos {
+                    flex-direction: row;
+                }
+
+                #iconos svg {
+                    position: relative;
+                    left: 77%;
+                    transform: translateX(-77%);
+                    margin: 0 10px 0 20px;
+                }
+
+                #iconos #separador {
+                    display: none;
+                }
+
 
 @media screen and (min-width: 650px) {
 
@@ -317,6 +332,12 @@ html, body {
 
         #observable #historial {
             font-size: 16px;
+        }
+
+        #iconos svg {
+            left: 85%;
+            transform: translateX(-85%);
+            margin: 0 0 0 30px;
         }
 }
 
@@ -404,6 +425,21 @@ html, body {
 
         #info_empleado p {
             width: 40%;
+        }
+
+        #iconos svg {
+            left: 180%;
+            transform: translateX(-180%);
+            margin: 0 0 0 35px;
+        }
+
+        #iconos #separador {
+            display: flex;
+            align-items: center;
+            width: 0;
+            position: relative;
+            left: 173%;
+            transform: translateX(-173%);
         }
 
 }
