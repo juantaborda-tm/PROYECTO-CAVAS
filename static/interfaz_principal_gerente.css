@@ -158,7 +158,7 @@ html, body {
         z-index: 1;
     }
 
-        #encabezado h2 {
+        #encabezado #bienvenido {
             position: relative;
             color: white;
             padding: 20px 0 30px 15px;

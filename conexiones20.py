@@ -119,6 +119,13 @@ def interf_principal():
     productos = cursor.fetchall()
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
+@programa.route("/interfaz_principal_g")
+def mostrar_nombre():
+    cursor = my_db.cursor()
+    cursor.execute("SELECT nom_comple FROM usuarios")
+    nombre = cursor.fetchall()
+    return render_template("interfaz_principal_gerente.html", nombre)
+
 @programa.route("/productos")
 def mostrar_productos():
     cursor = my_db.cursor()
@@ -174,18 +181,20 @@ def insertar_categoria():
     cursor.execute(sql)
     resultado = cursor.fetchone()
     
-    if len(resultado)== 1:
-        # Ya existe → enviar mensaje
-        mensaje = "La categoría ya existe, ingresa tus productos en la cetegoria "
+    # Registrar movimiento
+    registrar_movimiento(f"Se agregó nueva categoria:  {crear_nueva_categoria}")
+    
+    # Caso 1: La categoría ya existe
+    if resultado:
+        mensaje = "La categoría ya existe, ingresa tus productos en la categoría."
         return render_template("crear_categoria.html", mensaje=mensaje)
-    
-    elif (resultado) == 0:
-        cursor = my_db.cursor()
-        sql = f"INSERT INTO categorias (nombre_categoria) VALUES ('{crear_nueva_categoria}')"
-        cursor.execute(sql)
-        my_db.commit()
-        return redirect("/categorias")
-    
+
+    # Caso 2: No existe → insertar
+    cursor.execute("INSERT INTO categorias (nombre_categoria) VALUES (%s)", (crear_nueva_categoria,))
+    my_db.commit()
+
+    return redirect("/interfaz_principal_g")
+        
         
 
 
