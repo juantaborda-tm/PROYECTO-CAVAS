@@ -7,6 +7,8 @@
     <title>Bodega</title>
 
     <link rel="stylesheet" href="static/cavas_bodegas.css">
+
+    <script src="static/funciones.js"></script>
 </head>
 
 <body>
@@ -196,47 +198,15 @@
 
             <div id="barra_horizontal">
 
-                <div id="btn_crear_nevera">
-                    <label for="ventana_flotante">Crear nevera</label>
-                </div>
+                <button id="btn_crear_nevera" type="button"name="btn_crear_nevera">Crear nevera</button>
 
-                <div id="btn_crear_estanteria">
-                    <label for="ventana_flotante">Crear estanteria</label>
-                </div>
+                <button id="btn_crear_estanteria" type="button" name="btn_crear_estanteria">Crear estanteria</button>
 
-                <div id="btn_crear_espacio">
-                    <label for="ventana_flotante">Crear espacio</label>
-                </div>
-
-                <input type="checkbox" id="ventana_flotante" hidden>
-
-                <div id="ventana">
-
-                    <div id="contenido_ventana">
-
-                        <p>¿Estas seguro de que quieres crear este objeto?</p>
-
-                        <div id="btns_horizontal">
-
-                            <div id="btn_cerrar">
-                                <label for="ventana_flotante">Cancelar</label>
-                            </div>
-
-                            <div id="btn_crear">
-                                <label for="ventana_flotante">Crear</label>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <label for="ventana_flotante" id="cerrar_ventana"></label>
-
-                </div>
+                <button id="btn_crear_espacio" type="button" name="btn_crear_espacio">Crear espacio</button>
 
             </div>
 
-            <p id="titulo_historial">Neveras y estanterias</p>
+            <p id="titulo_historial">Neveras, estanterias y espacios</p>
 
             <div id="historial">
 
@@ -272,7 +242,73 @@
                                 stroke-linecap="round" />
                         </svg>
 
-                        <p id="nombre_espacio">Nevera 1</p>
+                        <p id="nombre_espacio"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="ventana_crear_nevera">
+
+                <div id="contenido_ventana">
+
+                    <p>¿Estas seguro de crear una nevera?</p>
+
+                    <div id="btns_horizontal">
+
+                        <div id="btn_cancelar" class="btn_cancelar">
+                            <label for="ventana_flotante">Cancelar</label>
+                        </div>
+
+                        <div id="btn_nombre_nevera">
+                            <label for="ventana_flotante">Crear</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="ventana_crear_estanteria">
+
+                <div id="contenido_ventana">
+
+                    <p>¿Estas seguro de crear una estanteria?</p>
+
+                    <div id="btns_horizontal">
+
+                        <div id="btn_cancelar">
+                            <label for="ventana_flotante">Cancelar</label>
+                        </div>
+
+                        <div id="btn_crear_estante">
+                            <label for="ventana_flotante">Crear</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="ventana_crear_espacio">
+
+                <div id="contenido_ventana">
+
+                    <p>¿Estas seguro de crear un espacio?</p>
+
+                    <div id="btns_horizontal">
+
+                        <div id="btn_cancelar">
+                            <label for="ventana_flotante">Cancelar</label>
+                        </div>
+
+                        <div id="btn_crear_espacio">
+                            <label for="ventana_flotante">Crear</label>
+                        </div>
 
                     </div>
 
@@ -285,21 +321,6 @@
     </main>
 
     <script>
-        // Seleccionamos los elementos del DOM
-        const menu_hamburguesa = document.getElementById('menu_hamburguesa');
-        const menu = document.getElementById('barra_menu');
-
-        // Escuchamos el evento "click" en el botón hamburguesa
-        menu_hamburguesa.addEventListener('click', () => {
-            // Alternamos la clase "active" en el botón
-            // Esto hace que las tres líneas se transformen en una "X"
-            menu_hamburguesa.classList.toggle('active');
-
-            // Alternamos la clase "open" en el menú
-            // Esto mueve el menú desde la izquierda (-250px) hasta 0
-            menu.classList.toggle('open');
-        });
-    </script>
 
 </body>
 

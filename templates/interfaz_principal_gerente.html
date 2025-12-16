@@ -6,8 +6,8 @@
     <title>Interfaz</title>
 
     <link rel="stylesheet" href="static/interfaz_principal_gerente.css">
-    <script src="/static/buscador.js"></script>
 
+    <script src="static/funciones.js"></script>
 </head>
 
 <body>
@@ -177,7 +177,7 @@
 
             <header id="encabezado">
 
-                <h2>Bienvenid@ Juan Manuel Taborda</h2>
+                <h2>Bienvenid@ {{ nombre }}</h2>
 
                 <div id="menu_hamburguesa">
 
@@ -194,7 +194,7 @@
             </a>
             <form action="/interfaz_principal_g" id="recoger_busqueda">
 
-                <svg width="30" height="30" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+                <svg width="30" height="30" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)" id="icono_busqueda">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 2.75C6.14154 2.75 2 6.89029 2 11.998C2 17.1056 6.14154 21.2459 11.25 21.2459C13.5335 21.2459 15.6238 20.4187 17.2373 19.0475L20.7182 22.5287C21.011 22.8216 21.4859 22.8217 21.7788 22.5288C22.0717 22.2359 22.0718 21.761 21.7789 21.4681L18.2983 17.9872C19.6714 16.3736 20.5 14.2826 20.5 11.998C20.5 6.89029 16.3585 2.75 11.25 2.75ZM3.5 11.998C3.5 7.71905 6.96962 4.25 11.25 4.25C15.5304 4.25 19 7.71905 19 11.998C19 16.2769 15.5304 19.7459 11.25 19.7459C6.96962 19.7459 3.5 16.2769 3.5 11.998Z" fill="#cbcbcb"/>
                 </svg>
 
@@ -214,7 +214,7 @@
 
                         <th id="ttl_nombre_producto">Nombre</th>
 
-                        <th id="ttl_tipo_producto">Tipo</th>
+                        <th id="ttl_tipo_producto">Categoria</th>
 
                         <th id="ttl_cantidad_producto">Cantidad</th>
 
@@ -228,7 +228,7 @@
 
                     {% for producto in productos %}
 
-                    <tr id="datos_informe">
+                    <tr id="informacion">
 
                         <td id="id_producto"><p>Id:</p>{{ producto[0] }}</td>
 
@@ -241,7 +241,7 @@
                         <td id="fecha_producto"><p>Fecha ingreso:</p>{{ producto[4] }}</td>
 
                         <td id="iconos">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)" id="iconos">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)" id="icono_eliminar" class="icono_eliminar">
                                 <path d="M14.7223 12.7585C14.7426 12.3448 14.4237 11.9929 14.01 11.9726C13.5963 11.9522 13.2444 12.2711 13.2241 12.6848L12.9999 17.2415C12.9796 17.6552 13.2985 18.0071 13.7122 18.0274C14.1259 18.0478 14.4778 17.7289 14.4981 17.3152L14.7223 12.7585Z" fill="#FC4C38"/>
                                 <path d="M9.98802 11.9726C9.5743 11.9929 9.25542 12.3448 9.27577 12.7585L9.49993 17.3152C9.52028 17.7289 9.87216 18.0478 10.2859 18.0274C10.6996 18.0071 11.0185 17.6552 10.9981 17.2415L10.774 12.6848C10.7536 12.2711 10.4017 11.9522 9.98802 11.9726Z" fill="#FC4C38"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.249 2C9.00638 2 7.99902 3.00736 7.99902 4.25V5H5.5C4.25736 5 3.25 6.00736 3.25 7.25C3.25 8.28958 3.95503 9.16449 4.91303 9.42267L5.54076 19.8848C5.61205 21.0729 6.59642 22 7.78672 22H16.2113C17.4016 22 18.386 21.0729 18.4573 19.8848L19.085 9.42267C20.043 9.16449 20.748 8.28958 20.748 7.25C20.748 6.00736 19.7407 5 18.498 5H15.999V4.25C15.999 3.00736 14.9917 2 13.749 2H10.249ZM14.499 5V4.25C14.499 3.83579 14.1632 3.5 13.749 3.5H10.249C9.83481 3.5 9.49902 3.83579 9.49902 4.25V5H14.499ZM5.5 6.5C5.08579 6.5 4.75 6.83579 4.75 7.25C4.75 7.66421 5.08579 8 5.5 8H18.498C18.9123 8 19.248 7.66421 19.248 7.25C19.248 6.83579 18.9123 6.5 18.498 6.5H5.5ZM6.42037 9.5H17.5777L16.96 19.7949C16.9362 20.191 16.6081 20.5 16.2113 20.5H7.78672C7.38995 20.5 7.06183 20.191 7.03807 19.7949L6.42037 9.5Z" fill="#FC4C38"/>
@@ -262,60 +262,32 @@
 
             </div>
 
+            <div id="ventana">
+
+                <div id="contenido_ventana">
+
+                    <p>¿Estas seguro de que quieres eliminar este objeto?</p>
+
+                    <div id="btns_horizontal">
+
+                        <div id="btn_cancelar">
+                            <label for="ventana_flotante">Cancelar</label>
+                        </div>
+
+                        <div id="btn_eliminar">
+                            <label for="ventana_flotante">Eliminar</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
     </main>
 
-    <script>
-
-        const menu_hamburguesa = document.getElementById('menu_hamburguesa');
-        const menu = document.getElementById('barra_menu');
-
-        menu_hamburguesa.addEventListener('click', () => {
-
-            menu_hamburguesa.classList.toggle('active');
-
-            menu.classList.toggle('open');
-        });
-    </script>
-
-    <script>
-    document.addEventListener("keyup", e => {
-        if (e.target.matches("#barra_busqueda")) {
-
-            const filas = document.querySelectorAll("#datos_informe");
-            let coincidencias = 0;
-
-            filas.forEach(fila => {
-                const texto = fila.textContent.toLowerCase();
-                const busqueda = e.target.value.toLowerCase();
-
-                if (texto.includes(busqueda)) {
-                    fila.style.display = "";
-                    coincidencias++;
-                } else {
-                    fila.style.display = "none";
-                }
-            });
-
-            // Mostrar mensaje si no hay coincidencias
-            let mensaje = document.getElementById("mensaje_no_encontrado");
-
-            if (!mensaje) {
-
-                e.target.parentNode.appendChild(mensaje);
-            }
-
-            if (coincidencias === 0) {
-                mensaje.style.display = "block";
-            } else {
-                mensaje.style.display = "none";
-            }
-        }
-    });
-    </script>
-
-    
 </body>
 
 </html>

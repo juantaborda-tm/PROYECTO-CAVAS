@@ -258,70 +258,6 @@ html, body {
                 font-size: 12px;
             }
 
-        #observable #ventana {
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-        }
-
-            #ventana_flotante:checked~#ventana {
-                display: flex;  
-            }
-
-            #ventana #contenido_ventana {
-                width: 80%;
-                padding: 20px;
-                background-color: #121212;
-                border-radius: 8px;
-            }
-
-                #contenido_ventana p {
-                    color: white;
-                    font-size: 15px;
-                    margin-bottom: 30px;
-                }
-
-                #contenido_ventana #btns_horizontal {
-                    width: 100%;
-                    display: flex;
-                    justify-content: end;
-                }
-
-                    #btns_horizontal #btn_cerrar {
-                        border: none;
-                        background: #202020;
-                        color: white;
-                        border-radius: 5px;
-                        padding: 10px;
-                        margin-right: 10px;
-                    }
-
-                    #btns_horizontal #btn_crear {
-                        border: none;
-                        background: rgb(207, 149, 0);
-                        color: black;
-                        border-radius: 5px;
-                        padding: 10px 35px;
-                        margin-left: 20px;
-                        font-weight: 600;
-                    }
-
-            #ventana #cerrar_ventana {
-                width: 100%;
-                height: 100vh;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-            }
-
         #observable #titulo_historial {
             color: white;
             width: 90%;
@@ -380,6 +316,186 @@ html, body {
                         font-weight: 600;
                         text-align: center;
                     }
+
+                #observable #ventana_crear_nevera {
+                    width: 100%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                }
+
+                #observable #ventana_crear_estanteria {
+                    width: 100%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                }
+
+                #observable #ventana_crear_espacio {
+                    width: 100%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                }
+
+                #ventana_crear_nevera #contenido_ventana {
+                    background: #121212;
+                    padding: 30px;
+                    border-radius: 8px;
+                }
+
+                #ventana_crear_estanteria #contenido_ventana {
+                    background: #121212;
+                    padding: 30px;
+                    border-radius: 8px;
+                }
+
+                #ventana_crear_espacio #contenido_ventana {
+                    background: #121212;
+                    padding: 30px;
+                    border-radius: 8px;
+                }
+
+                    #contenido_ventana p {
+                        color: white;
+                        font-size: 15px;
+                        margin-bottom: 30px;
+                    }
+
+                        #contenido_ventana #btns_horizontal {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                        }
+
+                            #btns_horizontal #btn_cancelar {
+                                border: none;
+                                background: #202020;
+                                color: white;
+                                border-radius: 5px;
+                                padding: 10px;
+                                margin-right: 10px;
+                            }
+
+                            #btns_horizontal #btn_nombre_nevera {
+                                border: none;
+                                background: #202020;
+                                color: #CF9500;
+                                border-radius: 5px;
+                                padding: 10px 35px;
+                                margin-left: 20px;
+                                font-weight: 600;
+                            }
+
+                            #btns_horizontal #btn_crear_estante {
+                                border: none;
+                                background: #202020;
+                                color: #CF9500;
+                                border-radius: 5px;
+                                padding: 10px 35px;
+                                margin-left: 20px;
+                                font-weight: 600;
+                            }
+
+                            #btns_horizontal #btn_crear_espacio {
+                                border: none;
+                                background: #202020;
+                                color: #CF9500;
+                                border-radius: 5px;
+                                padding: 10px 35px;
+                                margin-left: 20px;
+                                font-weight: 600;
+                            }
+
+                #observable #ventana_nombre_nevera {
+                    width: 100%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                }
+
+                    #ventana_nombre_nevera #contenido_ventana {
+                        background: #121212;
+                        padding: 30px;
+                        border-radius: 8px;
+                    }
+
+                        #contenido_ventana #ic_atras {
+                            margin: -30px 0 20px -25px;
+                        }
+
+                        #contenido_ventana #vtn_horizontal {
+                            flex-direction: row;
+                            display: flex;
+                        }
+
+                            #vtn_horizontal #input_nombre_nevera {
+                                background: #202020;
+                                padding: 5px;
+                                border-radius: 8px;
+                                border: none;
+                                color: white;
+                            }
+
+                            #vtn_horizontal #btn_crear_nombre {
+                                background: #252525;
+                                border: none;
+                                padding: 10px;
+                                color: #CF9500;
+                                border-radius: 8px;
+                                margin-left: 20px;
+                                font-weight: 600;
+                            }
+
+                #observable #ventana_nombre_estanteria {
+                    width: 100%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                }
+
+                #observable #ventana_nombre_espacio {
+                    width: 100%;
+                    height: 100vh;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                }
 
 @media screen and (min-width:650px ) {
 

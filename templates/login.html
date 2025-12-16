@@ -63,32 +63,6 @@
 
         </div>
 
-        {% if msg %}
-        <div id="mensaje_error" name="mensaje_error">
-        {{ msg }}
-        </div>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const msg = document.getElementById("mensaje_error");
-            if (msg) {
-                msg.classList.add("mostrar");
-
-                setTimeout( () =>{
-                    msg.classList.remove("mostrar");
-
-                    setTimeout(() => {
-                        msg.style.top = "-120%";
-                    }, 400);
-                },3000);
-            }
-        });
-        </script>
-
-
-        {% endif %}
-
-
     </main>
 
 </body>
