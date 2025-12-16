@@ -28,7 +28,7 @@ def registro_g():
     id_tipo_gerente = request.form["id_tipo_gerente"]
     tel_gerente = request.form["tel_gerente"]
     contraseña_gerente = request.form["contraseña_gerente"]
-    cifrarda = hashlib.sha512(contraseña_gerente.encode("utf-8")).hexdigest() 
+    ##cifrarda = hashlib.sha512(contraseña_gerente.encode("utf-8")).hexdigest() 
     confirmar_contraseña_gerente = request.form["confirmar_contraseña_gerente"]
     nit_emprese = request.form["nit_empresa"]
     fecha_gerente = request.form["fecha_gerente"]
@@ -40,7 +40,7 @@ def registro_g():
     
     if(confirmar_contraseña_gerente == contraseña_gerente):
         cursor = my_db.cursor()
-        sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, nom_empresa, num_tel, nit_empre, fecha_naci, tipo_id, roll) VALUES ('{id_gerente}' , '{nombre_gerente}' , '{email_gerente}' , '{cifrarda}' , '{nombre_empresa}' , '{tel_gerente}' , '{nit_emprese}' , '{fecha_gerente}' , '{id_tipo_gerente}' , '{roll}')"
+        sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, nom_empresa, num_tel, nit_empre, fecha_naci, tipo_id, roll) VALUES ('{id_gerente}' , '{nombre_gerente}' , '{email_gerente}' , '{contraseña_gerente}' , '{nombre_empresa}' , '{tel_gerente}' , '{nit_emprese}' , '{fecha_gerente}' , '{id_tipo_gerente}' , '{roll}')"
         cursor.execute(sql)
         my_db.commit()
         return render_template("registro_gerente.html")
@@ -64,7 +64,6 @@ def registro_u():
     id_tipo_usuario = request.form["id_tipo_usuario"]
     tel_usuario = request.form["tel_usuario"]
     contraseña_usuario = request.form["contraseña_usuario"]
-    cifrarda = hashlib.sha512(contraseña_usuario.encode("utf-8")).hexdigest() 
     confirmar_contraseña_usuario = request.form["confirmar_contraseña_usuario"]
     fecha_usuario = request.form["fecha_usuario"]
     id_usuario = request.form["id_usuario"]
@@ -72,7 +71,7 @@ def registro_u():
     roll = "2" #roll 2 es usuario normal
     if(confirmar_contraseña_usuario == contraseña_usuario):
         cursor = my_db.cursor()
-        sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{cifrarda  }' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')" 
+        sql = f"INSERT INTO usuarios (num_id, nom_comple, correo, contra, num_tel, fecha_naci, tipo_id, roll) VALUES ('{id_usuario}' , '{nombre_usuario}' , '{email_usuario}' , '{contraseña_usuario}' , '{tel_usuario}' , '{fecha_usuario}' , '{id_tipo_usuario}' , '{roll}')" 
         cursor.execute(sql)
         my_db.commit()
         return render_template("registro_usuario.html")
@@ -89,14 +88,13 @@ def login():
 def logear():
     email_usuario = request.form["email_usuario"]
     contraseña_usuario = request.form["contraseña_usuario"]
-    cifrarda = hashlib.sha512(contraseña_usuario.encode("utf-8")).hexdigest() 
     cursor = my_db.cursor()
-    sql = f"SELECT * FROM usuarios WHERE correo = '{email_usuario}' AND contra = '{cifrarda}'"
+    sql = f"SELECT * FROM usuarios WHERE correo = '{email_usuario}' AND contra = '{contraseña_usuario}'"
     cursor.execute(sql)   
     resultado = cursor.fetchone()
     
     if (resultado):
-        sql = f"SELECT roll FROM usuarios WHERE correo = '{email_usuario}' AND contra = '{cifrarda}'"
+        sql = f"SELECT roll FROM usuarios WHERE correo = '{email_usuario}' AND contra = '{contraseña_usuario}'"
         cursor.execute(sql)
         resultado_roll = cursor.fetchone()
         if resultado_roll:
@@ -119,13 +117,6 @@ def interf_principal():
     productos = cursor.fetchall()
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
-@programa.route("/interfaz_principal_g")
-def mostrar_nombre():
-    cursor = my_db.cursor()
-    cursor.execute("SELECT nom_comple FROM usuarios")
-    nombre = cursor.fetchall()
-    return render_template("interfaz_principal_gerente.html", nombre)
-
 @programa.route("/productos")
 def mostrar_productos():
     cursor = my_db.cursor()
@@ -141,24 +132,17 @@ def agregar_producto():
 
 @programa.route("/agrega_producto", methods = ["POST"])
 def agrega_p():
-    #aqui agrego el producto
     id_crear_producto = request.form["id_crear_producto"]
     nombre_crear_producto = request.form["nombre_crear_producto"]
     categoria_crear_producto = request.form["categoria_crear_producto"]
     cantidad_crear_producto = request.form["cantidad_crear_producto"]
-    
-    #esta parte muestra los productos
     cursor = my_db.cursor()
     sql = f"INSERT INTO bebidas (id, nombre, categoria, cantidad) VALUES ('{id_crear_producto}' , '{nombre_crear_producto}' , '{categoria_crear_producto}' , '{cantidad_crear_producto}')"
-    
-    # Registrar movimiento
-    registrar_movimiento(f"Se agregó el producto {nombre_crear_producto}")
-    
-    #lista los productos
     cursor.execute(sql)
     my_db.commit()
     cursor.execute("SELECT id, nombre, categoria, cantidad, fecha_ingreso FROM bebidas")
     productos = cursor.fetchall()
+    
     return render_template("interfaz_principal_gerente.html", productos=productos)
 
 
@@ -181,20 +165,18 @@ def insertar_categoria():
     cursor.execute(sql)
     resultado = cursor.fetchone()
     
-    # Registrar movimiento
-    registrar_movimiento(f"Se agregó nueva categoria:  {crear_nueva_categoria}")
-    
-    # Caso 1: La categoría ya existe
     if resultado:
-        mensaje = "La categoría ya existe, ingresa tus productos en la categoría."
+        # Ya existe → enviar mensaje
+        mensaje = "La categoría ya existe"
         return render_template("crear_categoria.html", mensaje=mensaje)
-
-    # Caso 2: No existe → insertar
-    cursor.execute("INSERT INTO categorias (nombre_categoria) VALUES (%s)", (crear_nueva_categoria,))
-    my_db.commit()
-
-    return redirect("/interfaz_principal_g")
-        
+    
+    else:
+        cursor = my_db.cursor()
+        sql = f"INSERT INTO categorias (nombre_categoria) VALUES ('{crear_nueva_categoria}')"
+        cursor.execute(sql)
+        my_db.commit()
+        return redirect("/categorias")
+    
         
 
 
@@ -203,24 +185,16 @@ def cavas_bodegas():
     return render_template("cavas_bodegas.html")
 
 
-@programa.route('/movimientos')
+@programa.route("/movimientos")
 def movimientos():
-    cursor = my_db.cursor()
-    cursor.execute("SELECT descripcion, fecha FROM movimientos ORDER BY fecha DESC")
-    data = cursor.fetchall()
-    cursor.close()
-
-    return render_template('movimientos.html', movimientos=data)
+    return render_template("movimientos.html")
 
 @programa.route("/movimientos")
-def registrar_movimiento(descripcion):
+def mostrar_movimientos():
     cursor = my_db.cursor()
-    cursor.execute(
-        "INSERT INTO movimientos (descripcion) VALUES (%s)",
-        (descripcion,)
-    )
-    my_db.commit()
-    cursor.close()
+    cursor.execute("SELECT nombre, fecha_ingreso FROM bebidas")
+    movimientos = cursor.fetchall()
+    return render_template("movimientos.html", movimientos=movimientos, reporte = "se agrego el producto ${nombre}")
 
 
 
@@ -276,6 +250,18 @@ def principal():
 @programa.route("/reportes")
 def reportes():
     return render_template("reportes.html")
+
+
+@programa.route("/cerrar_sesion")
+def cerrar_sesion():
+    session.clear()
+    return redirect("/")
+
+
+
+
+
+
 
 
 
