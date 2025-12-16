@@ -69,13 +69,22 @@
         </div>
 
         <script>
-        // Espera 2 segundos y oculta el div
+        document.addEventListener("DOMContentLoaded", function () {
+            const msg = document.getElementById("mensaje_error");
+            if (msg) {
+                msg.classList.add("mostrar");
 
-        setTimeout(function() {            
-                document.getElementById("mensaje_error").style.display = "flex";
+                setTimeout( () =>{
+                    msg.classList.remove("mostrar");
 
-            },3000)
+                    setTimeout(() => {
+                        msg.style.top = "-120%";
+                    }, 400);
+                },3000);
+            }
+        });
         </script>
+
 
         {% endif %}
 

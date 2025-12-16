@@ -202,9 +202,9 @@
                     <input type="text" id="buscar_producto" name="buscar_producto" placeholder="¿Que deseas buscar?">
 
                 </form>
-
-                <button type="submit" id="agregar_producto" name="agregar_producto">Agregar producto +</button>
-
+            <a href="/agrega_producto" id="enlace">
+                <button id="agregar_producto" >Agregar producto +</button>
+            </a>
             </div>
 
             <p id="titulo_historial">Productos agregados</p>
@@ -263,6 +263,12 @@
 
             </table>
 
+            <div id="mensaje_no_encontrado">
+
+                <p>No se han encontrado productos</p>
+
+            </div>
+
         </div>
 
     </main>
@@ -282,6 +288,42 @@
             // Esto mueve el menú desde la izquierda (-250px) hasta 0
             menu.classList.toggle('open');
         });
+    </script>
+
+    <script>
+    document.addEventListener("keyup", e => {
+        if (e.target.matches("#buscar_producto")) {
+
+            const filas = document.querySelectorAll("#informacion_producto");
+            let coincidencias = 0;
+
+            filas.forEach(fila => {
+                const texto = fila.textContent.toLowerCase();
+                const busqueda = e.target.value.toLowerCase();
+
+                if (texto.includes(busqueda)) {
+                    fila.style.display = "";
+                    coincidencias++;
+                } else {
+                    fila.style.display = "none";
+                }
+            });
+
+            // Mostrar mensaje si no hay coincidencias
+            let mensaje = document.getElementById("mensaje_no_encontrado");
+
+            if (!mensaje) {
+
+                e.target.parentNode.appendChild(mensaje);
+            }
+
+            if (coincidencias === 0) {
+                mensaje.style.display = "block";
+            } else {
+                mensaje.style.display = "none";
+            }
+        }
+    });
     </script>
 
 </body>
