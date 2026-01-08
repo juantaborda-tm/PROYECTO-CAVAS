@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar empelado</title>
+
+    <link rel="stylesheet" href="editar_empleado.css">
+</head>
+<body>
+
+    <main id="caja_padre">
+
+        <div id="caja_contenedora">
+
+            <h1>Editar empleado</h1>
+
+            <form action="" method="post" id="formulario">
+
+                <div id="contenido">
+
+                    <div>
+
+                        <label>Nombre completo</label>
+
+                        <input type="text" name="nombre_empleado" id="nombre_empleado" placeholder="Nombre(s) y apellido(s)" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z0-9 ]{1,128}" title="Por favor ingresa tu nombre" required>
+                    
+                    </div>
+
+                    <div>
+
+                        <label>Tipo de identificación</label>
+
+                        <select name="id_tipo_empleado" id="id_tipo_empleado" tabindex="3" required>
+
+                            <option value="Cedula de ciudadania">Cedula de ciudadanía</option>
+                            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="Cedula de estrangeria">Cedula de extranjería</option>
+                            <option value="Registro civil">Registro civil</option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>No. de identificación</label>
+
+                        <input type="tel" name="id_empleado" id="id_empleado" tabindex="4" maxlength="10" minlength="6" pattern="[0-9]{4,10}" title="Agrega un numero de documento valido" placeholder="1112345678" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Número de teléfono</label>
+
+                        <input type="tel" name="tel_empleado" id="tel_empleado" placeholder="3211234567" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Digita un numero de teléfono valido" tabindex="6" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Fecha de nacimiento</label>
+
+                        <input type="date" name="fecha_empleado" id="fecha_empleado" tabindex="5" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Correo electronico</label>
+
+                        <input type="email" inputmode="email" name="email_empleado" placeholder="micorreo@gmail.com" id="email_empleado" minlength="3" maxlength="64" pattern="[A-Za-z0-9@.]{3,64}" tabindex="7"  title="Parece que esto no es un email" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Contraseña</label>
+
+                        <input type="password" name="contraseña_empleado" id="contraseña_empleado" placeholder="••••••••" minlength="8" maxlength="21" pattern="[A-Za-z0-9.#%*+@]{8,21}" tabindex="8"  required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Confirmar contraseña</label>
+
+                        <input type="password" name="confirmar_contraseña_empleado" minlength="8" maxlength="21" pattern="[A-Za-z0-9.#%*+@]{8,21}" tabindex="9" placeholder="••••••••" required>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" id="btn_editar_empleado" name="btn_editar_empleado" tabindex="10">Editar</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

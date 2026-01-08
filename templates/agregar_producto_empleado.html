@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar producto</title>
+
+    <link rel="stylesheet" href="agregar_producto.css">
+</head>
+<body>
+
+    <main id="caja_padre">
+
+        <div id="caja_contenedora">
+
+            <h1>Agregar producto</h1>
+
+            <button type="button" id="codigo_barras" name="codigo_barras"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 64 64" fill="none" role="img" aria-label="Código de barras">
+                <path d="M8 20V8H20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M44 8H56V20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M56 44V56H44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M20 56H8V44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M24 20V44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <path d="M30 20V44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <path d="M36 20V44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <path d="M42 20V44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                Escanear código
+            </button>
+
+            <form action="" method="post" id="formulario">
+
+                <div id="contenido">
+                    <div>
+
+                        <label>Id</label>
+
+                        <input type="tel" id="id_producto" name="id_producto" maxlength="13" minlength="12" pattern="[0-9]{12,13}" title="Digita un código valido">
+
+                    </div>
+
+                    <div>
+
+                        <label>Nombre</label>
+
+                        <input type="text" id="nombre_producto" name="nombre_producto" minlength="1" maxlength="128" pattern="[a-zA-Z 0-9]{1,128}">
+
+                    </div>
+
+                    <div>
+
+                        <label>Categoría</label>
+
+                        <input type="text" id="categoria_producto" name="categoria_producto" minlength="3" maxlength="128" pattern="[a-zA-Z 0-9]{3,128}">
+
+                    </div>
+
+                    <div>
+
+                        <label>Cantidad</label>
+
+                        <input type="tel" id="cantidad_producto" name="cantidad_producto" minlength="1" maxlength="4" pattern="[0-9]{1,4}">
+
+                    </div>
+
+                </div>
+
+                <button type="submit" id="btn_agregar_producto" name="btn_agregar_producto">Guardar producto</button>
+
+            </form>
+
+        </div>
+
+    </main>
+</body>
+</html>

@@ -192,210 +192,97 @@ body {
             margin-top: 10px;
         }
 
-        #observable #btn_crear_empleado {
-            width: 45%;
-            height: 40px;
-            margin: 20px 0 30px 10px;
-            background: #4FA3F7;
-            color: white;
-            font-size: 15px;
-            border: none;
-            border-radius: 8px;
+        #observable #subtitulo_pc {
+            display: none;
         }
 
-        #observable #historial {
+        #observable #parrafo_pc {
+            display: none;
+        }
+
+        #observable #contenedor {
+            background: white;
+            border: solid 2px #E2E2E2 ;
+            position: relative;
             width: 90%;
+            left: 50%;
+            margin: 20px 0 0 0;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            padding: 10px;
             flex-direction: column;
             display: flex;
-            position: relative;
-            border-radius: 8px;
-            background: white;
-            border: solid 2px #E2E2E2;
-            left: 50%;
-            margin: 3px 0;
-            transform: translateX(-50%);
         }
 
-            #historial #titulo_horizontal {
-                display: flex;
-                width: 100%;
+            #contenedor #subtitulo {
+                font-weight: 600;
+                font-size: 19px;
             }
 
-                #titulo_horizontal th:nth-child(1) {
-                    width: 70%;
-                    text-align: left;
-                    font-weight: 500;
-                    font-size: 16px;
-                    padding: 10px;
-                }
+            #contenedor #parrafo {
+                margin: 10px 0 10px 0;
+            }
 
-                #titulo_horizontal th:nth-child(2) {
-                    width: 30%;
-                    display: flex;
-                    padding: 10px;
-                    justify-content: space-around;
-                    color: #E2E2E2;
-                    text-align: center;
-                }
-
-                #titulo_horizontal svg:hover {
-                    background: #CBCBCB;
-                    border-radius: 8px;
-                }
-
-            #historial #informacion {
+            #contenedor #fila {
                 flex-direction: column;
                 display: flex;
-                width: 90%;
-                position: relative;
-                left: 50%;
-                font-size: 15px;
-                transform: translateX(-50%);
             }
 
-                #informacion td {
-                    display: flex;
-                    padding: 10px 0;
-                    border-top: solid 1px #E2E2E2;
-                }
-
-                #informacion p {
-                    margin-right: 10px;
-                    font-weight: 500;
-                }
-
-        #observable #ventana {
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-        }
-
-        #ventana #contenido_ventana {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-            #contenido_ventana p {
+            #contenedor #label_1 {
+                font-size: 15px;
+                margin: 10px 0 5px 0;
                 color: black;
-                font-size: 15px;
-                font-weight: 600;
-                margin-bottom: 30px;
             }
 
-                #contenido_ventana #btns_horizontal {
-                    width: 100%;
-                    display: flex;
-                    justify-content: end;
-                }
+            #contenedor #tipo_queja {
+                height: 40px;
+                border-radius: 8px;
+                border: solid 2px #E2E2E2;
+                outline: none;
+            }
 
-                    #btns_horizontal #btn_cancelar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: black;
-                        border-radius: 5px;
-                        padding: 10px;
-                        margin-right: 10px;
-                    }
+            #contenedor #label_2 {
+                margin: 20px 0 5px 0;
+                color: black;
+            }
 
-                    #btns_horizontal #btn_eliminar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: #FC4C38;
-                        border-radius: 5px;
-                        padding: 10px 35px;
-                        margin-left: 20px;
-                        font-weight: 600;
-                    }
+            #contenedor #mensaje_reporte {
+                border-radius: 8px;
+                height: 80px;
+                border: solid 2px #E2E2E2;
+                padding: 5px;
+                outline: none;
+            }
 
-                #observable #ventana_editar {
-                    width: 100%;
-                    height: 100vh;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    background: rgba(0, 0, 0, 0.5);
-                    display: none;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 20;
-                }
-
-                #ventana_editar #contenido_ventana {
-                    background: white;
-                    padding: 30px;
-                    border-radius: 8px;
-                }
-
-                    #contenido_ventana p {
-                        color: black;
-                        font-size: 15px;
-                        font-weight: 600;
-                        margin-bottom: 30px;
-                    }
-
-                        #contenido_ventana #btns_horizontal {
-                            width: 100%;
-                            display: flex;
-                            justify-content: end;
-                        }
-
-                            #btns_horizontal #btn_cancelar_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color: black;
-                                border-radius: 5px;
-                                padding: 10px;
-                                margin-right: 10px;
-                            }
-
-                            #btns_horizontal #btn_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color:#27BEF5;
-                                border-radius: 5px;
-                                padding: 10px 35px;
-                                margin-left: 20px;
-                                font-weight: 600;
-                            }
+            #contenedor #btn_enviar_reporte {
+                margin: 20px 0 10px 0;
+                height: 40px;
+                font-size: 15px;
+                color: white;
+                border-radius: 8px;
+                background: #4FA3F7;
+                border: none;
+            }
 
 @media screen and (min-width: 650px) {
 
     #caja_padre #barra_menu {
         width: 40%;
-    }
+    }   
 
-    #observable #btn_crear_empleado {
-            width: 40%;
-            height: 50px;
-        }
-
-        #observable #historial {
+        #observable #contenedor {
             width: 95%;
         }
 
-                #titulo_horizontal th:nth-child(1) {
-                    width: 80%;
-                    padding: 10px 0 10px 20px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 20%;
-                }
-
-            #historial #informacion {
-                width: 95%;
+            #contenedor #btn_enviar_reporte {
+                width: 50%;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
             }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
 
     #caja_padre {
         flex-direction: row;
@@ -451,7 +338,44 @@ body {
             display: none;
         }
 
-        #observable #btn_crear_empleado {
-            width: 30%;
+        #observable #subtitulo_pc {
+            display: flex;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 15px 0 10px 15px;
         }
+
+        #observable #parrafo_pc {
+            display: flex;
+            font-size: 15px;
+            margin: 10px 0 10px 15px;
+        }
+
+            #contenedor #subtitulo {
+                display: none;
+            }
+
+            #contenedor #parrafo {
+                display: none;
+            }
+
+            #contenedor #fila {
+                flex-direction: row;
+                display: flex;
+                margin: 10px 0;
+            }
+
+                #fila label {
+                    width: 15%;
+                    height: 100%;
+                }
+
+                #fila #tipo_queja {
+                    width: 100%;
+                }
+
+                #fila #mensaje_reporte {
+                    width: 100%;
+                }
+
 }

@@ -34,7 +34,7 @@ body {
         width: 70%;
         height: 100vh;
         z-index: 6;
-        background: #4FA3F7;
+        background: #4DA6FF;
         left: -100%;
         border-right: solid 2px #CBCBCB;
     }   
@@ -130,7 +130,7 @@ body {
 
         #observable #encabezado {
             display: flex;
-            height: 12%;
+            height: 10%;
             width: 100%;
             justify-content: space-between;
             background: #E2E2E2;
@@ -189,79 +189,98 @@ body {
             font-size: 22px;
             font-weight: 600;
             margin-left: 5px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
-        #observable #btn_crear_empleado {
-            width: 45%;
+        #observable #recoger_busqueda {
             height: 40px;
-            margin: 20px 0 30px 10px;
-            background: #4FA3F7;
-            color: white;
-            font-size: 15px;
+            width: 95%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            display: flex;
+            background: #E2E2E2;
+            margin: 20px 0;
+        }
+
+            #recoger_busqueda svg {
+                width: 10%;
+                height: 100%;
+                padding: 5px;
+            }
+
+            #recoger_busqueda #barra_busqueda {
+                width: 90%;
+                border: none;
+                background: transparent;
+                outline: none;
+            }
+
+        #observable #btn_crear_producto {
+            width: 35%;
+            height: 45px;
+            margin: 10px 0 20px 10px;
             border: none;
             border-radius: 8px;
+            font-size: 15px;
+            color: white;
+            background: #4DA6FF;
+        }
+
+        #observable #subtitulo {
+            font-size: 18px;
+            margin-left: 10px;
+            font-weight: 600;
         }
 
         #observable #historial {
-            width: 90%;
-            flex-direction: column;
-            display: flex;
             position: relative;
-            border-radius: 8px;
-            background: white;
-            border: solid 2px #E2E2E2;
+            width: 95%;
             left: 50%;
-            margin: 3px 0;
             transform: translateX(-50%);
+            margin-top: 10px;
+            flex-direction: column;
         }
 
-            #historial #titulo_horizontal {
-                display: flex;
-                width: 100%;
+            #historial #titulos_historial {
+                display: none;
             }
 
-                #titulo_horizontal th:nth-child(1) {
-                    width: 70%;
-                    text-align: left;
-                    font-weight: 500;
-                    font-size: 16px;
-                    padding: 10px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 30%;
-                    display: flex;
-                    padding: 10px;
-                    justify-content: space-around;
-                    color: #E2E2E2;
-                    text-align: center;
-                }
-
-                #titulo_horizontal svg:hover {
-                    background: #CBCBCB;
-                    border-radius: 8px;
-                }
-
             #historial #informacion {
-                flex-direction: column;
                 display: flex;
-                width: 90%;
-                position: relative;
-                left: 50%;
-                font-size: 15px;
-                transform: translateX(-50%);
+                background: #E2E2E2;
+                border-radius: 8px;
+                padding: 5px;
+                flex-direction: column;
+                margin: 3px 0;
             }
 
                 #informacion td {
+                    margin: 5px 0;
                     display: flex;
-                    padding: 10px 0;
-                    border-top: solid 1px #E2E2E2;
+                    color: #404040;
+                    word-break: break-word;
+                    font-weight: 600;
                 }
 
                 #informacion p {
+                    font-size: 15px;
+                    flex: 0 0 auto;
+                    color: black;
                     margin-right: 10px;
-                    font-weight: 500;
+                }
+
+                #informacion td:nth-child(6) {
+                    margin-top: 10px;
+                    padding-top: 2px;
+                    border-top: solid 2px #404040;
+                    justify-content: space-around;
+                }
+
+                #informacion svg:hover {
+                    background: #a5a5a5;
+                    border-radius: 8px;
                 }
 
         #observable #ventana {
@@ -370,32 +389,19 @@ body {
 
     #caja_padre #barra_menu {
         width: 40%;
+        
+    } 
+
+    #recoger_busqueda svg {
+        width: 6%;
     }
 
-    #observable #btn_crear_empleado {
-            width: 40%;
-            height: 50px;
-        }
-
-        #observable #historial {
-            width: 95%;
-        }
-
-                #titulo_horizontal th:nth-child(1) {
-                    width: 80%;
-                    padding: 10px 0 10px 20px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 20%;
-                }
-
-            #historial #informacion {
-                width: 95%;
-            }
+    #recoger_busqueda #barra_busqueda {
+        width: 94%;
+    }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
 
     #caja_padre {
         flex-direction: row;
@@ -451,7 +457,106 @@ body {
             display: none;
         }
 
-        #observable #btn_crear_empleado {
+        #observable #recoger_busqueda {
+            height: 40px;
+            width: 50%;
+            left: 10px;
+            transform: translateX(0);
+            
+        }
+
+        #observable #btn_crear_producto {
             width: 30%;
         }
+
+        #observable #historial {
+            background: #E2E2E2;
+            border-radius: 8px 8px 0 0;
+        }
+
+            #historial #titulos_historial {
+                display: flex;
+                padding: 10px 0;
+            }
+
+                #titulos_historial th:nth-child(1) {
+                    width: 13%;
+                    padding: 0 5px;
+                    font-weight: 500;
+                }
+
+                #titulos_historial th:nth-child(2) {
+                    width: 37%;
+                    padding: 0 5px;
+                    font-weight: 500;
+                }
+
+                #titulos_historial th:nth-child(3) {
+                    width: 22%;
+                    padding: 0 5px;
+                    font-weight: 500;
+                }
+
+                #titulos_historial th:nth-child(4) {
+                    width: 8%;
+                    padding: 0 5px;
+                    font-weight: 500;
+                }
+
+                #titulos_historial th:nth-child(5) {
+                    width: 12%;
+                    padding: 0 5px;
+                    font-weight: 500;
+                }
+
+            #historial #informacion {
+                flex-direction: row;
+                background: #F8F9FA;
+                border: solid 1px #E2E2E2;
+                border-radius: 0;
+                margin: 0;
+            }
+
+                #informacion p {
+                    display: none;
+                }
+
+                #informacion td {
+                    justify-content: center;
+                }
+
+                #informacion td:nth-child(1) {
+                    width: 13%;
+                    padding: 0 5px;
+                }
+
+                #informacion td:nth-child(2) {
+                    width: 37%;
+                    padding: 0 5px;
+                }
+
+                #informacion td:nth-child(3) {
+                    width: 22%;
+                    padding: 0 5px;
+                }
+
+                #informacion td:nth-child(4) {
+                    width: 8%;
+                    padding: 0 5px;
+                }
+
+                #informacion td:nth-child(5) {
+                    width: 12%;
+                    padding: 0 5px;
+                }
+
+                #informacion td:nth-child(6) {
+                    width: 8%;
+                    margin-top: 0;
+                    padding-top: 0;
+                    border-top: none;
+                    justify-content: space-around;
+                }
+
+
 }

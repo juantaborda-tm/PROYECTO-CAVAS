@@ -45,15 +45,6 @@ main {
         justify-content: space-between;
     }
 
-        #linea_categoria #btn_crear_categoria {
-            border: none;
-            background: #7ED957;
-            border-radius: 4px;
-            height: 30px;
-            color: white;
-            width: 100px;
-        }
-
     #caja_contenedora #codigo_barras {
         border: none;
         width: 80%;
@@ -94,7 +85,7 @@ main {
             width: 100%;
         }
 
-        #formulario #btn_agregar_producto {
+        #formulario #btn_editar_producto {
             border: none;
             border-radius: 8px;
             background: #4DA6FF;
@@ -119,7 +110,7 @@ main {
         padding: 20px;
     }
 
-    #formulario #btn_agregar_producto {
+    #formulario #btn_editar_producto {
         height: 50px;
     }
 

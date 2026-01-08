@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar proveedor</title>
+
+    <link rel="stylesheet" href="editar_proveedor.css">
+</head>
+<body>
+
+    <main id="caja_padre">
+
+        <div id="caja_contenedora">
+
+            <h1>Editar proveedor</h1>
+
+            <form action="" method="post" id="formulario">
+
+                <div id="contenido">
+
+                    <div>
+
+                        <label>Nit de empresa</label>
+
+                        <input type="tel" name="nit_proveedor" id="nit_proveedor" placeholder="900291812" minlength="9" maxlength="9" tabindex="2" pattern="[0-9]{9}" title="Por favor ingresa un nit valido" required>
+                    
+                    </div>
+
+                    <div>
+
+                        <label>Nombre completo</label>
+
+                        <input type="text" name="nombre_proveedor" id="nombre_proveedor" placeholder="Nombre(s) y apellido(s)" minlength="1" maxlength="128" tabindex="2" pattern="[A-Za-z0-9 ]{1,128}" title="Por favor ingresa tu nombre" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>No. de identificación</label>
+
+                        <input type="tel" name="id_proveedor" id="id_proveedor" tabindex="4" maxlength="10" minlength="6" pattern="[0-9]{6,10}" title="Agrega un numero de documento valido" placeholder="1112345678" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Número de teléfono</label>
+
+                        <input type="tel" name="tel_proveedor" id="tel_proveedor" placeholder="3211234567" maxlength="10" minlength="10" pattern="[0-9]{10}" title="Digita un numero de telefono valido" tabindex="6" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>Correo electronico</label>
+
+                        <input type="email" inputmode="email" name="email_proveedor" placeholder="micorreo@gmail.com" id="email_proveedor" minlength="3" maxlength="64" pattern="[A-Za-z0-9@.]{3,64}" tabindex="7"  title="Parece que esto no es un email" required>
+
+                    </div>
+
+                    <div>
+
+                        <label>DIrección empresa</label>
+
+                        <input type="text" name="direccion_proveedor" placeholder="calle 1 #11-11" id="direccion_proveedor" minlength="4" maxlength="64" pattern="[A-Za-z0-9. -#]{3,64}" tabindex="7"  title="Parece que esto no es una dirección" required>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" id="btn_editar_proveedor" name="btn_editar_proveedor" tabindex="10">Editar</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

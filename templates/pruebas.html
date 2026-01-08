@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Productos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Menú lateral */
+        .sidebar {
+            width: 220px;
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 12px 0;
+            cursor: pointer;
+        }
+
+        /* Área principal */
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .main h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            background: #3498db;
+            color: #fff;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .add-button {
+            margin-bottom: 20px;
+            padding: 12px 20px;
+            background: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-list {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .product-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Menú lateral -->
+        <div class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li>Inicio</li>
+                <li>Productos</li>
+                <li>Inventario</li>
+                <li>Configuración</li>
+            </ul>
+        </div>
+        <!-- Área principal -->
+        <div class="main">
+            <h1>Agregar Productos</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos...">
+                <button>Buscar</button>
+            </div>
+            <button class="add-button">+ Agregar Producto</button>
+            <div class="product-list">
+                <div class="product-item">Producto 1</div>
+                <div class="product-item">Producto 2</div>
+                <div class="product-item">Producto 3</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

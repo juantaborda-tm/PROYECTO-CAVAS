@@ -192,210 +192,72 @@ body {
             margin-top: 10px;
         }
 
-        #observable #btn_crear_empleado {
-            width: 45%;
+        #observable #recoger_busqueda {
             height: 40px;
-            margin: 20px 0 30px 10px;
-            background: #4FA3F7;
-            color: white;
-            font-size: 15px;
-            border: none;
+            width: 95%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 8px;
+            display: flex;
+            background: #E2E2E2;
+            margin: 20px 0;
+        }
+
+            #recoger_busqueda svg {
+                width: 10%;
+                height: 100%;
+                padding: 5px;
+            }
+
+            #recoger_busqueda #barra_busqueda {
+                width: 90%;
+                border: none;
+                background: transparent;
+                outline: none;
+            }
+
+        #observable #subtitulo {
+            font-size: 18px;
+            margin-left: 10px;
+            font-weight: 600;
         }
 
         #observable #historial {
-            width: 90%;
-            flex-direction: column;
-            display: flex;
             position: relative;
-            border-radius: 8px;
-            background: white;
-            border: solid 2px #E2E2E2;
+            width: 95%;
             left: 50%;
-            margin: 3px 0;
+            background: #E2E2E2;
+            border-radius: 8px 8px 0 0;
             transform: translateX(-50%);
+            margin-top: 10px;
+            flex-direction: column;
         }
 
-            #historial #titulo_horizontal {
+            #historial #titulos_historial {
                 display: flex;
-                width: 100%;
+                margin: 10px 0 10px 10px;
             }
 
-                #titulo_horizontal th:nth-child(1) {
-                    width: 70%;
-                    text-align: left;
-                    font-weight: 500;
-                    font-size: 16px;
-                    padding: 10px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 30%;
-                    display: flex;
-                    padding: 10px;
-                    justify-content: space-around;
-                    color: #E2E2E2;
-                    text-align: center;
-                }
-
-                #titulo_horizontal svg:hover {
-                    background: #CBCBCB;
-                    border-radius: 8px;
-                }
-
             #historial #informacion {
-                flex-direction: column;
                 display: flex;
-                width: 90%;
-                position: relative;
-                left: 50%;
-                font-size: 15px;
-                transform: translateX(-50%);
+                background: #F8F9FA;
+                padding: 5px;
+                border: solid 1px #E2E2E2;
             }
 
                 #informacion td {
-                    display: flex;
-                    padding: 10px 0;
-                    border-top: solid 1px #E2E2E2;
-                }
-
-                #informacion p {
-                    margin-right: 10px;
-                    font-weight: 500;
-                }
-
-        #observable #ventana {
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-        }
-
-        #ventana #contenido_ventana {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-            #contenido_ventana p {
-                color: black;
-                font-size: 15px;
-                font-weight: 600;
-                margin-bottom: 30px;
-            }
-
-                #contenido_ventana #btns_horizontal {
                     width: 100%;
-                    display: flex;
-                    justify-content: end;
                 }
-
-                    #btns_horizontal #btn_cancelar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: black;
-                        border-radius: 5px;
-                        padding: 10px;
-                        margin-right: 10px;
-                    }
-
-                    #btns_horizontal #btn_eliminar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: #FC4C38;
-                        border-radius: 5px;
-                        padding: 10px 35px;
-                        margin-left: 20px;
-                        font-weight: 600;
-                    }
-
-                #observable #ventana_editar {
-                    width: 100%;
-                    height: 100vh;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    background: rgba(0, 0, 0, 0.5);
-                    display: none;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 20;
-                }
-
-                #ventana_editar #contenido_ventana {
-                    background: white;
-                    padding: 30px;
-                    border-radius: 8px;
-                }
-
-                    #contenido_ventana p {
-                        color: black;
-                        font-size: 15px;
-                        font-weight: 600;
-                        margin-bottom: 30px;
-                    }
-
-                        #contenido_ventana #btns_horizontal {
-                            width: 100%;
-                            display: flex;
-                            justify-content: end;
-                        }
-
-                            #btns_horizontal #btn_cancelar_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color: black;
-                                border-radius: 5px;
-                                padding: 10px;
-                                margin-right: 10px;
-                            }
-
-                            #btns_horizontal #btn_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color:#27BEF5;
-                                border-radius: 5px;
-                                padding: 10px 35px;
-                                margin-left: 20px;
-                                font-weight: 600;
-                            }
 
 @media screen and (min-width: 650px) {
 
     #caja_padre #barra_menu {
         width: 40%;
     }
-
-    #observable #btn_crear_empleado {
-            width: 40%;
-            height: 50px;
-        }
-
-        #observable #historial {
-            width: 95%;
-        }
-
-                #titulo_horizontal th:nth-child(1) {
-                    width: 80%;
-                    padding: 10px 0 10px 20px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 20%;
-                }
-
-            #historial #informacion {
-                width: 95%;
-            }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
 
     #caja_padre {
         flex-direction: row;
@@ -451,7 +313,11 @@ body {
             display: none;
         }
 
-        #observable #btn_crear_empleado {
-            width: 30%;
+        #observable #recoger_busqueda {
+            height: 40px;
+            width: 50%;
+            left: 10px;
+            transform: translateX(0);
+            
         }
 }

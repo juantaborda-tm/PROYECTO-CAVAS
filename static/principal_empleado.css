@@ -34,7 +34,7 @@ body {
         width: 70%;
         height: 100vh;
         z-index: 6;
-        background: #4FA3F7;
+        background: #4DA6FF;
         left: -100%;
         border-right: solid 2px #CBCBCB;
     }   
@@ -72,7 +72,7 @@ body {
                 display: block;
                 border-radius: 0 5px 5px 0;
                 padding-bottom: 10px;
-                margin: 6px 0;
+                margin: 8px 0;
             }
 
             #lista_menu li:hover {
@@ -189,213 +189,133 @@ body {
             font-size: 22px;
             font-weight: 600;
             margin-left: 5px;
-            margin-top: 10px;
         }
 
-        #observable #btn_crear_empleado {
-            width: 45%;
-            height: 40px;
-            margin: 20px 0 30px 10px;
-            background: #4FA3F7;
-            color: white;
-            font-size: 15px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        #observable #historial {
-            width: 90%;
-            flex-direction: column;
+        #observable #vistas_rapidas {
+            margin: 10px 0 20px 0;
             display: flex;
-            position: relative;
-            border-radius: 8px;
-            background: white;
-            border: solid 2px #E2E2E2;
-            left: 50%;
-            margin: 3px 0;
-            transform: translateX(-50%);
-        }
-
-            #historial #titulo_horizontal {
-                display: flex;
-                width: 100%;
-            }
-
-                #titulo_horizontal th:nth-child(1) {
-                    width: 70%;
-                    text-align: left;
-                    font-weight: 500;
-                    font-size: 16px;
-                    padding: 10px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 30%;
-                    display: flex;
-                    padding: 10px;
-                    justify-content: space-around;
-                    color: #E2E2E2;
-                    text-align: center;
-                }
-
-                #titulo_horizontal svg:hover {
-                    background: #CBCBCB;
-                    border-radius: 8px;
-                }
-
-            #historial #informacion {
-                flex-direction: column;
-                display: flex;
-                width: 90%;
-                position: relative;
-                left: 50%;
-                font-size: 15px;
-                transform: translateX(-50%);
-            }
-
-                #informacion td {
-                    display: flex;
-                    padding: 10px 0;
-                    border-top: solid 1px #E2E2E2;
-                }
-
-                #informacion p {
-                    margin-right: 10px;
-                    font-weight: 500;
-                }
-
-        #observable #ventana {
+            display: grid;
             width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
+            grid-template-columns: 1fr 1fr;
         }
 
-        #ventana #contenido_ventana {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-            #contenido_ventana p {
-                color: black;
-                font-size: 15px;
-                font-weight: 600;
-                margin-bottom: 30px;
+            #vistas_rapidas #info {
+                display: flex;
+                flex-direction: column;
+                background: #E2E2E2;
+                margin: 10px;
+                border-radius: 8px;
+                height: 60px;
             }
 
-                #contenido_ventana #btns_horizontal {
-                    width: 100%;
+                #info div {
                     display: flex;
-                    justify-content: end;
-                }
-
-                    #btns_horizontal #btn_cancelar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: black;
-                        border-radius: 5px;
-                        padding: 10px;
-                        margin-right: 10px;
-                    }
-
-                    #btns_horizontal #btn_eliminar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: #FC4C38;
-                        border-radius: 5px;
-                        padding: 10px 35px;
-                        margin-left: 20px;
-                        font-weight: 600;
-                    }
-
-                #observable #ventana_editar {
+                    font-weight: 600;
+                    gap: 10px;
+                    height: 100%;
                     width: 100%;
-                    height: 100vh;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    background: rgba(0, 0, 0, 0.5);
-                    display: none;
                     justify-content: center;
-                    align-items: center;
-                    z-index: 20;
+                    padding-top: 5px;
                 }
 
-                #ventana_editar #contenido_ventana {
-                    background: white;
-                    padding: 30px;
-                    border-radius: 8px;
-                }
+            #vistas_rapidas #titulo_info {
+                font-weight: 600;
+                font-size: 15px;
+                background: #7ED957;
+                width: 100%;
+                padding: 5px;
+                text-align: center;
+                border-radius: 8px 8px 0 0;
+            }
 
-                    #contenido_ventana p {
-                        color: black;
-                        font-size: 15px;
-                        font-weight: 600;
-                        margin-bottom: 30px;
-                    }
+        #observable #acciones_rapidas {
+            justify-content: space-around;
+            display: flex;
+        }
 
-                        #contenido_ventana #btns_horizontal {
-                            width: 100%;
-                            display: flex;
-                            justify-content: end;
-                        }
+            #acciones_rapidas button {
+                font-size: 15px; 
+                color: white;
+                height: 45px;
+                background: #4DA6FF;
+                width: 45%;
+                border: none;
+                border-radius: 8px;
+            }
 
-                            #btns_horizontal #btn_cancelar_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color: black;
-                                border-radius: 5px;
-                                padding: 10px;
-                                margin-right: 10px;
-                            }
-
-                            #btns_horizontal #btn_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color:#27BEF5;
-                                border-radius: 5px;
-                                padding: 10px 35px;
-                                margin-left: 20px;
-                                font-weight: 600;
-                            }
-
-@media screen and (min-width: 650px) {
-
-    #caja_padre #barra_menu {
-        width: 40%;
-    }
-
-    #observable #btn_crear_empleado {
-            width: 40%;
-            height: 50px;
+        #observable h2 {
+            margin: 20px 0 20px 5px;
         }
 
         #observable #historial {
             width: 95%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            background: #E2E2E2;
+            border-radius: 8px 8px 0 0;
         }
 
-                #titulo_horizontal th:nth-child(1) {
-                    width: 80%;
-                    padding: 10px 0 10px 20px;
+            #historial #titulos {
+                width: 100%;
+                display: flex;
+                text-align: center;
+                padding-top: 10px;
+                margin-bottom: 10px;
+            }
+
+                #titulos th:nth-child(1) {
+                    width: 70%;
+                    text-align: left;
+                    margin-left: 8px;
+                    font-weight: 500;
                 }
 
-                #titulo_horizontal th:nth-child(2) {
-                    width: 20%;
+                #titulos th:nth-child(2) {
+                    width: 30%;
+                    font-weight: 500;
                 }
 
             #historial #informacion {
-                width: 95%;
+                width: 100%;
+                display: flex;
+                background: #F8F9FA;
+                text-align: center;
+                align-items: center;
+                padding: 10px 5px;
+                border: solid 1px #E2E2E2;
+            }
+
+                #informacion td:nth-child(1) {
+                    width: 70%;
+                    margin-right: 5px;
+                    overflow: hidden;
+                    text-align: left;
+                }
+
+                #informacion td:nth-child(2) {
+                    width: 30%;
+                    margin-left: 10px;
+                }
+
+@media screen and (min-width:650px) {
+
+    #caja_padre #barra_menu {
+        width: 40%;
+    }  
+
+        #lista_menu a {
+                margin: 10px 0;
+        }
+
+            #vistas_rapidas #info {
+                margin: 10px 30px;
             }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
 
     #caja_padre {
         flex-direction: row;
@@ -451,7 +371,50 @@ body {
             display: none;
         }
 
-        #observable #btn_crear_empleado {
-            width: 30%;
+        #observable #vistas_rapidas {
+            margin: 10px 0 20px 0;
+            display: flex;
+            justify-content: space-around;
+            grid-template-columns: none;
         }
+
+            #vistas_rapidas #info {
+                display: flex;
+                width: 100%;
+                height: 70px;
+            }
+
+                #info div {
+                    padding: 10px 0;
+                }
+
+        #observable #acciones_rapidas {
+            justify-content: inherit;
+            display: flex;
+        }
+
+            #acciones_rapidas button {
+                width: 20%;
+                margin: 0 20px;
+            }
+
+        #observable h2 {
+            margin: 30px 0 20px 20px;
+        }
+
+            #titulos th:nth-child(1) {
+                width: 80%;
+            }
+
+            #titulos th:nth-child(2) {
+                width: 20%;
+            }
+
+                #informacion td:nth-child(1) {
+                    width: 80%;
+                }
+
+                #informacion td:nth-child(2) {
+                    width: 20%;
+                }
 }

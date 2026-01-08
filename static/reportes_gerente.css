@@ -190,181 +190,56 @@ body {
             font-weight: 600;
             margin-left: 5px;
             margin-top: 10px;
-        }
+        } 
 
-        #observable #btn_crear_empleado {
-            width: 45%;
-            height: 40px;
-            margin: 20px 0 30px 10px;
-            background: #4FA3F7;
-            color: white;
-            font-size: 15px;
-            border: none;
-            border-radius: 8px;
+        #observable #subtitulo {
+            font-size: 18px;
+            margin: 10px 0 10px 5px;
         }
 
         #observable #historial {
             width: 90%;
-            flex-direction: column;
-            display: flex;
             position: relative;
-            border-radius: 8px;
-            background: white;
-            border: solid 2px #E2E2E2;
             left: 50%;
-            margin: 3px 0;
             transform: translateX(-50%);
+            margin-top: 20px;
         }
 
-            #historial #titulo_horizontal {
-                display: flex;
-                width: 100%;
-            }
-
-                #titulo_horizontal th:nth-child(1) {
-                    width: 70%;
-                    text-align: left;
-                    font-weight: 500;
-                    font-size: 16px;
-                    padding: 10px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 30%;
-                    display: flex;
-                    padding: 10px;
-                    justify-content: space-around;
-                    color: #E2E2E2;
-                    text-align: center;
-                }
-
-                #titulo_horizontal svg:hover {
-                    background: #CBCBCB;
-                    border-radius: 8px;
-                }
-
             #historial #informacion {
-                flex-direction: column;
                 display: flex;
-                width: 90%;
-                position: relative;
-                left: 50%;
-                font-size: 15px;
-                transform: translateX(-50%);
+                flex-direction: column;
+                background: white;
+                border: solid 2px #E2E2E2;
+                border-radius: 8px;
+                padding: 10px;
             }
 
                 #informacion td {
-                    display: flex;
-                    padding: 10px 0;
-                    border-top: solid 1px #E2E2E2;
+                    margin: 10px 0;
                 }
 
-                #informacion p {
+                #informacion svg {
                     margin-right: 10px;
-                    font-weight: 500;
+                    position: relative;
+                    top: 8px;
                 }
 
-        #observable #ventana {
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-        }
-
-        #ventana #contenido_ventana {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-            #contenido_ventana p {
-                color: black;
-                font-size: 15px;
-                font-weight: 600;
-                margin-bottom: 30px;
-            }
-
-                #contenido_ventana #btns_horizontal {
-                    width: 100%;
-                    display: flex;
-                    justify-content: end;
+                #informacion td:nth-child(1) {
+                    font-size: 18px;
+                    font-weight: 600;
                 }
 
-                    #btns_horizontal #btn_cancelar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: black;
-                        border-radius: 5px;
-                        padding: 10px;
-                        margin-right: 10px;
-                    }
-
-                    #btns_horizontal #btn_eliminar {
-                        border: none;
-                        background: #E2E2E2;
-                        color: #FC4C38;
-                        border-radius: 5px;
-                        padding: 10px 35px;
-                        margin-left: 20px;
-                        font-weight: 600;
-                    }
-
-                #observable #ventana_editar {
-                    width: 100%;
-                    height: 100vh;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    background: rgba(0, 0, 0, 0.5);
-                    display: none;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 20;
+                #informacion td:nth-child(2) {
+                    font-size: 18px;
                 }
 
-                #ventana_editar #contenido_ventana {
-                    background: white;
-                    padding: 30px;
-                    border-radius: 8px;
+                #informacion td:nth-child(3) {
+                    font-size: 15px;
                 }
 
-                    #contenido_ventana p {
-                        color: black;
-                        font-size: 15px;
-                        font-weight: 600;
-                        margin-bottom: 30px;
-                    }
-
-                        #contenido_ventana #btns_horizontal {
-                            width: 100%;
-                            display: flex;
-                            justify-content: end;
-                        }
-
-                            #btns_horizontal #btn_cancelar_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color: black;
-                                border-radius: 5px;
-                                padding: 10px;
-                                margin-right: 10px;
-                            }
-
-                            #btns_horizontal #btn_editar {
-                                border: none;
-                                background: #E2E2E2;
-                                color:#27BEF5;
-                                border-radius: 5px;
-                                padding: 10px 35px;
-                                margin-left: 20px;
-                                font-weight: 600;
-                            }
+                #informacion td:nth-child(4) {
+                    font-weight: 600;
+                }   
 
 @media screen and (min-width: 650px) {
 
@@ -372,30 +247,20 @@ body {
         width: 40%;
     }
 
-    #observable #btn_crear_empleado {
-            width: 40%;
-            height: 50px;
+        #observable #titulo {
+            margin-left: 15px;
+        } 
+
+        #observable #subtitulo {
+            margin: 10px 0 10px 15px;
         }
 
         #observable #historial {
             width: 95%;
         }
-
-                #titulo_horizontal th:nth-child(1) {
-                    width: 80%;
-                    padding: 10px 0 10px 20px;
-                }
-
-                #titulo_horizontal th:nth-child(2) {
-                    width: 20%;
-                }
-
-            #historial #informacion {
-                width: 95%;
-            }
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
 
     #caja_padre {
         flex-direction: row;
@@ -449,9 +314,5 @@ body {
 
         #observable #titulo {
             display: none;
-        }
-
-        #observable #btn_crear_empleado {
-            width: 30%;
         }
 }

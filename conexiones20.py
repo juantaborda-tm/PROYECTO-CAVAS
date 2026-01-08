@@ -309,9 +309,5 @@ def agregar_never():
     return redirect("/interfaz_principal_g")
 
 
-
-
-
-    
 if __name__=="__main__":
     programa.run(debug=True, port=5080)
